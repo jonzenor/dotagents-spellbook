@@ -364,10 +364,10 @@ gh issue create --title "<short description>" --body "<context and details>" --l
 
 ## Cycle Summary Comment
 
-Before every exit where an action was taken, post a comment to the PRD issue summarizing what happened this cycle:
+Before every exit where an action was taken, post a comment to the PRD issue summarizing what happened this cycle. These comments are the **audit trail** — someone reading the issue history should understand exactly what happened without opening the diff.
 
 ```bash
-gh issue comment <prd-number> --body "🤖 Auto-process cycle: <one-sentence summary of what was done>"
+gh issue comment <prd-number> --body "🤖 Auto-process cycle: ..."
 ```
 
 **Post a comment when:**
@@ -383,13 +383,39 @@ gh issue comment <prd-number> --body "🤖 Auto-process cycle: <one-sentence sum
 - The PRD is in testing with no feedback issues (nothing to do)
 - CI checks are still running/pending (just reporting status, no action taken)
 
-Keep comments brief and factual. Examples:
-- `🤖 Auto-process cycle: Implemented issue #342 (MeetingPayout model and migration) on prd-lumen-payouts.`
-- `🤖 Auto-process cycle: All issues complete — wrote docs, pushed branch, opened PR #345 targeting staging.`
-- `🤖 Auto-process cycle: Fixed CI failure in ProcessMeetingPayoutsTest (RCON mock wrong type) and pushed.`
-- `🤖 Auto-process cycle: Addressed 3 CodeRabbit comments (null safety, unused import, doc fence) and pushed.`
-- `🤖 Auto-process cycle: PR #345 passed all checks and CodeRabbit review — merged to staging, transitioned to testing.`
-- `🤖 Auto-process cycle: Fixed test feedback issues #351, #352 — pushed and opened PR #356 for re-review.`
+**Comment length and detail:** Aim for 3–8 bullet points or sentences — enough context to understand what happened without reading the diff. A one-liner is never enough.
+
+**For CodeRabbit rounds**, always list each comment individually with whether it was fixed or skipped and why:
+```
+🤖 Auto-process cycle: Addressed CodeRabbit round 2 (2 of 3 comments fixed):
+- **Fixed** — Line 90 stale comment "No staff_rank set → crew": updated to "CrewMember < Officer"
+  because we added `staff_rank` to the fixture last cycle but forgot to update the comment
+- **Fixed** — Line 196 same stale comment pattern, same fix
+- **Not fixed** — Suggestion to add abort-on-syncstart-failure: intentional design decision to
+  warn-and-continue so a transient syncstart hiccup doesn't block the entire repair run
+```
+
+**For CI failures**, name the failing test(s) and describe the root cause and fix:
+```
+🤖 Auto-process cycle: Fixed CI failure — SyncMinecraftAccountTest "eligible staff user records
+staff position set activity" was failing because the test created a user with staff_department
+but no staff_rank; after our null-guard fix, that correctly returns 'none' and logs
+minecraft_staff_position_removed. Added staff_rank: CrewMember to the fixture to restore the
+intended scenario.
+```
+
+**For implementations**, summarize what was built:
+```
+🤖 Auto-process cycle: Implemented issue #342 — added MeetingPayout model and migration
+(amount, user_id, meeting_id, paid_at), MeetingPayoutFactory, and SyncMeetingPayouts action
+that calculates lumen payouts from check-in attendance. Tests cover eligibility rules.
+```
+
+**For merges**, confirm what passed:
+```
+🤖 Auto-process cycle: PR #369 passed CI (Pest + Coverage, Pint) and CodeRabbit review
+(2 rounds, 5 total comments addressed) — merged to staging, PRD #365 transitioned to testing.
+```
 
 ---
 

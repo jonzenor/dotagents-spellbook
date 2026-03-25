@@ -96,7 +96,7 @@ For each fixable issue:
 
 7. **Close the issue:**
    ```bash
-   gh issue edit <number> --remove-label "in-progress" --remove-label "test-feedback"
+   gh issue edit <number> --remove-label "in-progress"
    gh issue close <number> --reason completed
    ```
 
