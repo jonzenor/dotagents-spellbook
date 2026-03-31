@@ -32,11 +32,20 @@ Appends a `## Today's Focus` section to today's daily note. **Never overwrites o
    - From the **Rhythms** table: pull any softer rhythms scheduled for today (e.g. cook for family on Tuesday/Friday).
    - From **Daily Rhythms**: include the standard morning/daytime/evening habits as a reminder in the output.
 
-6. **Check Google Calendar** (timezone: America/Denver):
-   - Fetch **all events today** — include every one of them.
-   - Fetch events for the **rest of the week** — filter to only items that are actionable or important (meetings, deadlines, birthdays worth acknowledging, payday). Skip purely informational entries like cancelled events or reminders that nothing is happening.
+6. **Check Google Calendar** (timezone: America/Denver). Pull from all three calendars: **Jon's Calendar** (`jonzenor@gmail.com`), **Family** (`family18039985066750084653@group.calendar.google.com`), and **Danae's calendar** (`danaezenor@gmail.com`).
+   - Fetch **all events today** from all three calendars — include every one of them.
+   - Fetch events for the **rest of the week** from all three — filter to only items that are actionable or personally significant. Skip purely informational entries.
+   - **F1 and sports events** (typically on the Family calendar): low priority — summarize briefly or group them ("F1 race weekend: Sat–Sun") rather than listing each one. No need to attribute who added them.
+   - **Recurring logistical reminders** (e.g. Trash Day): only surface on the day itself or the evening before — never earlier in the week radar.
+   - **Danae's appointments**: flag any in-person (non-virtual) doctor or medical appointments — these require Jon to work from home and drive her. Treat these as high-priority items. Surface them clearly in "Today's hard landscape" if today, or prominently in "On the radar" if later this week, with a note: *"In-person — work from home, drive Danae."*
+   - **Schedule conflicts**: if two calendar events or commitments overlap in time, flag the conflict inline in the hard landscape with ⚠️ and a note.
 
 7. **Append** the Today's Focus section (see format below).
+
+## Output format notes
+
+- **Week's focus**: Pull the first line of the `## Focus This Week` section from the weekly note and include it as a single italic line at the top of Today's Focus, e.g. `*Week's focus: ...*`
+- **Mentoring links**: When a mentoring session appears in the hard landscape, use the wikilink to the mentoring note, e.g. `[[Mentoring/Zac Story]]`, `[[Mentoring/Jeremy]]`, `[[Mentoring/Tyler]]`
 
 ## Output format
 
@@ -60,7 +69,7 @@ Appends a `## Today's Focus` section to today's daily note. **Never overwrites o
 
 - **Today's hard landscape**: The fixed shape of the day (GTD concept). Include only items with a specific time — calendar events and Rhythms.md commitments that have a scheduled time. If a time-based commitment has a known exception (e.g. Youth Group cancelled for spring break), note it inline. Do NOT include untimed items like "work on-site" — those are tasks, not landscape. If a meal from the weekly cooking schedule has a time context (e.g. Thursday Lunch), include it here; otherwise put it in "Get done today." If nothing is scheduled, omit this section.
 - **Get done today**: Everything that needs doing but isn't pinned to a time. Pull from yesterday's unfinished follow-ups, weekly note action items, and anything with a deadline or dependency. Include untimed rhythms (e.g. work on-site, cook for family tonight) and cooking if no specific time. Order by importance — most critical first. If a recurring item keeps sliding (doctor's appointment, Bible reading, GTD), surface it with a brief nudge. Keep this list tight — 4–6 items max.
-- **On the radar**: Only actionable or personally significant items for the rest of the week. One line each. Skip purely informational entries.
+- **On the radar**: Only actionable or personally significant items for the rest of the week. One line each. Skip purely informational entries. For any day that is going on-site but is NOT a standard on-site day (standard = Monday and Wednesday), include the reason in parentheses, e.g. *"On-site (April Chapel 15:00)"*. No reason needed for Monday/Wednesday since those are always on-site.
 - **Daily habits tagline**: Always one line at the bottom. Never a section — just a quiet reminder of the daily rhythm. Use the Daily Rhythms from Rhythms.md.
 
 ## Standard daily note template
@@ -75,6 +84,10 @@ Appends a `## Today's Focus` section to today's daily note. **Never overwrites o
 ### What Needs Follow Up?
 
 ### Random Thoughts
+
+## Today's Reading
+
+See also: [[Prayer/War-Room]]
 ```
 
 ## Rules

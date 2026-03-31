@@ -25,7 +25,9 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - In **Cooking This Week**: fill in a Result if a meal was made today.
    - In **Notes & Reflections**: append a brief dated entry (e.g. `**Thu Mar 26** — [1–2 sentences on how the day went, anything notable for the week's arc]`). Do not overwrite existing reflections.
 
-6. **Append** the AI Summary section to today's daily note (see format below).
+6. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+
+7. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -43,6 +45,10 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 **Tomorrow's focus:**
 - [Concrete next actions derived from today's unfinished items and follow-ups]
+
+**New ideas worth capturing:**
+- [Idea from today's Random Thoughts or narrative — with a suggested vault home if it belongs somewhere: Topics/, project note, Mentoring, etc.]
+- [Omit this section entirely if nothing new surfaced]
 
 **Trends worth watching:**
 - **[Theme]** — [Observation across multiple days. Name the pattern, why it matters, and what would move the needle]
