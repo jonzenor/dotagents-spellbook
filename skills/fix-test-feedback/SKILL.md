@@ -31,11 +31,17 @@ If none exist, report "No test-feedback issues found" and exit.
 
 ### 3. Triage each issue
 
-For each test-feedback issue, read the full issue body:
+For each test-feedback issue, read the full issue body AND all comments:
 
 ```bash
 gh issue view <number>
 ```
+
+```bash
+gh api repos/{owner}/{repo}/issues/<number>/comments --jq '[.[] | {author: .user.login, body: .body}]'
+```
+
+Read both together before triaging. Comments often refine or supersede the original description — a tester may have clarified the actual problem, narrowed scope, or added "never mind, the real issue is X." Always triage based on the **most current understanding** from the full thread, not just the opening post.
 
 Assess the issue against these criteria:
 
