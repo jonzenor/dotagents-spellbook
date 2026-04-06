@@ -27,13 +27,19 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 6. **Follow wikilinks in today's note** — identify any `[[File]]` or `[[Folder/File]]` links mentioned in the daily note. Read those linked files and look for content added today (dated entries, new rows in tables, new meeting log entries, recently added items). Summarize what was added in the **Don't lose this** section if it's time-sensitive or easily forgotten. Pay particular attention to Mentoring notes (meeting logs), Prayer lists, and any file with dated entries.
 
-7. **Medical log** — scan today's daily note for any health- or medical-related mentions (symptoms, appointments, medications, diagnoses, test results, injuries, or anything health-adjacent). If found, append a dated entry to `Reference/Logs/Medical Log.md` under the `## Log` section (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [brief factual summary of what was mentioned]`. If nothing health-related came up, skip this step entirely.
+7. **Medical logs** — scan today's daily note for any health- or medical-related mentions (symptoms, appointments, medications, diagnoses, test results, injuries, or anything health-adjacent).
+   - Jon's health → append to `Reference/Logs/Medical Log.md` under `## Log` (newest at top).
+   - Danae's health → append to `Reference/Logs/Danae's Med Log.md` under `## Log` (newest at top).
+   - Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [brief factual summary of what was mentioned]`.
+   - If nothing health-related came up for a given person, skip their log entirely.
 
-8. **Cooking log** — scan today's daily note for any mention of actually cooking a meal: what was made, how it turned out, what worked, what didn't, substitutions, timing notes. If found, prepend a dated entry to `Reference/Logs/Cooking Log.md` under the `## Log` section (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [meal name, result, any notes for next time]`. Only log meals that were actually cooked today — skip plans, intentions, carries, or mentions that cooking didn't happen.
+8. **Answered prayers** — scan today's daily note for any mention of a prayer being answered or God responding to a specific ask. If found, prepend a dated entry to `Prayer/Answered Prayers.md` under `## Log` (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [what was prayed for, what happened, any context that makes it meaningful]`. Only log things explicitly described as answered — don't infer.
 
-9. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+9. **Cooking log** — scan today's daily note for any mention of actually cooking a meal: what was made, how it turned out, what worked, what didn't, substitutions, timing notes. If found, prepend a dated entry to `Reference/Logs/Cooking Log.md` under the `## Log` section (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [meal name, result, any notes for next time]`. Only log meals that were actually cooked today — skip plans, intentions, carries, or mentions that cooking didn't happen.
 
-9. **Append** the AI Summary section to today's daily note (see format below).
+10. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+
+11. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -72,7 +78,8 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 - **Daily note: append only** — never insert into or overwrite existing content in the daily note.
 - **Weekly note: targeted edits allowed** — check off completed items, fill in results, and append to Notes & Reflections. Never rewrite or delete existing weekly note content.
-- **Medical Log: prepend entries under `## Log`** — add newest entry at the top of the log section. Read the file first. Only write if there is actual health content from today's note.
+- **Medical Logs: prepend entries under `## Log`** — Jon's health → `Reference/Logs/Medical Log.md`; Danae's health → `Reference/Logs/Danae's Med Log.md`. Read each file first. Only write if there is actual health content for that person.
+- **Answered Prayers: prepend entries under `## Log`** — `Prayer/Answered Prayers.md`. Read the file first. Only write if a prayer is explicitly described as answered in today's note.
 - **Cooking Log: prepend entries under `## Log`** — add newest entry at the top of the log section (`Reference/Logs/Cooking Log.md`). Read the file first. Only write if cooking was mentioned in today's note.
 - **Linked files: read only** — follow wikilinks to gather context; do not edit linked files during evening summary (except the weekly note and Medical Log).
 - Read each file before writing to confirm current state.

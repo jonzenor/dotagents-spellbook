@@ -245,19 +245,15 @@ If there are CodeRabbit comments, read them ALL (not just recent ones) and check
 
 ### If there are NO new comments AND all checks pass:
 
-Merge the PR:
+**Do NOT merge the PR.** The PR stays open for human QA review before merging to staging.
 
-```bash
-gh pr merge <pr-number> --squash --delete-branch=false
-```
-
-Update the PRD label:
+Transition the PRD to testing:
 
 ```bash
 gh issue edit <prd-number> --remove-label "code-review" --add-label "testing"
 ```
 
-Exit.
+Exit. The PR remains open — a human will merge it to staging after QA sign-off.
 
 ## State: Testing (`testing`)
 
@@ -271,77 +267,43 @@ gh issue list --label "test-feedback" --state open --json number,title
 
 ### If test-feedback issues exist:
 
-**IMPORTANT:** Steps 1-6 below are ALL part of the same invocation. Do NOT exit after `/fix-test-feedback` returns — you MUST continue through the branch sync, push, PR creation, and label update before exiting. Stopping early leaves the PRD stuck in testing with no PR.
+**IMPORTANT:** Steps 1-4 below are ALL part of the same invocation. Do NOT exit after `/fix-test-feedback` returns — you MUST push and update labels before exiting.
 
 1. Invoke `/fix-test-feedback <prd-number>` to address all feedback issues.
-2. After `/fix-test-feedback` completes and returns, **sync the branch onto the latest `staging`** before pushing. Squash merges cause diverged history that shows as "branch is out-of-date" on every subsequent PR — this step prevents that.
-
-   Run each command as a separate Bash call (no `&&` chains):
-
+2. After `/fix-test-feedback` completes and returns, push the fixes to the existing PR branch:
    ```bash
-   git fetch origin staging
+   git push origin prd-<short-name>
    ```
 
-   ```bash
-   git log --oneline origin/staging..HEAD
-   ```
+   **Note:** Do NOT rebase onto staging. The PR is the source of truth. Push directly to the PR branch — the existing open PR will pick up the new commits automatically.
 
-   Read the output. Note each commit SHA — the list is newest-first, so you will cherry-pick in reverse (oldest first). If the list is empty, skip steps c-e.
+3. Add a comment to the open PR summarising the fixes. Use the Read tool on `/tmp/pr-feedback-comment.md` first, then Write it:
 
-   ```bash
-   git reset --hard origin/staging
-   ```
-
-   Cherry-pick each commit from oldest to newest, one Bash call per commit:
-   ```bash
-   git cherry-pick <oldest-sha>
-   ```
-   ```bash
-   git cherry-pick <next-sha>
-   ```
-   (continue for all commits)
-
-3. Push with `--force-with-lease` (required because the remote still has the old diverged history):
-   ```bash
-   git push --force-with-lease origin prd-<short-name>
-   ```
-
-4. Open a new PR to `staging`. Use the Read tool on `/tmp/pr-body.md` first (it may exist from a previous run), then use the Write tool to write the PR body (avoids heredoc permission issues). Then create the PR:
-   ```bash
-   gh pr create --base staging --head prd-<short-name> --title "fix: address test feedback for <PRD title>" --body-file /tmp/pr-body.md
-   ```
-
-   The body should follow this template:
    ```markdown
-   ## What Changed
+   ## Test Feedback Addressed
 
-   Fixes based on tester feedback for PRD #<prd-number>.
-
-   ## Issues Addressed
+   Fixes pushed to branch for the following feedback issues:
 
    - #<feedback-issue-1>: <brief description of what was fixed>
    - #<feedback-issue-2>: <brief description of what was fixed>
 
-   ## How to Re-Test
-
-   <Step-by-step instructions focused on verifying the fixes.
-   Reference the original test-feedback issues for context.>
-
-   ## Things to Watch For
-
-   - <Anything the fixes might have affected beyond the reported issues>
-
    🤖 Generated with [Claude Code](https://claude.com/claude-code)
    ```
-5. Update labels:
+
+   Then post it:
+   ```bash
+   gh pr comment <pr-number> --body-file /tmp/pr-feedback-comment.md
+   ```
+
+4. Update labels (back to code-review so CI re-runs):
    ```bash
    gh issue edit <prd-number> --remove-label "testing" --add-label "code-review"
    ```
-6. Exit.
+5. Exit.
 
 ### If NO test-feedback issues exist:
 
-Nothing to do. Report "PRD #X is in testing with no feedback issues" and exit.
+Nothing to do. Report "PRD #X is in testing — PR is open, waiting for QA sign-off before merging to staging." and exit.
 
 ## Escalation: HITL Issues
 
@@ -375,8 +337,8 @@ gh issue comment <prd-number> --body "🤖 Auto-process cycle: ..."
 - Documentation was written and a PR was opened
 - CI failures were investigated and fixed
 - CodeRabbit feedback was addressed and pushed
-- The PR was merged and the PRD transitioned to testing
-- Test feedback was fixed and a new PR was opened
+- CI passed and CodeRabbit is clean — PR is ready for QA (transitioned to testing)
+- Test feedback was fixed and pushed to the PR branch
 
 **Do NOT post a comment when:**
 - No active PRD was found
@@ -411,10 +373,11 @@ intended scenario.
 that calculates lumen payouts from check-in attendance. Tests cover eligibility rules.
 ```
 
-**For merges**, confirm what passed:
+**When PR is ready for QA**, confirm what passed:
 ```
 🤖 Auto-process cycle: PR #369 passed CI (Pest + Coverage, Pint) and CodeRabbit review
-(2 rounds, 5 total comments addressed) — merged to staging, PRD #365 transitioned to testing.
+(2 rounds, 5 total comments addressed) — PR is open and ready for QA sign-off before merging
+to staging. PRD #365 transitioned to testing.
 ```
 
 ---
