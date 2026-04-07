@@ -43,18 +43,21 @@ gh api repos/{owner}/{repo}/issues/<number>/comments --jq '[.[] | {author: .user
 
 Read both together before triaging. Comments often refine or supersede the original description — a tester may have clarified the actual problem, narrowed scope, or added "never mind, the real issue is X." Always triage based on the **most current understanding** from the full thread, not just the opening post.
 
-Assess the issue against these criteria:
+Assess the issue against these criteria, using **relatedness to the PRD** as the primary axis:
 
-**Fix it** if:
-- It's a small, contained change (single file or a few lines across 1-2 files)
-- The bug is clear and reproducible from the description
-- The fix doesn't require architectural or structural changes
+**If the issue IS related to the PRD being worked:**
+- **Fix it** unless it requires a design decision, needs clarification, or has missing details to proceed.
+- Breadth (many files, each with a small repetitive change) is fine — implement it.
+- Escalate only when you genuinely don't know what to do without more input from the user.
 
-**Escalate it** if:
-- It touches multiple files or requires structural changes
-- It's ambiguous — the problem isn't clear enough to confidently fix
-- It reads like a feature request rather than a bug
-- It requires a design decision or user input
+**If the issue is NOT related to the PRD being worked:**
+- **Fix it** only if it's a small, contained change (single file or a few lines across 1-2 files).
+- **Escalate it** if it touches multiple files, requires structural changes, or reads like a standalone feature request.
+
+**Always escalate** (regardless of relatedness) if:
+- The problem description is ambiguous and you can't confidently determine what to fix
+- A design decision or explicit user direction is needed before implementing
+- Key details are missing and the fix could go multiple ways
 
 ### 4. Escalate complex issues
 
@@ -132,6 +135,6 @@ No action needed:
 - **NEVER touch `main`.** All work happens on the PRD branch.
 - **One commit per issue.** Each fix gets its own commit referencing the issue number.
 - **Don't push.** The caller (`/auto-process-prd`) handles pushing and PR creation.
-- **Keep fixes minimal.** If you're touching more than 2 files, reconsider whether this should be escalated.
+- **Keep fixes focused.** Only implement what the issue describes — don't expand scope.
 - **Run tests after every fix.** Never move on with failing tests.
-- **When in doubt, escalate.** A wrongly-escalated issue costs less than a bad fix.
+- **When in doubt about direction, escalate.** But breadth alone (many files, trivial repeated change) is not a reason to escalate — especially for PRD-related feedback.
