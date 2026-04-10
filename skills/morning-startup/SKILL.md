@@ -47,7 +47,14 @@ Appends a `## Today's Focus` section to today's daily note. **Never overwrites o
    - **Danae's appointments**: flag any in-person (non-virtual) doctor or medical appointments — these require Jon to work from home and drive her. Treat these as high-priority items. Surface them clearly in "Today's hard landscape" if today, or prominently in "On the radar" if later this week, with a note: *"In-person — work from home, drive Danae."*
    - **Schedule conflicts**: if two calendar events or commitments overlap in time, flag the conflict inline in the hard landscape with ⚠️ and a note.
 
-7. **Query OmniFocus for the Brainstorm item** — query for `Available` tasks tagged `Thinking / Brainstorming`. Pick **one** item that is most timely or resonant given the day's context (e.g. prefer items with an upcoming due date, or that connect to something already surfaced from the weekly note or daily note). This item goes into the `### Brainstorm Today` section of the daily note (see template and format below) — not in "Get done today." The intent is a low-pressure prompt for background thinking during downtime, not a hard task.
+7. **Query OmniFocus for the Brainstorm item** — query for `Available` tasks tagged `Thinking / Brainstorming`. Pick **one** task using this priority order:
+   1. Tasks with a due date — soonest first
+   2. Flagged tasks
+   3. Tasks that are timely given today's context (e.g. a Lighthouse task on a day with heavy LH activity) — but it must still be an actual OmniFocus task, never a synthesized question
+
+   **Important:** Always use an actual OmniFocus task from this tag. Never generate a brainstorm question on the fly, even if the user mentions a topic they want to think about. The brainstorm item is always sourced from OmniFocus.
+
+   This item goes into the `### Brainstorm Today` section of the daily note (see template and format below) — not in "Get done today." The intent is a low-pressure prompt for background thinking during downtime, not a hard task.
 
 8. **Query OmniFocus** for three categories — in order of priority:
 
