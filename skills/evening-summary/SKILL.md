@@ -37,9 +37,11 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 9. **Cooking log** — scan today's daily note for any mention of actually cooking a meal: what was made, how it turned out, what worked, what didn't, substitutions, timing notes. If found, prepend a dated entry to `Reference/Logs/Cooking Log.md` under the `## Log` section (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [meal name, result, any notes for next time]`. Only log meals that were actually cooked today — skip plans, intentions, carries, or mentions that cooking didn't happen.
 
-10. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+10. **Book log** — scan today's daily note for any mention of reading, starting, finishing, or making notes about a book. If found, prepend an entry to `Reference/Logs/Book Log.md` under `## Log` (newest at top). Check whether a note exists at `Reference/Books/[Title].md` — if it does, use a wikilink. Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [[Reference/Books/Title|Title]] — [Started / Finished / Made a note / etc.]`. Only log if a book is explicitly mentioned — skip plans or intentions to read.
 
-11. **Append** the AI Summary section to today's daily note (see format below).
+11. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+
+12. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -81,6 +83,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Medical Logs: prepend entries under `## Log`** — Jon's health → `Reference/Logs/Medical Log.md`; Danae's health → `Reference/Logs/Danae's Med Log.md`. Read each file first. Only write if there is actual health content for that person.
 - **Answered Prayers: prepend entries under `## Log`** — `Prayer/Answered Prayers.md`. Read the file first. Only write if a prayer is explicitly described as answered in today's note.
 - **Cooking Log: prepend entries under `## Log`** — add newest entry at the top of the log section (`Reference/Logs/Cooking Log.md`). Read the file first. Only write if cooking was mentioned in today's note.
+- **Book Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Book Log.md`). Read the file first. Check for an existing note at `Reference/Books/[Title].md` and use a wikilink if it exists. Only write if a book is explicitly mentioned as read, started, or finished today.
 - **Linked files: read only** — follow wikilinks to gather context; do not edit linked files during evening summary (except the weekly note and Medical Log).
 - Read each file before writing to confirm current state.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
