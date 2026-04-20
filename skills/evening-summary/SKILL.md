@@ -39,9 +39,11 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 10. **Book log** — scan today's daily note for any mention of reading, starting, finishing, or making notes about a book. If found, prepend an entry to `Reference/Logs/Book Log.md` under `## Log` (newest at top). Check whether a note exists at `Reference/Books/[Title].md` — if it does, use a wikilink. Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [[Reference/Books/Title|Title]] — [Started / Finished / Made a note / etc.]`. Only log if a book is explicitly mentioned — skip plans or intentions to read.
 
-11. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+11. **Lighthouse log** — scan today's daily note for *significant* Lighthouse moments: direction shifts, staffing changes (join/leave/role change), key conversations with officers or mentors, spiritual discernment about the ministry, external connections (other ministries, collaborators, advisors), or reframes of the ministry's trajectory. If found, prepend an entry to `Reference/Logs/Lighthouse Log.md` under `## Log` (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [what happened, why it matters, link to relevant people/notes]`. Use wikilinks for people (`[[Organizations/Lighthouse/People/OnlineName]]` or `[[Mentoring/Name]]`) and related notes. **Only log significant moments — skip routine status updates, everyday server activity, or passing mentions.** If nothing significant surfaced, skip it.
 
-12. **Append** the AI Summary section to today's daily note (see format below).
+12. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+
+13. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -84,6 +86,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Answered Prayers: prepend entries under `## Log`** — `Prayer/Answered Prayers.md`. Read the file first. Only write if a prayer is explicitly described as answered in today's note.
 - **Cooking Log: prepend entries under `## Log`** — add newest entry at the top of the log section (`Reference/Logs/Cooking Log.md`). Read the file first. Only write if cooking was mentioned in today's note.
 - **Book Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Book Log.md`). Read the file first. Check for an existing note at `Reference/Books/[Title].md` and use a wikilink if it exists. Only write if a book is explicitly mentioned as read, started, or finished today.
+- **Lighthouse Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Lighthouse Log.md`). Read the file first. Only write for *significant* Lighthouse events — direction shifts, staffing changes, key conversations, spiritual discernment, external connections, or reframes. Skip routine mentions, everyday server activity, or passing references. If nothing significant surfaced, skip it entirely.
 - **Linked files: read only** — follow wikilinks to gather context; do not edit linked files during evening summary (except the weekly note and Medical Log).
 - Read each file before writing to confirm current state.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
