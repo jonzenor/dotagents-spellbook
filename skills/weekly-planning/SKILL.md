@@ -17,7 +17,12 @@ Run this skill at the start of each week (Sunday or Monday morning). It loads fu
 - Read this week's weekly note if it already exists
 - Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — determine which quarter it is from today's date
 - Query OmniFocus for overdue and flagged tasks: `query_omnifocus` with `{"status": ["Overdue", "DueSoon"], "fields": ["name", "project", "dueDate", "flagged"]}`
-- Pull Google Calendar for the full 7 days ahead via `gcal_list_events`
+- Pull calendar for the full 7 days ahead using the `mcp-ical` tool. Query each of these calendars in parallel:
+  - **"Jon's Calendar"** — personal events, appointments, paydays
+  - **"Family"** (query twice — there are two calendars with this name; both will return results)
+  - **"danaezenor@gmail.com"** — Danae's calendar; watch for in-person medical appointments (require Jon to work from home and drive her)
+  - **"Calendar"** — FOTF Exchange calendar (work meetings)
+  - Note: Google Calendar (`gcal_list_events`) is not available — use `mcp-ical` exclusively for all calendar queries.
 
 ### Step 2 — Review Last Week
 - Identify any goals or action items from last week's note that did not complete

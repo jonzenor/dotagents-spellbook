@@ -1,6 +1,6 @@
 ---
 name: morning-startup
-description: Morning startup routine for Jon's Obsidian life vault. Checks Google Calendar, reads the weekly note and yesterday's daily note, then appends a Today's Focus section to today's daily note. Use when the user says "morning startup", "start my day", "morning routine", or asks what to focus on today.
+description: Morning startup routine for Jon's Obsidian life vault. Checks Apple Calendar (Jon's Calendar, Family, Danae's, and FOTF Exchange), reads the weekly note and yesterday's daily note, then appends a Today's Focus section to today's daily note. Use when the user says "morning startup", "start my day", "morning routine", or asks what to focus on today.
 ---
 
 # Morning Startup
@@ -34,18 +34,23 @@ Appends a `## Today's Focus` section to today's daily note. **Never overwrites o
 
 6. **Check calendars** (timezone: America/Denver).
 
-   **Google Calendar** — Pull from all three: **Jon's Calendar** (`jonzenor@gmail.com`), **Family** (`family18039985066750084653@group.calendar.google.com`), and **Danae's calendar** (`danaezenor@gmail.com`).
-   - Fetch **all events today** from all three — include every one of them.
-   - Fetch events for the **rest of the week** from all three — filter to only items that are actionable or personally significant. Skip purely informational entries.
+   Use the `mcp-ical` tool exclusively for all calendar queries. Query all of the following in parallel:
 
-   **Apple Calendar / Exchange (FOTF work meetings)** — Use the `mcp-ical` tool to fetch from the **"Calendar"** calendar (this is the Exchange calendar synced from FOTF).
-   - Fetch **all events today** from the "Calendar" calendar — include every timed work meeting in the hard landscape.
-   - Fetch events for the **rest of the week** from the "Calendar" calendar — include in "On the radar" any meetings that are notable (new one-time events, conflicts, unusual schedule, etc.). Recurring standup noise can be omitted from the radar unless there's something worth flagging.
-   - Convert event times from UTC to America/Denver (MDT = UTC−6 in summer, MST = UTC−7 in winter).
-   - **F1 and sports events** (typically on the Family calendar): low priority — summarize briefly or group them ("F1 race weekend: Sat–Sun") rather than listing each one. No need to attribute who added them.
-   - **Recurring logistical reminders** (e.g. Trash Day): only surface on the day itself or the evening before — never earlier in the week radar.
-   - **Danae's appointments**: flag any in-person (non-virtual) doctor or medical appointments — these require Jon to work from home and drive her. Treat these as high-priority items. Surface them clearly in "Today's hard landscape" if today, or prominently in "On the radar" if later this week, with a note: *"In-person — work from home, drive Danae."*
-   - **Schedule conflicts**: if two calendar events or commitments overlap in time, flag the conflict inline in the hard landscape with ⚠️ and a note.
+   - **"Jon's Calendar"** — personal events, appointments, paydays, Jon's own medical appointments
+   - **"Family"** — query twice; there are two calendars with this name and both may have events
+   - **"danaezenor@gmail.com"** — Danae's calendar
+   - **"Calendar"** — FOTF Exchange calendar (work meetings)
+
+   For each calendar:
+   - Fetch **all events today** — include every timed event in the hard landscape.
+   - Fetch events for the **rest of the week** — filter to actionable or personally significant items only. Skip purely informational entries.
+   - Convert all event times from UTC to America/Denver (MDT = UTC−6 in summer, MST = UTC−7 in winter).
+
+   **F1 and sports events** (typically on the Family calendar): low priority — summarize briefly or group them ("F1 race weekend: Sat–Sun") rather than listing each one. No need to attribute who added them.
+   **Recurring logistical reminders** (e.g. Trash Day): only surface on the day itself or the evening before — never earlier in the week radar.
+   **Danae's appointments**: flag any in-person (non-virtual) doctor or medical appointments — these require Jon to work from home and drive her. Treat these as high-priority items. Surface them clearly in "Today's hard landscape" if today, or prominently in "On the radar" if later this week, with a note: *"In-person — work from home, drive Danae."*
+   **FOTF Exchange (Calendar) — radar guidance**: include notable one-time events, conflicts, or unusual schedule items. Recurring standup noise can be omitted from the radar unless there's something worth flagging.
+   **Schedule conflicts**: if two calendar events or commitments overlap in time, flag the conflict inline in the hard landscape with ⚠️ and a note.
 
 7. **Query OmniFocus for the Brainstorm item** — query for `Available` tasks tagged `Thinking / Brainstorming`. Pick **one** task using this priority order:
    1. Tasks with a due date — soonest first
