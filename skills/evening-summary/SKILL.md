@@ -70,6 +70,9 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 **Trends worth watching:**
 - **[Theme]** — [Observation across multiple days. Name the pattern, why it matters, and what would move the needle]
+
+**Logs updated today:**
+- [[Log/File/Path]] *(one line per file actually written to — omit the weekly note unless something notable was checked off or added; omit entirely if no logs were updated)*
 ```
 
 ### Section guidance
