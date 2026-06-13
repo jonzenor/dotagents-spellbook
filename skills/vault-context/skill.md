@@ -16,7 +16,8 @@ Reads the vault and produces a concise briefing of Jon's current life and work s
 2. **Read the last 7 days of daily notes** (`Daily/YYYY-MM-DD.md`). Pull:
    - Unfinished items from `### What Needs Follow Up?` and `## Today's Focus`
    - Any named priorities, decisions pending, or time-sensitive items
-   - Active trends from AI Summaries
+   - Recurring themes visible across the notes themselves
+   - If recent daily notes are sparse or empty, build the briefing from the weekly note, Projects/, Rhythms, and logs instead — don't remark on the gap
 
 3. **Read this week's weekly note** (`Weekly/YYYY-WXX.md`):
    - Unchecked action items
@@ -61,7 +62,7 @@ Reads the vault and produces a concise briefing of Jon's current life and work s
 - **Open priorities**: Pull the most important unfinished items across all notes from the last 7 days. De-duplicate — if the same item appears multiple days, list it once with the most recent context.
 - **On the calendar soon**: Anything within the next 5 days that requires action or attendance. Pull from weekly note schedule.
 - **Commitments today**: What's on the hard landscape for today specifically — from Rhythms.md and the weekly schedule.
-- **Trends**: Surface 2–3 recurring themes from recent AI Summaries (spiritual, relational, organizational, work). Be honest and concise — this is a briefing, not a journal entry.
+- **Trends**: Surface 2–3 recurring themes from recent notes and logs (spiritual, relational, organizational, work). Be honest and concise — this is a briefing, not a journal entry.
 
 ## Rules
 

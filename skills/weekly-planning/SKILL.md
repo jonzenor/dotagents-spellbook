@@ -12,7 +12,7 @@ Run this skill at the start of each week (Sunday or Monday morning). It loads fu
 ## Workflow
 
 ### Step 1 — Load Context (run in parallel)
-- Read `/Users/jonzenor/ObsidianVaults/Life of Asgard/Rhythms.md`
+- Read `Rhythms.md` at the vault root
 - Read last week's weekly note (`Weekly/YYYY-WXX.md`) for rolled items
 - Read this week's weekly note if it already exists
 - Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — determine which quarter it is from today's date
@@ -27,6 +27,14 @@ Run this skill at the start of each week (Sunday or Monday morning). It loads fu
 ### Step 2 — Review Last Week
 - Identify any goals or action items from last week's note that did not complete
 - Note them as candidates for this week's goals
+- **Re-entry after a gap:** if the most recent weekly note is more than a week old, do not backfill missed weeks or enumerate the gap. Skim whatever daily notes and logs exist since then, give Jon a 2–3 sentence "since last time" picture in the conversation, and plan this week fresh. Carried items from the old note are candidates only if they still appear alive — ask rather than assume.
+
+### Step 2.1 — Patterns Check
+Weekly planning is the **one place** where cross-day patterns get raised — the daily skills deliberately never do this.
+- Look across last week's daily notes, Today's Focus checklists, and logs for at most 1–2 real patterns (an item that slid all week, a rhythm that didn't happen, a thread gaining momentum worth feeding)
+- Frame each as a **question, not a verdict**: "X didn't happen last week — is it still important? What would make it happen this week, or should it move to OmniFocus someday/maybe or be dropped?"
+- Positive patterns count too — name what's working so it gets protected
+- ⚡ Tenacity awareness: if the slid item is a Tenacity-type task, acknowledge the real resistance and look for the Invention lever (what made cooking work in Q1) rather than prescribing more willpower
 
 ### Step 2.5 — Review Quarterly Plan
 - Identify which Q goals are most relevant *this* week — especially any with time pressure or early-quarter milestones

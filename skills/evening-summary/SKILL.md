@@ -1,6 +1,6 @@
 ---
 name: evening-summary
-description: Evening summary routine for Jon's Obsidian life vault. Reads today's daily note and recent history, then appends an AI Summary with lessons learned, things not to lose, tomorrow's focus, and trends. Use when the user says "evening summary", "summarize my day", "end of day", or asks for a daily summary.
+description: Evening summary routine for Jon's Obsidian life vault. Reads today's daily note and recent history, then appends a short AI Summary with lessons learned, things not to lose, and tomorrow's focus. Use when the user says "evening summary", "summarize my day", "end of day", or asks for a daily summary.
 ---
 
 # Evening Summary
@@ -15,7 +15,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 2. **Read today's daily note** at `Daily/YYYY-MM-DD.md` in full.
 
-3. **Read the last 3–5 daily notes** to identify recurring themes and trends across days, not just today.
+3. **Read the last 3–5 daily notes** for context on ongoing threads. If recent notes are sparse or empty, work with what's there — never comment on the gap or count missed days. Cross-day trend observations belong in weekly planning, not here.
 
 4. **Read this week's weekly note** (`Weekly/YYYY-WXX.md`, weeks start Sunday) in full — both for broader context and to identify what needs updating.
 
@@ -68,9 +68,6 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - [Idea from today's Random Thoughts or narrative — with a suggested vault home if it belongs somewhere: Topics/, project note, Mentoring, etc.]
 - [Omit this section entirely if nothing new surfaced]
 
-**Trends worth watching:**
-- **[Theme]** — [Observation across multiple days. Name the pattern, why it matters, and what would move the needle]
-
 **Logs updated today:**
 - [[Log/File/Path]] *(one line per file actually written to — omit the weekly note unless something notable was checked off or added; omit entirely if no logs were updated)*
 ```
@@ -80,11 +77,11 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **What happened**: Write it like a friend summarizing the day — honest, human, not clinical. Acknowledge hard days as hard.
 - **Lessons learned**: Only include genuine insights. A lesson should change future behavior. Skip platitudes.
 - **Don't lose this**: The most important section. Capture things that are easy to forget but costly if forgotten — upcoming events, pending decisions, relationship moments, financial deadlines. Also flag anything from today that belongs in a deeper note (Mentoring, Person, Prayer, etc.).
-- **Tomorrow's focus**: Pull from `### What Needs Follow Up?`, unfinished `## Today's Focus` items, and anything that needs a next action. Keep it short — 2–4 items max.
-- **Trends worth watching**: Look across the last several days. Name recurring themes (spiritual drift, health neglect, over-commitment, relational opportunities closing). Be honest, not harsh. If a trend has improved, note that too.
+- **Tomorrow's focus**: Pull from `### What Needs Follow Up?`, unfinished `## Today's Focus` items, and anything that needs a next action. Keep it short — 2–4 items max. State items plainly, once — no slip counts, no "this keeps not happening" commentary. If a genuine multi-day pattern matters, it gets raised during weekly planning, framed as a question.
 
 ## Rules
 
+- **Proportionality — the most important rule for this skill.** The AI Summary is a response to Jon's journaling, not a replacement for it. Aim for a summary no longer than what Jon wrote today. A thin note (a line or two) gets 1–3 sentences and the log scans, nothing more. If the note is essentially empty, append at most two lines — anything genuinely time-sensitive found in linked notes, or simply a quiet placeholder — and skip every optional section. Never reconstruct the day from calendar data Jon didn't write about.
 - **Daily note: append only** — never insert into or overwrite existing content in the daily note.
 - **Weekly note: targeted edits allowed** — check off completed items, fill in results, and append to Notes & Reflections. Never rewrite or delete existing weekly note content.
 - **Medical Logs: prepend entries under `## Log`** — Jon's health → `Reference/Logs/Medical Log.md`; Danae's health → `Reference/Logs/Danae's Med Log.md`. Read each file first. Only write if there is actual health content for that person.

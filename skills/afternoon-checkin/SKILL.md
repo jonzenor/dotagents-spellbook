@@ -47,6 +47,7 @@ description: Afternoon check-in routine for Jon's Obsidian life vault. Reads tod
 ## Rules
 - Output only — never write to or update any notes
 - Keep it tight — this is a quick scan, not a full replanning session
+- Surface each open item once, plainly — never count days slipped or reference past misses; cross-day patterns belong in weekly planning
 - Calendar: use live data for today only; never surface future days
 - OmniFocus: two queries only (flagged/planned-today incomplete + overdue/due-soon); never dump the full task list
 - Omit any section that has nothing to surface — don't pad with filler
