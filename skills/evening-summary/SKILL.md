@@ -11,9 +11,13 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 ## Steps
 
-1. **Determine today's date and day of week** from the `currentDate` context variable.
+1. **Determine the target date** from the `currentDate` context variable and the time of day.
+   - **If invoked before 14:00 (2:00 PM) local time and no explicit date was specified in the arguments**, assume this is a catch-up summary for *yesterday* — use `currentDate - 1 day` as the target date. Proceed silently without commenting on the timing.
+   - **If invoked at 14:00 or later**, use `currentDate` (today) as the target date.
+   - **If the user explicitly names a date or says "for yesterday"**, always use what they specified regardless of time.
+   - All subsequent steps refer to "today's note" and "today" as the *target date*, not necessarily the calendar date.
 
-2. **Read today's daily note** at `Daily/YYYY-MM-DD.md` in full.
+2. **Read the target daily note** at `Daily/YYYY-MM-DD.md` in full.
 
 3. **Read the last 3–5 daily notes** for context on ongoing threads. If recent notes are sparse or empty, work with what's there — never comment on the gap or count missed days. Cross-day trend observations belong in weekly planning, not here.
 

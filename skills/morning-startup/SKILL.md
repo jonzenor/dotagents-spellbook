@@ -55,7 +55,17 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    **FOTF Exchange (Calendar) — radar guidance**: include notable one-time events, conflicts, or unusual schedule items. Recurring standup noise can be omitted from the radar unless there's something worth flagging.
    **Schedule conflicts**: if two calendar events or commitments overlap in time, flag the conflict inline in the hard landscape with ⚠️ and a note.
 
-7. **Build the two Brainstorm items** — the `### Brainstorm Today` section gets **two** prompts, from two different sources:
+7. **Weather check** — After the calendar pass, scan today's hard landscape and the week's radar for any event that involves outdoor activity (disc golf, Ren Fair, hiking, camping, sports, outdoor festivals, etc.) or significant travel (a trip day, a long drive, an out-of-town event).
+
+   For each such event, fetch the forecast using `WebFetch` to `https://wttr.in/LOCATION?format=j1` (replace LOCATION with the city or area; use `Woodland+Park,CO` as the default for local events, `Colorado+Springs,CO` for on-site work days). Parse the JSON to pull the relevant day's high temp, low temp, and weather description.
+
+   Include a brief inline weather note alongside the event in the hard landscape or radar. Keep it to one phrase — enough to know whether to bring water, a jacket, or an umbrella. Examples: *"92°F, sunny — bring water"*, *"scattered afternoon showers"*, *"looks great, mid-70s"*. Only add a note when the weather is meaningfully good, bad, hot, cold, or rainy. Skip it if conditions are unremarkable.
+
+   **Default locations:**
+   - Local outdoor events: `Woodland+Park,CO`
+   - Travel events: use the destination from the calendar event name or notes
+
+8. **Build the two Brainstorm items** — the `### Brainstorm Today` section gets **two** prompts, from two different sources:
 
    **a. The OmniFocus item** — query for `Available` tasks tagged `Thinking / Brainstorming`. Pick **one** task using this priority order:
    1. Tasks with a due date — soonest first

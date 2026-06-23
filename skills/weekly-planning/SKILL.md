@@ -76,6 +76,12 @@ For each day, compile:
 - Goal(s) assigned to that day
 - Dinner / lunch for that day
 
+**Weather check** — For any day in the week that has an outdoor activity (disc golf, Ren Fair, camping, hiking, outdoor festival, sports, etc.) or significant travel (a trip day, long drive, out-of-town event), fetch the forecast using `WebFetch` to `https://wttr.in/LOCATION?format=j1`. Parse the relevant day's high temp, conditions, and any precipitation. Include a brief inline weather note on that day's radar entry. One phrase is enough — e.g., *"looks great, mid-70s"*, *"hot — 95°F, bring water"*, *"chance of afternoon rain"*. Skip unremarkable conditions.
+
+**Default locations:**
+- Local outdoor events: `Woodland+Park,CO`
+- Travel events: use the destination from the calendar event
+
 ### Step 8 — Write the Weekly Note
 Create or update `Weekly/YYYY-WXX.md` using the structure below.
 - Week number starts on Sunday (ISO: use Monday-based ISO week, but *label* the note for the Sunday start)
