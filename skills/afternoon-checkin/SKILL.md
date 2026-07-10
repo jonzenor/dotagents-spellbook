@@ -7,7 +7,7 @@ description: Afternoon check-in routine for Jon's Obsidian life vault. Reads tod
 
 ## Steps
 
-1. Read today's daily note: `Daily/YYYY-MM-DD.md`
+1. Read today's daily note: `Daily/YYYY-MM-DD.md` — including the free-form "What Happened Today?" narrative. Scan it for plans Jon states in passing for later in the day (not just events already past), not only the structured "Get done today" checklist.
 2. Read this week's weekly note: `Weekly/YYYY-WXX.md`
 3. **Check Google Calendar** (timezone: America/Denver) — fetch remaining events today from all three calendars: `jonzenor@gmail.com`, `family18039985066750084653@group.calendar.google.com`, `danaezenor@gmail.com`. Use this as the live source of truth for what's actually still on the schedule — it may differ from what was written in the morning note.
 4. **Query OmniFocus** — two targeted queries only:
@@ -19,6 +19,7 @@ description: Afternoon check-in routine for Jon's Obsidian life vault. Reads tod
 
 ### Still Needs to Get Done Today
 - Pull from "Get done today" and any open action items in the daily note
+- Also pull stated plans from the "What Happened Today?" narrative (e.g. "I'm going to use this time to work on X") — these are easy to miss since they're prose, not checklist items
 - Note status if mentioned (e.g. "in testing", "waiting on X")
 - Include personal/financial tasks (bills, errands) — these slip easily
 
@@ -37,6 +38,11 @@ description: Afternoon check-in routine for Jon's Obsidian life vault. Reads tod
 ### Urgent from OmniFocus
 - List any tasks that are Overdue or DueSoon that weren't in this morning's note
 - Omit this section entirely if nothing new has become urgent
+
+### Keeper Instructions Pending
+- Scan today's daily note for any `Keeper,` or `Keeper:` lines that do **not** end with `📚✅`
+- If any are found, list them briefly so Jon knows the evening summary will act on them
+- Omit this section entirely if all Keeper instructions are already marked complete
 
 ### Later Today (Only If Action Required Now)
 - Use the live calendar, not the morning note, as the source of truth for what's still on the schedule

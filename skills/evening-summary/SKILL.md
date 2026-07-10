@@ -47,9 +47,46 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 12. **Lighthouse log** — scan today's daily note for *significant* Lighthouse moments: direction shifts, staffing changes (join/leave/role change), key conversations with officers or mentors, spiritual discernment about the ministry, external connections (other ministries, collaborators, advisors), or reframes of the ministry's trajectory. If found, prepend an entry to `Reference/Logs/Lighthouse Log.md` under `## Log` (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [what happened, why it matters, link to relevant people/notes]`. Use wikilinks for people (`[[Organizations/Lighthouse/People/OnlineName]]` or `[[Mentoring/Name]]`) and related notes. **Only log significant moments — skip routine status updates, everyday server activity, or passing mentions.** If nothing significant surfaced, skip it.
 
-13. **Scan for new ideas** — look through `### Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+13. **Keeper instructions** — scan today's daily note for any line containing `Keeper,` or `Keeper:` that does **not** already end with `📚✅`.
 
-14. **Append** the AI Summary section to today's daily note (see format below).
+   For each unprocessed Keeper instruction:
+   - Read the surrounding context (the instruction may reference content written several paragraphs earlier)
+   - Interpret the instruction with judgment — common actions include: creating or appending to a project or topic note, updating a person file, adding a reminder to a future daily note, generating reflection questions to append to tomorrow's note, or ensuring an idea gets filed in the right vault location
+   - Execute the action fully — don't just summarize or note it
+   - After completing the action, append `📚✅` to the end of that Keeper line in today's daily note
+   - Note what was done in the **Logs updated today** section of the AI Summary
+
+   Skip any Keeper line already ending with `📚✅` — it has been handled.
+
+14. **Person file updates** — scan today's note for people worth logging. For each qualifying person, prepend a dated entry under `## Log` in their `Person/Name.md` file (creating the file if it doesn't exist).
+
+   **Who qualifies:** People with a real relationship to Jon — family, friends, mentees, close colleagues. Ask: would future-Jon want this on record when interacting with this person again? Skip FOTF coworkers mentioned only in a routine work context. Skip Danae (covered by her Med Log and existing notes). For mentees with a Mentoring note, use the Mentoring note for session content — but still use Person/ for significant life events outside of sessions.
+
+   **Two tiers:**
+
+   *Brief note* — a single dated bullet. Use when something happened involving the person that's worth knowing later but doesn't need context or texture. Examples: attended an event together, a health update, a quick observation.
+   Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [one sentence]`
+
+   *Deeper entry* — a dated paragraph. Use when: Jon had a strong emotional reaction, a significant relational development surfaced, a pattern emerged, or the entry needs context and texture to be meaningful later. Examples: a difficult conversation, a revealed family dynamic, a moment of concern or pride.
+   Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [paragraph with context, Jon's reaction, relevant detail]`
+
+   **File handling:**
+   - If `Person/Name.md` exists: read it first, then prepend the entry under `## Log` (add the section if it's missing).
+   - If it doesn't exist: create the file with a minimal template, then add the entry:
+     ```markdown
+     # [Name]
+
+     *[Relationship to Jon — e.g. "Jon's mother", "family friend"]*
+
+     ## Log
+
+     <!-- Dated entries — events, health, relational notes. Newest at top. -->
+     ```
+   - Never duplicate content already captured in a Mentoring note for today.
+
+15. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+
+16. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -81,7 +118,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **What happened**: Write it like a friend summarizing the day — honest, human, not clinical. Acknowledge hard days as hard.
 - **Lessons learned**: Only include genuine insights. A lesson should change future behavior. Skip platitudes.
 - **Don't lose this**: The most important section. Capture things that are easy to forget but costly if forgotten — upcoming events, pending decisions, relationship moments, financial deadlines. Also flag anything from today that belongs in a deeper note (Mentoring, Person, Prayer, etc.).
-- **Tomorrow's focus**: Pull from `### What Needs Follow Up?`, unfinished `## Today's Focus` items, and anything that needs a next action. Keep it short — 2–4 items max. State items plainly, once — no slip counts, no "this keeps not happening" commentary. If a genuine multi-day pattern matters, it gets raised during weekly planning, framed as a question.
+- **Tomorrow's focus**: Pull from `## What Needs Follow Up?`, unfinished `## Today's Focus` items, and anything that needs a next action. Keep it short — 2–4 items max. State items plainly, once — no slip counts, no "this keeps not happening" commentary. If a genuine multi-day pattern matters, it gets raised during weekly planning, framed as a question.
 
 ## Rules
 
@@ -93,7 +130,9 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Cooking Log: prepend entries under `## Log`** — add newest entry at the top of the log section (`Reference/Logs/Cooking Log.md`). Read the file first. Only write if cooking was mentioned in today's note.
 - **Book Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Book Log.md`). Read the file first. Check for an existing note at `Reference/Books/[Title].md` and use a wikilink if it exists. Only write if a book is explicitly mentioned as read, started, or finished today.
 - **Lighthouse Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Lighthouse Log.md`). Read the file first. Only write for *significant* Lighthouse events — direction shifts, staffing changes, key conversations, spiritual discernment, external connections, or reframes. Skip routine mentions, everyday server activity, or passing references. If nothing significant surfaced, skip it entirely.
-- **Linked files: read only** — follow wikilinks to gather context; do not edit linked files during evening summary (except the weekly note and Medical Log).
+- **Person files: prepend entries under `## Log`** — `Person/Name.md`. Read the file first if it exists; create with a minimal template if not. Two tiers: brief (single sentence) for events and passing notes, deeper (paragraph) for significant relational developments, strong reactions, or anything that needs context to be useful later. Skip people with no real relationship to Jon, skip Danae (her own logs), skip FOTF coworkers in routine work contexts. Never duplicate content already written to a Mentoring note for today.
+- **Keeper instructions: act and mark complete** — scan for `Keeper,` or `Keeper:` lines not ending with `📚✅`. Execute each instruction with full context, then append `📚✅` to the line. Log what was done in **Logs updated today**. Skip already-marked lines.
+- **Linked files: read only** — follow wikilinks to gather context; do not edit linked files during evening summary (except the weekly note, Medical Logs, and Person files).
 - Read each file before writing to confirm current state.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
 - Keep the tone direct and personal — this is a private journal, not a report.

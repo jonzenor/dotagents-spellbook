@@ -37,9 +37,15 @@ Weekly planning is the **one place** where cross-day patterns get raised — the
 - ⚡ Tenacity awareness: if the slid item is a Tenacity-type task, acknowledge the real resistance and look for the Invention lever (what made cooking work in Q1) rather than prescribing more willpower
 
 ### Step 2.5 — Review Quarterly Plan
-- Identify which Q goals are most relevant *this* week — especially any with time pressure or early-quarter milestones
+- Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — it contains full GTD-style project breakdowns with next actions, milestone signals, and blocker watches. Jon does not read this file; it is Claude's reference.
+- Work through the **Weekly Planning Checklist** at the bottom of the quarterly plan — each signal item tells you what to surface or flag this week
 - Flag anything with a hard deadline inside the next two weeks
-- Note where this week falls in the quarter (e.g. W1 of Q2 = foundation-setting week)
+- Note where this week falls in the quarter (e.g. W1 of Q3 = reentry/foundation week)
+- **Choose a Primary Objective** — pull it from the quarterly plan's project next-action lists. It must be:
+  - Big enough to take several days (not a single to-do item)
+  - An obvious, concrete step toward a named quarterly goal
+  - Something that feels genuinely stuck or unstarted on the Q plan if *not* done this week
+  - Named in the `## Primary Objective` section (see structure below)
 
 ### Step 3 — Ask the User (all at once, numbered list)
 1. Any travel, special on-site days, or appointments not on the calendar yet?
@@ -63,6 +69,7 @@ Plan 3 dinners + 1 lunch:
 
 ### Step 6 — Weekly Goals
 - Choose a weekly theme/focus (one phrase)
+- The **Primary Objective** (set in Step 2.5) anchors the week — make sure at least one goal per day clearly advances it
 - Top 3–5 goals, split by area:
   - **FOTF** — day job goals (separate from Lighthouse)
   - **Lighthouse** — side project goals
@@ -95,6 +102,10 @@ Create or update `Weekly/YYYY-WXX.md` using the structure below.
 
 ## Weekly Focus
 [Theme phrase]
+
+## Primary Objective
+**[One goal — big enough to take several days, directly advances a quarterly goal]**
+*Advances: [Q goal name(s)]*
 
 ## Goals
 ### FOTF

@@ -18,6 +18,11 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 2. **Open today's daily note** at `Daily/YYYY-MM-DD.md`.
    - If it doesn't exist, create it using the standard template (see below).
+   - **If today is Sunday**, insert the following line at the very top of the note (above all other content), then the rest of the template below it:
+     ```
+     [[Bible/Church/Church Notes YYYY-MM-DD]]
+     ```
+     Use today's actual date. Do **not** create the linked file — just place the wikilink so it's ready to tap in Obsidian.
    - Read the full file before appending anything.
 
 3. **Read yesterday's daily note** (`Daily/YYYY-MM-DD.md` for yesterday).
@@ -27,6 +32,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 4. **Read this week's weekly note** at `Weekly/YYYY-WXX.md` (weeks start Sunday).
    - Extract the week's focus, priorities, and any action items relevant to today.
    - Pull any items explicitly tied to today's day of the week (e.g. cooking schedule entries for today, day-specific tasks). Surface these in the brief.
+   - Extract the **Primary Objective** (`## Primary Objective` section) — the week's main multi-day goal tied to a quarterly goal. This feeds the `## Quarterly Progress` section in the daily note.
 
 5. **Read `Rhythms.md`**.
    - From the **Structure** table: note if today is an on-site work day.
@@ -96,7 +102,17 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
       
       Surface 1–2 stretch items maximum, clearly labeled as optional. Never surface tasks with a future defer date (these appear as `Blocked` in OmniFocus and should be ignored entirely).
 
-8. **Append** the Today's Focus section (see format below).
+9. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment (e.g. a mentoring session, a doctor visit, a planned call), read their `Person/Name.md` and/or `Mentoring/Name.md` if it exists. Pull the 1–3 most recent or most relevant log entries. Surface a brief "Before you talk to X" note in the **Get done today** section or as a callout just before the matching hard landscape item — enough to jog memory on anything important without turning it into a report. Keep it to 1–2 lines. Skip this step if no named meetings are on today's calendar.
+
+10. **Build the `## Quarterly Progress` section** — this is the day's concrete move toward the weekly Primary Objective.
+    - Name the Primary Objective (quoted from the weekly note — do not reword it).
+    - Propose **one specific action** that moves it forward today. It should be:
+      - Flexible — doable today or tomorrow, not a hard deadline item
+      - Concrete — specific enough to start, not vague ("make progress on X")
+      - Sized for a partial day — a focused session, not a week of work
+    - If the Primary Objective is complete or has no daily move today (e.g. it's a Saturday with no work context), omit this section rather than forcing a weak entry.
+
+11. **Append** the Today's Focus section followed by the Quarterly Progress section (see format below).
 
 ## Output format notes
 
@@ -123,6 +139,13 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 - [Day Mon DD] — [Event or commitment] *(time if applicable)*
 
 *[Daily habits tagline — one line, always at the bottom: e.g. "Rhythms: Bible → exercise → family time → read before bed"]*
+
+## Quarterly Progress
+
+*Weekly objective: [Primary Objective from weekly note — verbatim]*
+
+**Today's move:**
+- [ ] [One specific, flexible action toward the weekly objective — scoped for a focused session; can carry into tomorrow if needed]
 ```
 
 ### Section guidance
@@ -134,24 +157,36 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 ## Standard daily note template
 
-```markdown
-### What Happened Today?
+On Sundays, the note begins with a church notes link before any other content:
 
-### Brainstorm Today
+```markdown
+[[Bible/Church/Church Notes YYYY-MM-DD]]
+
+## What Happened Today?
+```
+
+All other days (and the remainder of Sunday's note after the link):
+
+```markdown
+## What Happened Today?
+
+## Brainstorm Today
 
 > **OF:** [Thinking / Brainstorming task from OmniFocus — one sentence or question to hold in the back of your mind]
 
 > **AI:** [Assistant-generated question — what Jon's recent notes, plans, and threads suggest he needs to be thinking about; never a reworded OmniFocus item]
 
-### What Stood Out?
+## What Stood Out?
 
-### What Needs Follow Up?
+## What Needs Follow Up?
 
-### Random Thoughts
+## Random Thoughts
 
 ## Today's Reading
 
 See also: [[Prayer/War-Room]]
+
+## Quarterly Progress
 ```
 
 ## Rules
