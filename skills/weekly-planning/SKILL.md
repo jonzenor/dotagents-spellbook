@@ -1,6 +1,6 @@
 ---
 name: weekly-planning
-description: Full weekly planning routine for Jon's Obsidian vault. Loads calendar, rhythms, OmniFocus tasks, and last week's rollover, then guides meal planning (3 dinners + 1 lunch), sets weekly goals across FOTF/Lighthouse/Personal, builds a day-by-day radar, and writes the week's note. Use when user says "weekly planning", "plan my week", "plan the week", or "weekly review".
+description: Full weekly planning routine for Jon's Obsidian vault. Loads calendar, rhythms, OmniFocus tasks, and last week's rollover, then guides meal planning (Tue + Sat dinners plus 1 batch lunch), sets weekly goals across FOTF/Lighthouse/Personal, builds a day-by-day radar, and writes the week's note. Use when user says "weekly planning", "plan my week", "plan the week", or "weekly review".
 ---
 
 # Weekly Planning
@@ -41,11 +41,13 @@ Weekly planning is the **one place** where cross-day patterns get raised — the
 - Work through the **Weekly Planning Checklist** at the bottom of the quarterly plan — each signal item tells you what to surface or flag this week
 - Flag anything with a hard deadline inside the next two weeks
 - Note where this week falls in the quarter (e.g. W1 of Q3 = reentry/foundation week)
-- **Choose a Primary Objective** — pull it from the quarterly plan's project next-action lists. It must be:
-  - Big enough to take several days (not a single to-do item)
-  - An obvious, concrete step toward a named quarterly goal
-  - Something that feels genuinely stuck or unstarted on the Q plan if *not* done this week
-  - Named in the `## Primary Objective` section (see structure below)
+- **Choose the week's Quarterly Objectives** — a list, not a single item. Pull however many are needed to make a real chunk of progress across the quarter's active goals — this is not capped at one. For each active quarterly goal (per the Q plan's Weekly Planning Checklist), ask: does this goal need a push this week, or is it already moving/not due for attention? Include an objective for every goal that needs one. Typically 2–4 objectives, but let the quarterly plan's actual state decide the count — don't pad and don't force everything in artificially.
+  - Each objective must be:
+    - Big enough to take several days (not a single to-do item)
+    - An obvious, concrete step toward a named quarterly goal
+    - Something that feels genuinely stuck or unstarted on the Q plan if *not* done this week
+  - List them in the `## Quarterly Objectives` section (see structure below), each tagged with which quarterly goal it advances
+  - It's fine for one objective to functionally lead the week (the thing Jon would call "the main thing") — but don't let it crowd out other quarterly goals that also need a foothold this week. A goal with no weekly objective for several weeks running is a goal quietly stalling.
 
 ### Step 3 — Ask the User (all at once, numbered list)
 1. Any travel, special on-site days, or appointments not on the calendar yet?
@@ -60,16 +62,17 @@ Weekly planning is the **one place** where cross-day patterns get raised — the
 - Flag Tenacity-heavy days — acknowledge real cost, don't minimize it
 
 ### Step 5 — Meal Plan
-Plan 3 dinners + 1 lunch:
-- **Breakfast burritos** are a weekly staple — default Sunday night. Assume Sunday unless user moves them. Do not ask about them.
-- **Dinner 2 & 3**: Use whatever the user named in Step 3. Assign to cook nights (Tue/Fri/Sat-or-Sun per Rhythms). Match to day load — don't put a complex dinner on a heavy evening.
-- **Lunch**: Something quick to batch on a light at-home day (Tue/Thu/Fri) — examples: chili dogs, tacos, sloppy joes. Cook enough for several lunches.
-  - Schedule the cook on the first at-home day of the week
+Cooking happens 3 times a week: **Tuesday dinner, Saturday dinner, and 1 batch lunch**. Not a meal for every day.
+- **Breakfast burritos are no longer a guaranteed weekly staple.** Only include them if the user names them in Step 3 — do not default to Sunday.
+- **Tuesday dinner** and **Saturday dinner**: use whatever the user named in Step 3. Match to day load — don't put a complex meal on a heavy evening.
+- **Lunch**: one batch cook, quick to make (chili dogs, tacos, sloppy joes, etc.) on a light at-home day (Tue/Thu/Fri) — cook enough for several lunches. Tuesday's dinner batch can double as the lunch source if it's suited to leftovers (e.g. chili) — otherwise schedule a separate lunch batch on the first at-home day of the week.
+- Leftovers from Tuesday/Saturday dinners can cover other days' lunches or dinners — note this in the Meal Plan table rather than planning a separate meal for every day.
 - Nights with Bible Study (Mon), Youth Group (Thu), or Lighthouse events are typically too busy to cook — plan accordingly without asking.
+- Days with no planned meal can be left blank, marked "leftovers," or "quick/simple" in the table.
 
 ### Step 6 — Weekly Goals
 - Choose a weekly theme/focus (one phrase)
-- The **Primary Objective** (set in Step 2.5) anchors the week — make sure at least one goal per day clearly advances it
+- The **Quarterly Objectives** (set in Step 2.5) anchor the week — distribute them across the week so each one has at least one day where it can actually get attention, rather than stacking them all on one day
 - Top 3–5 goals, split by area:
   - **FOTF** — day job goals (separate from Lighthouse)
   - **Lighthouse** — side project goals
@@ -103,9 +106,12 @@ Create or update `Weekly/YYYY-WXX.md` using the structure below.
 ## Weekly Focus
 [Theme phrase]
 
-## Primary Objective
-**[One goal — big enough to take several days, directly advances a quarterly goal]**
-*Advances: [Q goal name(s)]*
+## Quarterly Objectives
+1. **[Objective — big enough to take several days, directly advances a quarterly goal]**
+   *Advances: [Q goal name]*
+2. **[Objective — another quarterly goal getting a push this week]**
+   *Advances: [Q goal name]*
+[... however many are needed this week — not capped at one, not padded]
 
 ## Goals
 ### FOTF
@@ -140,3 +146,5 @@ Create or update `Weekly/YYYY-WXX.md` using the structure below.
 - Working Genius frustration types: Wonder and Tenacity — acknowledge real resistance on Tenacity tasks
 - OmniFocus captures are loaded incrementally; note count when surfacing inbox items
 - Do NOT add meals or cooking to the calendar — calendar is hard landscape only (appointments and meetings)
+- Meal plan is Tue dinner + Sat dinner + 1 batch lunch (3 cooks a week), not a meal every day — breakfast burritos are no longer an automatic default
+- Quarterly Objectives is a list sized to what the quarter actually needs that week, not a single fixed slot — morning-startup pulls from this list daily to build each day's Quarterly Progress section

@@ -32,7 +32,8 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 4. **Read this week's weekly note** at `Weekly/YYYY-WXX.md` (weeks start Sunday).
    - Extract the week's focus, priorities, and any action items relevant to today.
    - Pull any items explicitly tied to today's day of the week (e.g. cooking schedule entries for today, day-specific tasks). Surface these in the brief.
-   - Extract the **Primary Objective** (`## Primary Objective` section) — the week's main multi-day goal tied to a quarterly goal. This feeds the `## Quarterly Progress` section in the daily note.
+   - Read the `## Meal Plan` table. If today has a planned cook (dinner or lunch), surface it in "Get done today" or "Today's hard landscape" as appropriate. Pull the **remaining** planned meals for the rest of the week (after today) into "On the radar this week" as a single line, e.g. *"Fri — cook night (salsa meatloaf)"*. Skip days marked blank, "leftovers," or "quick/simple."
+   - Extract the **Quarterly Objectives** (`## Quarterly Objectives` section) — the week's list of multi-day goals, each tied to a quarterly goal. This feeds the `## Quarterly Progress` section in the daily note. There may be several — do not assume there's only one.
 
 5. **Read `Rhythms.md`**.
    - From the **Structure** table: note if today is an on-site work day.
@@ -104,13 +105,15 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 9. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment (e.g. a mentoring session, a doctor visit, a planned call), read their `Person/Name.md` and/or `Mentoring/Name.md` if it exists. Pull the 1–3 most recent or most relevant log entries. Surface a brief "Before you talk to X" note in the **Get done today** section or as a callout just before the matching hard landscape item — enough to jog memory on anything important without turning it into a report. Keep it to 1–2 lines. Skip this step if no named meetings are on today's calendar.
 
-10. **Build the `## Quarterly Progress` section** — this is the day's concrete move toward the weekly Primary Objective.
-    - Name the Primary Objective (quoted from the weekly note — do not reword it).
-    - Propose **one specific action** that moves it forward today. It should be:
+10. **Build the `## Quarterly Progress` section** — this is where the day makes real, visible progress toward the quarter, not just the one item that happens to be loudest.
+    - Pull from the week's full **Quarterly Objectives** list (Step 4), not just the first or most urgent one.
+    - Propose **2–3 specific actions**, each moving a different quarterly objective forward — a couple items, not one. It's fine if that means picking from 2–3 different objectives on the list rather than only the top one.
+    - A multi-day action that's already in progress (started yesterday or earlier, not yet finished) belongs back on today's list — carry it forward until it's actually done. Don't let a several-day task disappear after one mention; that's how it stalls.
+    - Each action should be:
       - Flexible — doable today or tomorrow, not a hard deadline item
-      - Concrete — specific enough to start, not vague ("make progress on X")
-      - Sized for a partial day — a focused session, not a week of work
-    - If the Primary Objective is complete or has no daily move today (e.g. it's a Saturday with no work context), omit this section rather than forcing a weak entry.
+      - Concrete — specific enough to start, not vague ("make progress on X"); "start X" or "make progress on the first piece of X" is fine for a multi-day item
+      - Sized for a partial day — a focused session or a starting step, not a week of work
+    - If a given objective is complete or has no sensible daily move today, just skip it — pull the day's 2–3 actions from whichever objectives do have something to move. Only omit the whole `## Quarterly Progress` section if none of the week's objectives have any daily move available (e.g. a Saturday with no work context).
 
 11. **Append** the Today's Focus section followed by the Quarterly Progress section (see format below).
 
@@ -142,17 +145,19 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 ## Quarterly Progress
 
-*Weekly objective: [Primary Objective from weekly note — verbatim]*
+*This week's objectives: [list the week's Quarterly Objectives from the weekly note — verbatim, one per line or comma-separated]*
 
-**Today's move:**
-- [ ] [One specific, flexible action toward the weekly objective — scoped for a focused session; can carry into tomorrow if needed]
+**Today's moves:**
+- [ ] [Specific, flexible action toward one objective — scoped for a focused session; can carry into tomorrow if needed]
+- [ ] [Specific, flexible action toward a different objective]
+- [ ] [A third, if a third objective has a sensible daily move today]
 ```
 
 ### Section guidance
 
 - **Today's hard landscape**: The fixed shape of the day (GTD concept). Include only items with a specific time — calendar events and Rhythms.md commitments that have a scheduled time. If a time-based commitment has a known exception (e.g. Youth Group cancelled for spring break), note it inline. Do NOT include untimed items like "work on-site" — those are tasks, not landscape. If a meal from the weekly cooking schedule has a time context (e.g. Thursday Lunch), include it here; otherwise put it in "Get done today." If nothing is scheduled, omit this section.
 - **Get done today**: Everything that needs doing but isn't pinned to a time. Order: (1) OmniFocus overdue items ⚠️, (2) OmniFocus due today, (3) flagged/planned-today OF items, (4) weekly note action items and yesterday's unfinished follow-ups, (5) untimed rhythms (work on-site, cook for family, etc.). Keep this list tight — 3–5 items max, not counting stretch goals. Mark overdue items ⚠️ with the due date, once, without commentary — never count days slipped, missed attempts, or "windows" that went unused; patterns belong in weekly planning, not the morning brief. Never surface OmniFocus tasks with a future defer date. Do not duplicate items already shown from the weekly note.
-- **On the radar**: Only actionable or personally significant items for the rest of the week. One line each. Skip purely informational entries. For any day that is going on-site but is NOT a standard on-site day (standard = Monday and Wednesday), include the reason in parentheses, e.g. *"On-site (April Chapel 15:00)"*. No reason needed for Monday/Wednesday since those are always on-site.
+- **On the radar**: Only actionable or personally significant items for the rest of the week. One line each. Skip purely informational entries. For any day that is going on-site but is NOT a standard on-site day (standard = Monday and Wednesday), include the reason in parentheses, e.g. *"On-site (April Chapel 15:00)"*. No reason needed for Monday/Wednesday since those are always on-site. Include remaining planned cook nights/meals from the weekly note's Meal Plan table (see step 4) — skip days with no meal planned.
 - **Daily habits tagline**: Always one line at the bottom. Never a section — just a quiet reminder of the daily rhythm. Use the Daily Rhythms from Rhythms.md.
 
 ## Standard daily note template
