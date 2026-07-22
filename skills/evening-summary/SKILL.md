@@ -51,14 +51,24 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
    For each unprocessed Keeper instruction:
    - Read the surrounding context (the instruction may reference content written several paragraphs earlier)
-   - Interpret the instruction with judgment — common actions include: creating or appending to a project or topic note, updating a person file, adding a reminder to a future daily note, generating reflection questions to append to tomorrow's note, or ensuring an idea gets filed in the right vault location
+   - Interpret the instruction with judgment — common actions include: creating or appending to a project or topic note, updating a person file, adding an entry to `Almanac.md` for a future date or meeting, generating reflection questions to append to tomorrow's note, or ensuring an idea gets filed in the right vault location
    - Execute the action fully — don't just summarize or note it
    - After completing the action, append `📚✅` to the end of that Keeper line in today's daily note
    - Note what was done in the **Logs updated today** section of the AI Summary
 
    Skip any Keeper line already ending with `📚✅` — it has been handled.
 
-14. **Person file updates** — scan today's note for people worth logging. For each qualifying person, prepend a dated entry under `## Log` in their `Person/Name.md` file (creating the file if it doesn't exist).
+14. **Almanac entries** — scan today's full narrative (not just explicit Keeper lines) for anything tied to a future date or a specific future meeting/event — e.g. "bring this up at next week's Dev Chapter meeting," "remind me about X on the 15th," "need to follow up on Y next month." This includes both Keeper instructions handled in Step 13 that ask for something to be surfaced later, and plain narrative that states a clear future-surfacing intent without invoking Keeper at all.
+
+   For each one found:
+   - Determine the target date. If a specific date is given, use it. If it's tied to a recurring meeting/event with no fixed date yet, use the date of its next known occurrence and name the event in the entry text.
+   - Read `Almanac.md` at vault root (create it with a one-line header if it doesn't exist yet).
+   - Add the entry as a bullet under the matching `## YYYY-MM-DD` header, creating the header in the correct date-ascending position if it doesn't exist. Tag it with `*(added YYYY-MM-DD)*` using today's date.
+   - Note the addition in the **Logs updated today** section.
+
+   Only add entries with a genuine future-surfacing intent — not every mention of a date. This skill only ever *adds* to Almanac.md; entries are removed by morning-startup once they've surfaced.
+
+15. **Person file updates** — scan today's note for people worth logging. For each qualifying person, prepend a dated entry under `## Log` in their `Person/Name.md` file (creating the file if it doesn't exist).
 
    **Who qualifies:** People with a real relationship to Jon — family, friends, mentees, close colleagues. Ask: would future-Jon want this on record when interacting with this person again? Skip FOTF coworkers mentioned only in a routine work context. Skip Danae (covered by her Med Log and existing notes). For mentees with a Mentoring note, use the Mentoring note for session content — but still use Person/ for significant life events outside of sessions.
 
@@ -84,9 +94,9 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
      ```
    - Never duplicate content already captured in a Mentoring note for today.
 
-15. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+16. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
 
-16. **Append** the AI Summary section to today's daily note (see format below).
+17. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -132,6 +142,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Lighthouse Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Lighthouse Log.md`). Read the file first. Only write for *significant* Lighthouse events — direction shifts, staffing changes, key conversations, spiritual discernment, external connections, or reframes. Skip routine mentions, everyday server activity, or passing references. If nothing significant surfaced, skip it entirely.
 - **Person files: prepend entries under `## Log`** — `Person/Name.md`. Read the file first if it exists; create with a minimal template if not. Two tiers: brief (single sentence) for events and passing notes, deeper (paragraph) for significant relational developments, strong reactions, or anything that needs context to be useful later. Skip people with no real relationship to Jon, skip Danae (her own logs), skip FOTF coworkers in routine work contexts. Never duplicate content already written to a Mentoring note for today.
 - **Keeper instructions: act and mark complete** — scan for `Keeper,` or `Keeper:` lines not ending with `📚✅`. Execute each instruction with full context, then append `📚✅` to the line. Log what was done in **Logs updated today**. Skip already-marked lines.
+- **Almanac.md: add only, under the matching date header** — `Almanac.md` at vault root. Read the file first (create it if missing). Only add entries with a clear future-surfacing intent — a specific date or a named future meeting/event. Never delete entries here — deletion happens in morning-startup, at the moment an entry actually surfaces.
 - **Linked files: read only** — follow wikilinks to gather context; do not edit linked files during evening summary (except the weekly note, Medical Logs, and Person files).
 - Read each file before writing to confirm current state.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
