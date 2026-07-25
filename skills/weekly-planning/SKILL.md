@@ -11,8 +11,22 @@ Run this skill at the start of each week (Sunday or Monday morning). It loads fu
 
 ## Workflow
 
+### Step 0 — Monthly Vault Maintenance
+
+Read `Reference/Logs/Vault Maintenance Log.md`. If the current calendar month has no completed maintenance entry, run the monthly pass before planning:
+- Move root-level `Daily/YYYY-MM-DD.md` notes more than 60 days old to `Daily/YYYY/MM/YYYY-MM-DD.md`.
+- Update every explicit wikilink to each moved note, preserving aliases and heading references.
+- Do not overwrite a destination collision; report it.
+- Repair stale collection indexes and unambiguous wikilinks.
+- Add missing provenance only when the source is unambiguous.
+- Report, but do not automatically resolve, inactive-project candidates, conflicting duplicates, unclear provenance, ambiguous Person/Mentoring placement, or incomplete Keeper actions.
+- Prepend the result to the maintenance log. Add a short weekly-note maintenance line only if something materially changed or needs Jon's decision.
+
+Run this only during the first weekly-planning session of the month, never as a daily archive job.
+
 ### Step 1 — Load Context (run in parallel)
 - Read `Rhythms.md` at the vault root
+- Read the `## Weekly` section of `Keeper Instructions.md` and execute applicable standing instructions
 - Read last week's weekly note (`Weekly/YYYY-WXX.md`) for rolled items
 - Read this week's weekly note if it already exists
 - Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — determine which quarter it is from today's date
@@ -97,6 +111,7 @@ Create or update `Weekly/YYYY-WXX.md` using the structure below.
 - Week number starts on Sunday (ISO: use Monday-based ISO week, but *label* the note for the Sunday start)
 - Never overwrite sections the user has already written
 - Append or fill only sections that are missing
+- Update the `This week` link in `Home.md` to the weekly note used by this run
 
 ## Weekly Note Structure
 
@@ -148,3 +163,4 @@ Create or update `Weekly/YYYY-WXX.md` using the structure below.
 - Do NOT add meals or cooking to the calendar — calendar is hard landscape only (appointments and meetings)
 - Meal plan is Tue dinner + Sat dinner + 1 batch lunch (3 cooks a week), not a meal every day — breakfast burritos are no longer an automatic default
 - Quarterly Objectives is a list sized to what the quarter actually needs that week, not a single fixed slot — morning-startup pulls from this list daily to build each day's Quarterly Progress section
+- Weekly reflection records the significance of events to the week's arc; it does not repeat the full daily narrative

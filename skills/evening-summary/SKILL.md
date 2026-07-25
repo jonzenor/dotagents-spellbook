@@ -17,7 +17,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - **If the user explicitly names a date or says "for yesterday"**, always use what they specified regardless of time.
    - All subsequent steps refer to "today's note" and "today" as the *target date*, not necessarily the calendar date.
 
-2. **Read the target daily note** at `Daily/YYYY-MM-DD.md` in full.
+2. **Read the target daily note** in full. Check `Daily/YYYY-MM-DD.md` first; for an explicitly requested older date, fall back to `Daily/YYYY/MM/YYYY-MM-DD.md`.
 
 3. **Read the last 3–5 daily notes** for context on ongoing threads. If recent notes are sparse or empty, work with what's there — never comment on the gap or count missed days. Cross-day trend observations belong in weekly planning, not here.
 
@@ -55,6 +55,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - Execute the action fully — don't just summarize or note it
    - After completing the action, append `📚✅` to the end of that Keeper line in today's daily note
    - Note what was done in the **Logs updated today** section of the AI Summary
+   - If the instruction explicitly recurs by event, context, or cadence, add it to `Keeper Instructions.md` with its trigger, action, and source daily note. Do not use the Almanac for recurring instructions.
 
    Skip any Keeper line already ending with `📚✅` — it has been handled.
 
@@ -94,9 +95,15 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
      ```
    - Never duplicate content already captured in a Mentoring note for today.
 
-16. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and any passing mentions in the note for ideas, side projects, product thoughts, or anything that surfaced but has no next action or home yet. Note any suggested vault home (Topics/, project note, Mentoring, etc.).
+16. **Capture explicit actions in OmniFocus** — scan Jon's narrative and `## What Needs Follow Up?` for direct commitments such as “I need to…,” “I will…,” or “follow up with…”.
+   - Search OmniFocus for an equivalent existing action before adding anything; wording does not need to match exactly.
+   - Add qualifying new actions to the OmniFocus inbox.
+   - Do not capture “maybe,” “I could,” questions, brainstorms, or uncommitted ideas.
+   - Report each action actually added in the AI Summary.
 
-17. **Append** the AI Summary section to today's daily note (see format below).
+17. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and passing mentions for uncommitted possibilities. Substantial project-shaped ideas belong in `Ideas/`, never `Projects/` unless Jon explicitly committed to implementation. Reusable learning belongs in `Topics/`. Update the relevant collection index when creating a durable note.
+
+18. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -121,6 +128,9 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 **Logs updated today:**
 - [[Log/File/Path]] *(one line per file actually written to — omit the weekly note unless something notable was checked off or added; omit entirely if no logs were updated)*
+
+**OmniFocus captured:**
+- [One line per action actually added — omit entirely if none]
 ```
 
 ### Section guidance
@@ -141,14 +151,18 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Book Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Book Log.md`). Read the file first. Check for an existing note at `Reference/Books/[Title].md` and use a wikilink if it exists. Only write if a book is explicitly mentioned as read, started, or finished today.
 - **Lighthouse Log: prepend entries under `## Log`** — add newest entry at the top (`Reference/Logs/Lighthouse Log.md`). Read the file first. Only write for *significant* Lighthouse events — direction shifts, staffing changes, key conversations, spiritual discernment, external connections, or reframes. Skip routine mentions, everyday server activity, or passing references. If nothing significant surfaced, skip it entirely.
 - **Person files: prepend entries under `## Log`** — `Person/Name.md`. Read the file first if it exists; create with a minimal template if not. Two tiers: brief (single sentence) for events and passing notes, deeper (paragraph) for significant relational developments, strong reactions, or anything that needs context to be useful later. Skip people with no real relationship to Jon, skip Danae (her own logs), skip FOTF coworkers in routine work contexts. Never duplicate content already written to a Mentoring note for today.
-- **Keeper instructions: act and mark complete** — scan for `Keeper,` or `Keeper:` lines not ending with `📚✅`. Execute each instruction with full context, then append `📚✅` to the line. Log what was done in **Logs updated today**. Skip already-marked lines.
+- **Person versus Mentoring** — mentoring-session content belongs in the Mentoring note. Person notes receive only identity, relationship facts, and significant life events outside the session; use a brief linked pointer instead of duplicating session details.
+- **Keeper instructions: act and mark complete** — scan for `Keeper,` or `Keeper:` lines not ending with `📚✅`. Execute each instruction with full context, promote explicit recurring behavior to `Keeper Instructions.md`, then append `📚✅` to the line. Log what was done in **Logs updated today**. Skip already-marked lines.
 - **Almanac.md: add only, under the matching date header** — `Almanac.md` at vault root. Read the file first (create it if missing). Only add entries with a clear future-surfacing intent — a specific date or a named future meeting/event. Never delete entries here — deletion happens in morning-startup, at the moment an entry actually surfaces.
-- **Linked files: read only** — follow wikilinks to gather context; do not edit linked files during evening summary (except the weekly note, Medical Logs, and Person files).
+- **Ideas are not projects** — create project-shaped possibilities under `Ideas/`. Move one to `Projects/` only after Jon explicitly commits to implementing it.
+- **Provenance** — every durable AI-created dated entry links to the supporting daily note. Label cross-note inference as Keeper synthesis; never promote uncertainty into fact.
+- **Linked files: read for context** — edit only the destinations explicitly authorized by this workflow (weekly note, logs, Person/Mentoring notes, Almanac, Keeper Instructions, Ideas/Topics/Projects when a Keeper instruction requires it).
 - Read each file before writing to confirm current state.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
 - Keep the tone direct and personal — this is a private journal, not a report.
 - If a section has nothing worth saying (e.g. no real lessons learned today), omit it rather than padding with filler.
 - Do not summarize things already captured well in the note — add insight, not repetition.
+- Before writing to another layer, require new retrieval value: relationship context for Person, session context for Mentoring, a significant domain fact for a log, a decision or milestone for a project, or reusable knowledge for a Topic.
 
 ### No assumptions — only what the note explicitly says
 

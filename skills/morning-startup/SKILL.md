@@ -25,7 +25,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
      Use today's actual date. Do **not** create the linked file — just place the wikilink so it's ready to tap in Obsidian.
    - Read the full file before appending anything.
 
-3. **Read yesterday's daily note** (`Daily/YYYY-MM-DD.md` for yesterday).
+3. **Read yesterday's daily note**. Check `Daily/YYYY-MM-DD.md` first; if absent, check `Daily/YYYY/MM/YYYY-MM-DD.md`.
    - Pull any unfinished items from `### What Needs Follow Up?` and `## Today's Focus` must/try lists.
    - If yesterday's note is empty or missing, skip this step silently — build today's brief from the calendar, weekly note, and Rhythms instead. After a multi-day gap, at most one warm line acknowledging the restart; never list or count what was missed.
 
@@ -72,9 +72,14 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - Local outdoor events: `Woodland+Park,CO`
    - Travel events: use the destination from the calendar event name or notes
 
-8. **Check the Almanac** — read `Almanac.md` at vault root. For each `## YYYY-MM-DD` section matching today's date, pull the entries into today's daily note in whatever spot fits best: an item tied to a specific meeting goes near that meeting (e.g. in "Get done today" or as a note just before it in the hard landscape), a general reminder with no natural home goes into "Get done today" as its own item. After pulling an entry into today's note, **delete it from Almanac.md** — entries are removed at the moment they surface, not left for evening-summary to clean up later. If `Almanac.md` doesn't exist yet or has no section for today, skip silently.
+8. **Check standing instructions** — read `Keeper Instructions.md`.
+   - Run entries under `## Daily`.
+   - Run any `## Before Events` instruction whose trigger matches today's calendar or radar. For example, before a Kevin Shireman 1:1, read his Person note and surface the requested preparation brief.
+   - Standing instructions remain active after use; never remove or mark them complete.
 
-9. **Build the two Brainstorm items** — the `### Brainstorm Today` section gets **two** prompts, from two different sources:
+9. **Check the Almanac** — read `Almanac.md` at vault root. Pull every entry dated today **or earlier** into today's daily note. Put meeting-specific context near the matching meeting; put general information in "Get done today." Preserve an overdue entry's original target date inline. After copying each entry, **delete it from Almanac.md immediately** and remove any empty date heading. Surfacing is the terminal state; do not wait for the underlying matter to be completed. If `Almanac.md` is missing or has no due/overdue entries, skip silently.
+
+10. **Build the two Brainstorm items** — the `### Brainstorm Today` section gets **two** prompts, from two different sources:
 
    **a. The OmniFocus item** — query for `Available` tasks tagged `Thinking / Brainstorming`. Pick **one** task using this priority order:
    1. Tasks with a due date — soonest first
@@ -87,7 +92,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
    Both go into the `### Brainstorm Today` section of the daily note (see template and format below) — not in "Get done today." The intent is low-pressure prompts for background thinking during downtime, not tasks.
 
-10. **Query OmniFocus** for three categories — in order of priority:
+11. **Query OmniFocus** for three categories — in order of priority:
 
    a. **Hard deadlines** — query for tasks with `dueDate` of today or earlier and status `Available` or `Overdue`. These are non-negotiable. Mark overdue items with ⚠️. Weave into the top of "Get done today."
 
@@ -105,9 +110,9 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
       
       Surface 1–2 stretch items maximum, clearly labeled as optional. Never surface tasks with a future defer date (these appear as `Blocked` in OmniFocus and should be ignored entirely).
 
-11. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment (e.g. a mentoring session, a doctor visit, a planned call), read their `Person/Name.md` and/or `Mentoring/Name.md` if it exists. Pull the 1–3 most recent or most relevant log entries. Surface a brief "Before you talk to X" note in the **Get done today** section or as a callout just before the matching hard landscape item — enough to jog memory on anything important without turning it into a report. Keep it to 1–2 lines. Skip this step if no named meetings are on today's calendar.
+12. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment (e.g. a mentoring session, a doctor visit, a planned call), read their `Person/Name.md` and/or `Mentoring/Name.md` if it exists. Pull the 1–3 most recent or most relevant log entries. Surface a brief "Before you talk to X" note in the **Get done today** section or as a callout just before the matching hard landscape item — enough to jog memory on anything important without turning it into a report. Keep it to 1–2 lines. Skip this step if no named meetings are on today's calendar.
 
-12. **Build the `## Quarterly Progress` section** — this is where the day makes real, visible progress toward the quarter, not just the one item that happens to be loudest.
+13. **Build the `## Quarterly Progress` section** — this is where the day makes real, visible progress toward the quarter, not just the one item that happens to be loudest.
     - Pull from the week's full **Quarterly Objectives** list (Step 4), not just the first or most urgent one.
     - Propose **2–3 specific actions**, each moving a different quarterly objective forward — a couple items, not one. It's fine if that means picking from 2–3 different objectives on the list rather than only the top one.
     - A multi-day action that's already in progress (started yesterday or earlier, not yet finished) belongs back on today's list — carry it forward until it's actually done. Don't let a several-day task disappear after one mention; that's how it stalls.
@@ -117,7 +122,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
       - Sized for a partial day — a focused session or a starting step, not a week of work
     - If a given objective is complete or has no sensible daily move today, just skip it — pull the day's 2–3 actions from whichever objectives do have something to move. Only omit the whole `## Quarterly Progress` section if none of the week's objectives have any daily move available (e.g. a Saturday with no work context).
 
-13. **Append** the Today's Focus section followed by the Quarterly Progress section (see format below).
+14. **Append** the Today's Focus section followed by the Quarterly Progress section (see format below).
 
 ## Output format notes
 
@@ -199,7 +204,7 @@ See also: [[Prayer/War-Room]]
 ## Rules
 
 - **Append only** — never insert into or overwrite existing content.
-- **Almanac.md is the one exception** — this skill both reads it and deletes entries from it (Step 8), once those entries have been pulled into today's note. Never delete an entry without also surfacing it.
+- **Almanac.md is the one exception** — this skill both reads it and deletes due/overdue entries (Step 9), once those entries have been pulled into today's note. Never delete an entry without also surfacing it.
 - Read the file before writing to confirm where it ends.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
 - Keep the tone direct and personal — this is for Jon, not a report.

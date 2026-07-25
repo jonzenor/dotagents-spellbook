@@ -16,6 +16,7 @@ Run this skill at the start of a new quarter (or the week before). It loads data
 - Last 2–3 weeks of daily notes → energy and avoidance patterns
 - `Vision.md` → stated values and priorities
 - `Rhythms.md` → current standing commitments
+- `Keeper Instructions.md` → execute the `## Quarterly` standing instructions
 - OmniFocus stalled/on-hold projects: `query_omnifocus {"status": ["OnHold"], "fields": ["name", "status", "deferDate"]}`
 - Previous quarter review note (`Quarterly/YYYY-QX-Review.md`) → lessons and "things not to lose"
 - Determine the upcoming quarter label (Q1=Jan–Mar, Q2=Apr–Jun, Q3=Jul–Sep, Q4=Oct–Dec)
@@ -38,6 +39,7 @@ Compare agreed goals against Rhythms.md. Suggest additions, changes, or removals
 
 ### 5 — Finalize and Write
 Summarize goals, ask about stop/avoid items, then write `Quarterly/YYYY-QX-Plan.md`.
+Update the `This quarter` link in `Home.md` to the plan created by this run.
 Offer to add OmniFocus projects for any goals that need them.
 
 See [REFERENCE.md](REFERENCE.md) for the plan note structure and goal format.
