@@ -30,6 +30,7 @@ Run this only during the first weekly-planning session of the month, never as a 
 - Read last week's weekly note (`Weekly/YYYY-WXX.md`) for rolled items
 - Read this week's weekly note if it already exists
 - Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — determine which quarter it is from today's date
+- Read `Reference/Theater Movie Candidates.md` if it exists. Use it only for the monthly theater-selection and release-week rules below.
 - Query OmniFocus for overdue and flagged tasks: `query_omnifocus` with `{"status": ["Overdue", "DueSoon"], "fields": ["name", "project", "dueDate", "flagged"]}`
 - Pull calendar for the full 7 days ahead using the `mcp-ical` tool. Query each of these calendars in parallel:
   - **"Jon's Calendar"** — personal events, appointments, paydays
@@ -63,11 +64,23 @@ Weekly planning is the **one place** where cross-day patterns get raised — the
   - List them in the `## Quarterly Objectives` section (see structure below), each tagged with which quarterly goal it advances
   - It's fine for one objective to functionally lead the week (the thing Jon would call "the main thing") — but don't let it crowd out other quarterly goals that also need a foothold this week. A goal with no weekly objective for several weeks running is a goal quietly stalling.
 
+### Step 2.75 — Theater Movie Rhythm
+
+Jon's goal is to enjoy one or two movies in a theater each month. This is a soft plan, not a quota or overdue commitment.
+
+- **Plan next month:** If this is the final weekly-planning session before the calendar month changes, browse to verify and fill missing information for candidates releasing theatrically next month. Present the candidates with release date, rating, main stars, brief description, and Jon's recorded reason for interest. Ask Jon to soft-select zero, one, or two for next month.
+- **Record selections:** Update selected entries in `Reference/Theater Movie Candidates.md` to `Soft plan (YYYY-MM)`. Do not create an OmniFocus task or calendar event until Jon chooses an actual showing or explicitly commits to an action.
+- **Surface release week:** Every weekly-planning run checks for `Soft plan` candidates whose theatrical release date falls within the planned week. Add them to that week's radar on the release date, clearly labeled as a soft plan. If a release date changes, update the candidate and use the verified date.
+- **Afterward:** Mark a movie `Saw` only with explicit confirmation. Mark it `Passed` only when Jon explicitly decides against it. An unchosen candidate remains a candidate without pressure or rollover commentary.
+
+Quarterly planning does not own or compile this movie list.
+
 ### Step 3 — Ask the User (all at once, numbered list)
 1. Any travel, special on-site days, or appointments not on the calendar yet?
 2. Anything from last week that *must* land this week?
 3. Energy outlook — anything coming in hot (deadline, drained, etc.)?
 4. What do you want to make for dinner this week? Any fridge items that need to be used up?
+5. If Step 2.75 applies, which zero, one, or two theater candidates do you want to soft-plan for next month?
 
 ### Step 4 — Identify Day Load
 - Mark Mon/Wed as on-site (no reason needed)
@@ -162,5 +175,6 @@ Create or update `Weekly/YYYY-WXX.md` using the structure below.
 - OmniFocus captures are loaded incrementally; note count when surfacing inbox items
 - Do NOT add meals or cooking to the calendar — calendar is hard landscape only (appointments and meetings)
 - Meal plan is Tue dinner + Sat dinner + 1 batch lunch (3 cooks a week), not a meal every day — breakfast burritos are no longer an automatic default
+- Theater planning runs only in the final weekly-planning session before a new month. The candidate file is theater-specific; selected movies surface during release week but remain soft until an actual showing is chosen.
 - Quarterly Objectives is a list sized to what the quarter actually needs that week, not a single fixed slot — morning-startup pulls from this list daily to build each day's Quarterly Progress section
 - Weekly reflection records the significance of events to the week's arc; it does not repeat the full daily narrative

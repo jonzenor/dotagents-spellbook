@@ -65,6 +65,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - Determine the target date. If a specific date is given, use it. If it's tied to a recurring meeting/event with no fixed date yet, use the date of its next known occurrence and name the event in the entry text.
    - Read `Almanac.md` at vault root (create it with a one-line header if it doesn't exist yet).
    - Add the entry as a bullet under the matching `## YYYY-MM-DD` header, creating the header in the correct date-ascending position if it doesn't exist. Tag it with `*(added YYYY-MM-DD)*` using today's date.
+   - For a birthday, anniversary, or other explicitly annual reminder, tag it `*(annual; added YYYY-MM-DD)*`. Annual entries renew for the following year when morning-startup consumes them. Do not tag an event annual merely because it could recur; require explicit annual meaning.
    - Note the addition in the **Logs updated today** section.
 
    Only add entries with a genuine future-surfacing intent — not every mention of a date. This skill only ever *adds* to Almanac.md; entries are removed by morning-startup once they've surfaced.
@@ -103,7 +104,14 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 17. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and passing mentions for uncommitted possibilities. Substantial project-shaped ideas belong in `Ideas/`, never `Projects/` unless Jon explicitly committed to implementation. Reusable learning belongs in `Topics/`. Update the relevant collection index when creating a durable note.
 
-18. **Append** the AI Summary section to today's daily note (see format below).
+18. **Theater movie candidates** — scan for movies Jon explicitly says he may want to see **in a theater**. This is not a general watchlist.
+   - Read or create `Reference/Theater Movie Candidates.md` and keep it linked from `Reference/Reference.md`.
+   - Before adding or substantially updating a candidate, browse for missing decision-support information: verified theatrical release date (or the narrowest supported window), current MPAA rating or `Not yet rated`, main star or stars, and a brief spoiler-free description. Prefer official studio/distributor pages and authoritative rating sources; preserve descriptive source links.
+   - Record Jon's stated reason for interest from the daily note. Do not invent a reason from genre, cast, or Keeper synthesis.
+   - Use these fields: title, theatrical release date, rating, main stars, brief description, why Jon is interested, status, and sources. Default status is `Candidate`; weekly-planning may change it to `Soft plan (YYYY-MM)`, `Saw`, or `Passed`.
+   - If a title or date is uncertain, preserve that uncertainty and the search result rather than guessing. Do not add every movie Jon mentions—require explicit theatrical interest.
+
+19. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -154,6 +162,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Person versus Mentoring** — mentoring-session content belongs in the Mentoring note. Person notes receive only identity, relationship facts, and significant life events outside the session; use a brief linked pointer instead of duplicating session details.
 - **Keeper instructions: act and mark complete** — scan for `Keeper,` or `Keeper:` lines not ending with `📚✅`. Execute each instruction with full context, promote explicit recurring behavior to `Keeper Instructions.md`, then append `📚✅` to the line. Log what was done in **Logs updated today**. Skip already-marked lines.
 - **Almanac.md: add only, under the matching date header** — `Almanac.md` at vault root. Read the file first (create it if missing). Only add entries with a clear future-surfacing intent — a specific date or a named future meeting/event. Never delete entries here — deletion happens in morning-startup, at the moment an entry actually surfaces.
+- **Theater candidates are theater-specific** — `Reference/Theater Movie Candidates.md` supports choosing one or two theater outings each month. Do not turn it into a general streaming, rental, or someday watchlist. Preserve Jon's stated reason for interest and cited release information.
 - **Ideas are not projects** — create project-shaped possibilities under `Ideas/`. Move one to `Projects/` only after Jon explicitly commits to implementing it.
 - **Provenance** — every durable AI-created dated entry links to the supporting daily note. Label cross-note inference as Keeper synthesis; never promote uncertainty into fact.
 - **Linked files: read for context** — edit only the destinations explicitly authorized by this workflow (weekly note, logs, Person/Mentoring notes, Almanac, Keeper Instructions, Ideas/Topics/Projects when a Keeper instruction requires it).

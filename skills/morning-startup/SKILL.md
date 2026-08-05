@@ -7,7 +7,12 @@ description: Morning startup routine for Jon's Obsidian life vault. Checks Apple
 
 ## What this does
 
-Appends a `## Today's Focus` section to today's daily note. **Never overwrites or inserts — append only.**
+Creates or refreshes the AI-owned `## Today's Focus` and `## Quarterly Progress` sections in today's daily note. On a rerun, replace those existing AI-owned sections in place so the note has only one current copy of each.
+
+The safety boundary is **section ownership**, not append-only file handling:
+- Never modify Jon-authored journal content under `## What Happened Today?`, `## What Stood Out?`, `## What Needs Follow Up?`, or `## Random Thoughts`, including Jon-authored subheadings such as Captain's Log entries.
+- AI-designated sections may be updated by the AI. For this skill, those are `## Today's Focus`, `## Quarterly Progress`, and the two skill-generated blockquotes under `## Brainstorm Today`.
+- Preserve any content whose ownership is unclear. Do not treat an unfamiliar heading as AI-owned merely because it appears near an AI section.
 
 This is a **morning briefing, not a task ledger**. Its job is orientation: gather the full shape of the day and the important things coming that get lost in the fullness of the calendar app, all in one place. Deadlines get surfaced plainly, once. Jon decides what the day holds — the brief describes, it doesn't direct.
 
@@ -23,7 +28,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
      [[Bible/Church/Church Notes YYYY-MM-DD]]
      ```
      Use today's actual date. Do **not** create the linked file — just place the wikilink so it's ready to tap in Obsidian.
-   - Read the full file before appending anything.
+   - Read the full file before changing anything. Identify the exact boundaries of existing AI-owned sections and Jon-authored sections.
 
 3. **Read yesterday's daily note**. Check `Daily/YYYY-MM-DD.md` first; if absent, check `Daily/YYYY/MM/YYYY-MM-DD.md`.
    - Pull any unfinished items from `### What Needs Follow Up?` and `## Today's Focus` must/try lists.
@@ -77,7 +82,10 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - Run any `## Before Events` instruction whose trigger matches today's calendar or radar. For example, before a Kevin Shireman 1:1, read his Person note and surface the requested preparation brief.
    - Standing instructions remain active after use; never remove or mark them complete.
 
-9. **Check the Almanac** — read `Almanac.md` at vault root. Pull every entry dated today **or earlier** into today's daily note. Put meeting-specific context near the matching meeting; put general information in "Get done today." Preserve an overdue entry's original target date inline. After copying each entry, **delete it from Almanac.md immediately** and remove any empty date heading. Surfacing is the terminal state; do not wait for the underlying matter to be completed. If `Almanac.md` is missing or has no due/overdue entries, skip silently.
+9. **Check the Almanac** — read `Almanac.md` at vault root. Pull every entry dated today **or earlier** into today's daily note. Put meeting-specific context near the matching meeting; put general information in "Get done today." Preserve an overdue entry's original target date inline.
+   - After copying a one-time entry, delete it immediately and remove any empty date heading. Surfacing is its terminal state; do not wait for the underlying matter to be completed.
+   - An entry tagged `*(annual; added YYYY-MM-DD)*` is renewable. Before deleting the consumed occurrence, add the same reminder under the same month and day in the following year, preserve its provenance and wording, and replace the metadata with `*(annual; added [today's date])*`. Keep date headings ascending and avoid duplicates. Then delete the consumed occurrence.
+   - If `Almanac.md` is missing or has no due/overdue entries, skip silently.
 
 10. **Build the two Brainstorm items** — the `### Brainstorm Today` section gets **two** prompts, from two different sources:
 
@@ -122,7 +130,11 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
       - Sized for a partial day — a focused session or a starting step, not a week of work
     - If a given objective is complete or has no sensible daily move today, just skip it — pull the day's 2–3 actions from whichever objectives do have something to move. Only omit the whole `## Quarterly Progress` section if none of the week's objectives have any daily move available (e.g. a Saturday with no work context).
 
-14. **Append** the Today's Focus section followed by the Quarterly Progress section (see format below).
+14. **Write or refresh** the Today's Focus section followed by the Quarterly Progress section (see format below).
+   - If either AI-owned section already exists, replace that section in place through the next heading of equal or higher level, leaving surrounding Jon-authored sections byte-for-byte unchanged.
+   - If an AI-owned section is missing, add it after Jon's template sections at the bottom of the note.
+   - On reruns, consolidate prior AI-created duplicates into one current `## Today's Focus` and one current `## Quarterly Progress`.
+   - Never replace the whole daily note to accomplish a section update.
 
 ## Output format notes
 
@@ -203,9 +215,10 @@ See also: [[Prayer/War-Room]]
 
 ## Rules
 
-- **Append only** — never insert into or overwrite existing content.
-- **Almanac.md is the one exception** — this skill both reads it and deletes due/overdue entries (Step 9), once those entries have been pulled into today's note. Never delete an entry without also surfacing it.
-- Read the file before writing to confirm where it ends.
+- **Protect Jon's writing** — never alter Jon-authored journal sections or their subheadings. Existing AI-designated sections may be replaced in place on reruns.
+- **No duplicate AI sections** — keep one current `## Today's Focus` and one current `## Quarterly Progress`. Refresh them instead of appending another copy.
+- **Almanac.md is the one exception** — this skill both reads it and deletes due/overdue entries (Step 9), once those entries have been pulled into today's note. Never delete an entry without also surfacing it. Renew annual entries for the following year before deleting the consumed occurrence.
+- Read the full file before writing to confirm section ownership and boundaries.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
 - Keep the tone direct and personal — this is for Jon, not a report.
 - **Briefing voice, not supervisor voice.** Describe the shape of the day; don't issue orders or apply pressure ("no excuses", "no better day than today"). State deadlines plainly and trust Jon with them.
