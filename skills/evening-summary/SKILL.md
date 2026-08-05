@@ -111,7 +111,15 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - Use these fields: title, theatrical release date, rating, main stars, brief description, why Jon is interested, status, and sources. Default status is `Candidate`; weekly-planning may change it to `Soft plan (YYYY-MM)`, `Saw`, or `Passed`.
    - If a title or date is uncertain, preserve that uncertainty and the search result rather than guessing. Do not add every movie Jon mentions—require explicit theatrical interest.
 
-19. **Append** the AI Summary section to today's daily note (see format below).
+19. **Review active project lifecycle state** — read `Projects/Projects.md`, then open every project listed there.
+   - Compare each active project's stated outcome and status with explicit evidence in today's daily note, the recent daily notes read in Step 3, and this week's weekly note.
+   - If the evidence explicitly confirms that the project's outcome was achieved, close it during this run: set `**Status:** Complete`, add `**Completed:** [[Daily/YYYY-MM-DD|YYYY-MM-DD]]` using the supporting daily note, move it to `Archive/Projects/`, repair wikilinks throughout the vault, and synchronize `Projects/Projects.md`.
+   - If Jon explicitly says the project was abandoned, follow the same lifecycle using `**Status:** Dropped` and record the decision source/date.
+   - If completion or abandonment seems likely but is not explicit, do not change project status. Ask Jon whether the project should be closed, and identify the evidence that made its state uncertain.
+   - Never treat inactivity, completed individual tasks, a past event date, or an unchecked stale checklist as proof that the project outcome is complete.
+   - Include every project file, index, or repaired-link location actually written in **Logs updated today**.
+
+20. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
