@@ -7,7 +7,7 @@ description: Morning startup routine for Jon's Obsidian life vault. Checks Apple
 
 ## What this does
 
-Creates or refreshes the AI-owned `## Today's Focus` and `## Quarterly Progress` sections in today's daily note. On a rerun, replace those existing AI-owned sections in place so the note has only one current copy of each.
+Creates or refreshes the AI-owned `## Today's Focus` and `## Quarterly Progress` sections in today's daily note. `## Today's Focus` always includes a compact, deadline-aware **Active Projects** triage. On a rerun, replace those existing AI-owned sections in place so the note has only one current copy of each.
 
 The safety boundary is **section ownership**, not append-only file handling:
 - Never modify Jon-authored journal content under `## What Happened Today?`, `## What Stood Out?`, `## What Needs Follow Up?`, or `## Random Thoughts`, including Jon-authored subheadings such as Captain's Log entries.
@@ -82,6 +82,12 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - Run any `## Before Events` instruction whose trigger matches today's calendar or radar. For example, before a Kevin Shireman 1:1, read his Person note and surface the requested preparation brief.
    - Standing instructions remain active after use; never remove or mark them complete.
 
+8a. **Build the Active Projects triage** — use the `project-morning-brief` skill.
+   - When sub-agents are available, delegate this review to a fresh sub-agent and continue calendar and OmniFocus work in parallel. Give it today's date, capacity/hard landscape, relevant deadlines, and the skill path. Otherwise run the skill locally.
+   - Always include every active project as a link, but surface only the zero-to-two actions that deserve attention today according to deadline, remaining work, recent progress, weekly priorities, and capacity.
+   - Include `⚠️ At risk` or `🔥 Urgent` with a concise evidence-based explanation when the project is in danger of missing its committed plan.
+   - Project-specific actions live in project notes under `## Next Actions`; do not duplicate them in OmniFocus.
+
 9. **Check the Almanac** — read `Almanac.md` at vault root. Pull every entry dated today **or earlier** into today's daily note. Put meeting-specific context near the matching meeting; put general information in "Get done today." Preserve an overdue entry's original target date inline.
    - After copying a one-time entry, delete it immediately and remove any empty date heading. Surfacing is its terminal state; do not wait for the underlying matter to be completed.
    - An entry tagged `*(annual; added YYYY-MM-DD)*` is renewable. Before deleting the consumed occurrence, add the same reminder under the same month and day in the following year, preserve its provenance and wording, and replace the metadata with `*(annual; added [today's date])*`. Keep date headings ascending and avoid duplicates. Then delete the consumed occurrence.
@@ -101,6 +107,8 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    Both go into the `### Brainstorm Today` section of the daily note (see template and format below) — not in "Get done today." The intent is low-pressure prompts for background thinking during downtime, not tasks.
 
 11. **Query OmniFocus** for three categories — in order of priority:
+
+   OmniFocus supplies standalone actions and commitments. Exclude project-specific actions maintained in project notes; never create or surface duplicate copies.
 
    a. **Hard deadlines** — query for tasks with `dueDate` of today or earlier and status `Available` or `Overdue`. These are non-negotiable. Mark overdue items with ⚠️. Weave into the top of "Get done today."
 
@@ -154,6 +162,13 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 **Get done today:**
 - [ ] [Prioritized list — OmniFocus overdue ⚠️ and due-today first, then flagged/planned-today, then weekly note items and yesterday's follow-ups, then untimed rhythms]
 
+**Active Projects:**
+- [[Projects/Project Name|Project Name]] — [optional risk flag and concise explanation]
+  - [ ] [Only today's selected project action]
+- [[Projects/Another Project|Another Project]]
+  - No project action needed today.
+- None *(use only when there are no active projects)*
+
 *Stretch (if time allows):*
 - [ ] [1–2 context-appropriate tasks from OmniFocus backlog — omit this block entirely if nothing fits or the day is already packed]
 
@@ -176,6 +191,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 - **Today's hard landscape**: The fixed shape of the day (GTD concept). Include only items with a specific time — calendar events and Rhythms.md commitments that have a scheduled time. If a time-based commitment has a known exception (e.g. Youth Group cancelled for spring break), note it inline. Do NOT include untimed items like "work on-site" — those are tasks, not landscape. If a meal from the weekly cooking schedule has a time context (e.g. Thursday Lunch), include it here; otherwise put it in "Get done today." If nothing is scheduled, omit this section.
 - **Get done today**: Everything that needs doing but isn't pinned to a time. Order: (1) OmniFocus overdue items ⚠️, (2) OmniFocus due today, (3) flagged/planned-today OF items, (4) weekly note action items and yesterday's unfinished follow-ups, (5) untimed rhythms (work on-site, cook for family, etc.). Keep this list tight — 3–5 items max, not counting stretch goals. Mark overdue items ⚠️ with the due date, once, without commentary — never count days slipped, missed attempts, or "windows" that went unused; patterns belong in weekly planning, not the morning brief. Never surface OmniFocus tasks with a future defer date. Do not duplicate items already shown from the weekly note.
+- **Active Projects**: Always include this subsection. Link every project from `Projects/Projects.md`, but use the `project-morning-brief` skill to select only what deserves attention today—normally zero or one action per project, never the full checklist. State `No project action needed today` when appropriate. Add an evidence-based `⚠️ At risk` or `🔥 Urgent` explanation only when the committed plan is genuinely endangered. If there are no active projects, write `- None`.
 - **On the radar**: Only actionable or personally significant items for the rest of the week. One line each. Skip purely informational entries. For any day that is going on-site but is NOT a standard on-site day (standard = Monday and Wednesday), include the reason in parentheses, e.g. *"On-site (April Chapel 15:00)"*. No reason needed for Monday/Wednesday since those are always on-site. Include remaining planned cook nights/meals from the weekly note's Meal Plan table (see step 4) — skip days with no meal planned.
 - **Daily habits tagline**: Always one line at the bottom. Never a section — just a quiet reminder of the daily rhythm. Use the Daily Rhythms from Rhythms.md.
 

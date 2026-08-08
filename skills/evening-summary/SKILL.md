@@ -96,11 +96,11 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
      ```
    - Never duplicate content already captured in a Mentoring note for today.
 
-16. **Capture explicit actions in OmniFocus** — scan Jon's narrative and `## What Needs Follow Up?` for direct commitments such as “I need to…,” “I will…,” or “follow up with…”.
-   - Search OmniFocus for an equivalent existing action before adding anything; wording does not need to match exactly.
-   - Add qualifying new actions to the OmniFocus inbox.
+16. **Capture explicit actions in the correct system** — scan Jon's narrative and `## What Needs Follow Up?` for direct commitments such as “I need to…,” “I will…,” or “follow up with…”.
+   - If an action advances an active project, check that project's `## Next Actions` section for an equivalent and add it there if new. Do not duplicate it in OmniFocus.
+   - For standalone actions, search OmniFocus for an equivalent existing action before adding anything; wording does not need to match exactly. Add qualifying new standalone actions to the OmniFocus inbox.
    - Do not capture “maybe,” “I could,” questions, brainstorms, or uncommitted ideas.
-   - Report each action actually added in the AI Summary.
+   - Report each action actually added and its destination in the AI Summary.
 
 17. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and passing mentions for uncommitted possibilities. Substantial project-shaped ideas belong in `Ideas/`, never `Projects/` unless Jon explicitly committed to implementation. Reusable learning belongs in `Topics/`. Update the relevant collection index when creating a durable note.
 
