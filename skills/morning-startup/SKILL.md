@@ -84,7 +84,9 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 8a. **Build the Active Projects triage** — use the `project-morning-brief` skill.
    - When sub-agents are available, delegate this review to a fresh sub-agent and continue calendar and OmniFocus work in parallel. Give it today's date, capacity/hard landscape, relevant deadlines, and the skill path. Otherwise run the skill locally.
-   - Always include every active project as a link, but surface only the zero-to-two actions that deserve attention today according to deadline, remaining work, recent progress, weekly priorities, and capacity.
+   - Always include every active project as a link. Put projects with a selected action under **Projects to Advance Today** and place all others, with their concise deferral reasons, in the collapsed **Other Active Projects** callout.
+   - When there are more than six active projects, give strong extra weight to projects that can be completed soon from a small number of clear, unblocked actions, regardless of deadline. Preserve truly urgent commitments, but prefer closing a nearly finished project over distributing attention across larger projects.
+   - Surface only the zero-to-two actions that deserve attention today according to urgency, finishability, remaining work, recent progress, weekly priorities, and capacity.
    - Include `⚠️ At risk` or `🔥 Urgent` with a concise evidence-based explanation when the project is in danger of missing its committed plan.
    - Project-specific actions live in project notes under `## Next Actions`; do not duplicate them in OmniFocus.
 
@@ -95,7 +97,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 10. **Build the two Brainstorm items** — the `### Brainstorm Today` section gets **two** prompts, from two different sources:
 
-   **a. The OmniFocus item** — query for `Available` tasks tagged `Thinking / Brainstorming`. Pick **one** task using this priority order:
+   **a. The OmniFocus item** — use `get_tasks` with `source: "tag"`, `tagName: "Thinking / Brainstorming"`, and `exactMatch: true`; keep only available tasks. Pick **one** task using this priority order:
    1. Tasks with a due date — soonest first
    2. Flagged tasks
    3. Tasks that are timely given today's context (e.g. a Lighthouse task on a day with heavy LH activity)
@@ -106,25 +108,27 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
    Both go into the `### Brainstorm Today` section of the daily note (see template and format below) — not in "Get done today." The intent is low-pressure prompts for background thinking during downtime, not tasks.
 
-11. **Query OmniFocus** for three categories — in order of priority:
+11. **Query OmniFocus** for three categories — in order of priority. Use the enhanced server's `filter_tasks` for filtered reads and `get_tasks` for Inbox, Flagged, Forecast, tag, or custom-perspective views:
 
    OmniFocus supplies standalone actions and commitments. Exclude project-specific actions maintained in project notes; never create or surface duplicate copies.
 
-   a. **Hard deadlines** — query for tasks with `dueDate` of today or earlier and status `Available` or `Overdue`. These are non-negotiable. Mark overdue items with ⚠️. Weave into the top of "Get done today."
+   a. **Hard deadlines** — use `filter_tasks` for overdue tasks and a separate `dueToday: true` read, keeping only available, due-soon, or overdue tasks. These are non-negotiable. Mark overdue items with ⚠️. Weave into the top of "Get done today."
 
-   b. **Today's intentions** — query for tasks that are `Available` and either `flagged: true` OR `plannedDate` = today. These are tasks Jon has already decided he wants to attempt today. Add below hard deadlines in "Get done today." Do not duplicate items already surfaced from the weekly note or yesterday's follow-ups.
+   b. **Today's intentions** — use separate `filter_tasks` reads for `flagged: true` and `plannedToday: true`, keeping available tasks. These are tasks Jon has already decided he wants to attempt today. Add below hard deadlines in "Get done today." Do not duplicate items already surfaced from the weekly note or yesterday's follow-ups.
 
    c. **Stretch goals** — based on two signals already known at this point:
       - **Location**: on-site (Monday/Wednesday, or any day flagged as on-site) vs. home
       - **Mental load**: light (0–2 timed events in hard landscape) vs. heavy (3+ events, or back-to-back blocks)
       
-      Query for `Available` tasks with no due date, not flagged, no planned date — then filter by context-appropriate tags:
+      Use `filter_tasks` for available, unflagged work, then exclude anything with a due date, planned date, or future defer date and filter by context-appropriate tags:
       - On-site → prefer tags like `Phone Calls`, `Errands`, `In Person`
       - Home → prefer tags like `5 Minutes - Quick Win`, `Low Energy`, `Deep Work`
       - Heavy day → only suggest `5 Minutes - Quick Win` or similar low-overhead tasks
       - Light day → suggest 1–2 more substantive tasks
       
       Surface 1–2 stretch items maximum, clearly labeled as optional. Never surface tasks with a future defer date (these appear as `Blocked` in OmniFocus and should be ignored entirely).
+
+   **Reliability rule:** OmniFocus is best-effort and must never block the morning brief. If a call fails because the transport closed, the server disconnected, or the tool is unavailable, retry that read exactly once. If it still fails, omit OmniFocus-derived brainstorm, deadline, intention, and stretch items; continue from the daily note, weekly note, projects, calendar, Rhythms, and Almanac. Do not use a prior run's counts or tasks as current truth. Mention the omission briefly in the final report, not as filler in Jon's journal. Do not attempt a write unless the duplicate-check read succeeded in the current run.
 
 12. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment (e.g. a mentoring session, a doctor visit, a planned call), read their `Person/Name.md` and/or `Mentoring/Name.md` if it exists. Pull the 1–3 most recent or most relevant log entries. Surface a brief "Before you talk to X" note in the **Get done today** section or as a callout just before the matching hard landscape item — enough to jog memory on anything important without turning it into a report. Keep it to 1–2 lines. Skip this step if no named meetings are on today's calendar.
 
@@ -162,12 +166,14 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 **Get done today:**
 - [ ] [Prioritized list — OmniFocus overdue ⚠️ and due-today first, then flagged/planned-today, then weekly note items and yesterday's follow-ups, then untimed rhythms]
 
-**Active Projects:**
+**Projects to Advance Today:**
 - [[Projects/Project Name|Project Name]] — [optional risk flag and concise explanation]
   - [ ] [Only today's selected project action]
-- [[Projects/Another Project|Another Project]]
-  - No project action needed today.
 - None *(use only when there are no active projects)*
+
+> [!note]- Other Active Projects
+> - [[Projects/Another Project|Another Project]]
+>   - No project action needed today — [concise reason].
 
 *Stretch (if time allows):*
 - [ ] [1–2 context-appropriate tasks from OmniFocus backlog — omit this block entirely if nothing fits or the day is already packed]
@@ -191,7 +197,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 - **Today's hard landscape**: The fixed shape of the day (GTD concept). Include only items with a specific time — calendar events and Rhythms.md commitments that have a scheduled time. If a time-based commitment has a known exception (e.g. Youth Group cancelled for spring break), note it inline. Do NOT include untimed items like "work on-site" — those are tasks, not landscape. If a meal from the weekly cooking schedule has a time context (e.g. Thursday Lunch), include it here; otherwise put it in "Get done today." If nothing is scheduled, omit this section.
 - **Get done today**: Everything that needs doing but isn't pinned to a time. Order: (1) OmniFocus overdue items ⚠️, (2) OmniFocus due today, (3) flagged/planned-today OF items, (4) weekly note action items and yesterday's unfinished follow-ups, (5) untimed rhythms (work on-site, cook for family, etc.). Keep this list tight — 3–5 items max, not counting stretch goals. Mark overdue items ⚠️ with the due date, once, without commentary — never count days slipped, missed attempts, or "windows" that went unused; patterns belong in weekly planning, not the morning brief. Never surface OmniFocus tasks with a future defer date. Do not duplicate items already shown from the weekly note.
-- **Active Projects**: Always include this subsection. Link every project from `Projects/Projects.md`, but use the `project-morning-brief` skill to select only what deserves attention today—normally zero or one action per project, never the full checklist. State `No project action needed today` when appropriate. Add an evidence-based `⚠️ At risk` or `🔥 Urgent` explanation only when the committed plan is genuinely endangered. If there are no active projects, write `- None`.
+- **Projects to Advance Today / Other Active Projects**: Always account for every project from `Projects/Projects.md`. Put only projects with selected work under **Projects to Advance Today**, normally with zero or one action per project and never the full checklist. Put all remaining projects in a collapsed `> [!note]- Other Active Projects` callout and retain a concise reason each is not being worked today. When there are more than six active projects, strongly favor projects that can be completed soon from clear, unblocked remaining work, regardless of deadline, while still respecting genuinely urgent commitments. Add an evidence-based `⚠️ At risk` or `🔥 Urgent` explanation only when the committed plan is genuinely endangered. If there are no active projects, write `- None` under **Projects to Advance Today** and omit the callout.
 - **On the radar**: Only actionable or personally significant items for the rest of the week. One line each. Skip purely informational entries. For any day that is going on-site but is NOT a standard on-site day (standard = Monday and Wednesday), include the reason in parentheses, e.g. *"On-site (April Chapel 15:00)"*. No reason needed for Monday/Wednesday since those are always on-site. Include remaining planned cook nights/meals from the weekly note's Meal Plan table (see step 4) — skip days with no meal planned.
 - **Daily habits tagline**: Always one line at the bottom. Never a section — just a quiet reminder of the daily rhythm. Use the Daily Rhythms from Rhythms.md.
 

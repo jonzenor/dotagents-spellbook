@@ -98,9 +98,11 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 16. **Capture explicit actions in the correct system** — scan Jon's narrative and `## What Needs Follow Up?` for direct commitments such as “I need to…,” “I will…,” or “follow up with…”.
    - If an action advances an active project, check that project's `## Next Actions` section for an equivalent and add it there if new. Do not duplicate it in OmniFocus.
-   - For standalone actions, search OmniFocus for an equivalent existing action before adding anything; wording does not need to match exactly. Add qualifying new standalone actions to the OmniFocus inbox.
+   - For standalone actions, search OmniFocus with `filter_tasks` and `searchText` for an equivalent existing action before adding anything; wording does not need to match exactly. Add qualifying new standalone actions with `add_omnifocus_task` only after the duplicate-check read succeeds.
    - Do not capture “maybe,” “I could,” questions, brainstorms, or uncommitted ideas.
    - Report each action actually added and its destination in the AI Summary.
+
+   **OmniFocus reliability:** Treat OmniFocus as best-effort and never let it block the rest of evening summary. If an OmniFocus read or write fails because the transport closed, the server disconnected, or the tool is unavailable, retry that operation exactly once. If a duplicate-check read still fails, do not add the task and do not assume it is absent; list it under `OmniFocus follow-up still needed` in the AI Summary. If a write still fails after a successful duplicate check, report the uncaptured action plainly. Never use cached task state from an earlier run as current truth.
 
 17. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and passing mentions for uncommitted possibilities. Substantial project-shaped ideas belong in `Ideas/`, never `Projects/` unless Jon explicitly committed to implementation. Reusable learning belongs in `Topics/`. Update the relevant collection index when creating a durable note.
 

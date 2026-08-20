@@ -31,13 +31,15 @@ Run this only during the first weekly-planning session of the month, never as a 
 - Read this week's weekly note if it already exists
 - Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — determine which quarter it is from today's date
 - Read `Reference/Theater Movie Candidates.md` if it exists. Use it only for the monthly theater-selection and release-week rules below.
-- Query OmniFocus for overdue and flagged tasks: `query_omnifocus` with `{"status": ["Overdue", "DueSoon"], "fields": ["name", "project", "dueDate", "flagged"]}`
+- Query OmniFocus with the enhanced server: use `filter_tasks` once for `taskStatus: ["Overdue", "DueSoon"]` and once for `flagged: true`, using compact output and a reasonable limit.
 - Pull calendar for the full 7 days ahead using the `mcp-ical` tool. Query each of these calendars in parallel:
   - **"Jon's Calendar"** — personal events, appointments, paydays
   - **"Family"** (query twice — there are two calendars with this name; both will return results)
   - **"danaezenor@gmail.com"** — Danae's calendar; watch for in-person medical appointments (require Jon to work from home and drive her)
   - **"Calendar"** — FOTF Exchange calendar (work meetings)
-  - Note: Google Calendar (`gcal_list_events`) is not available — use `mcp-ical` exclusively for all calendar queries.
+- Note: Google Calendar (`gcal_list_events`) is not available — use `mcp-ical` exclusively for all calendar queries.
+
+**OmniFocus reliability:** Treat OmniFocus as a best-effort external system, never a prerequisite for finishing weekly planning. If any OmniFocus call fails because the transport closed, the server disconnected, or the tool became unavailable, retry that read exactly once. If the retry fails, continue from the vault and calendar without using an old task snapshot as current truth. State briefly in the weekly note or final report that OmniFocus was unavailable and which task-dependent checks were omitted. Never manufacture task state or queue writes that cannot first be duplicate-checked.
 
 ### Step 2 — Review Last Week
 - Identify any goals or action items from last week's note that did not complete
