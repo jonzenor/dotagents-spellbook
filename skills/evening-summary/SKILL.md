@@ -1,6 +1,6 @@
 ---
 name: evening-summary
-description: Evening summary routine for Jon's Obsidian life vault. Reads today's daily note and recent history, then appends a short AI Summary with lessons learned, things not to lose, and tomorrow's focus. Use when the user says "evening summary", "summarize my day", "end of day", or asks for a daily summary.
+description: Evening summary routine for Jon's Obsidian life vault. Reads today's note, performs Keeper/log work, and captures every executable next action in OmniFocus using GTD rules and a durable failure queue. Use when the user says "evening summary", "summarize my day", "end of day", or asks for a daily summary.
 ---
 
 # Evening Summary
@@ -96,13 +96,10 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
      ```
    - Never duplicate content already captured in a Mentoring note for today.
 
-16. **Capture explicit actions in the correct system** — scan Jon's narrative and `## What Needs Follow Up?` for direct commitments such as “I need to…,” “I will…,” or “follow up with…”.
-   - If an action advances an active project, check that project's `## Next Actions` section for an equivalent and add it there if new. Do not duplicate it in OmniFocus.
-   - For standalone actions, search OmniFocus with `filter_tasks` and `searchText` for an equivalent existing action before adding anything; wording does not need to match exactly. Add qualifying new standalone actions with `add_omnifocus_task` only after the duplicate-check read succeeds.
-   - Do not capture “maybe,” “I could,” questions, brainstorms, or uncommitted ideas.
-   - Report each action actually added and its destination in the AI Summary.
-
-   **OmniFocus reliability:** Treat OmniFocus as best-effort and never let it block the rest of evening summary. If an OmniFocus read or write fails because the transport closed, the server disconnected, or the tool is unavailable, retry that operation exactly once. If a duplicate-check read still fails, do not add the task and do not assume it is absent; list it under `OmniFocus follow-up still needed` in the AI Summary. If a write still fails after a successful duplicate check, report the uncaptured action plainly. Never use cached task state from an earlier run as current truth.
+16. **Invoke `gtd-omnifocus` in `capture` mode automatically** — supply the target daily note, its source path/date, explicit Keeper actions, and relevant project names. Do not ask Jon to run the GTD skill separately.
+   - Let the GTD skill own commitment tests, project routing, duplicate checks, action wording, tags, dates, flags, waiting/someday states, verification, and the failure queue.
+   - Treat OmniFocus as best-effort: if capture mode reports an outage after its retry, continue the evening summary and report the safely queued writes.
+   - Report each verified action and destination under **OmniFocus captured** and each queued write under **OmniFocus queued**.
 
 17. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and passing mentions for uncommitted possibilities. Substantial project-shaped ideas belong in `Ideas/`, never `Projects/` unless Jon explicitly committed to implementation. Reusable learning belongs in `Topics/`. Update the relevant collection index when creating a durable note.
 
@@ -113,12 +110,14 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - Use these fields: title, theatrical release date, rating, main stars, brief description, why Jon is interested, status, and sources. Default status is `Candidate`; weekly-planning may change it to `Soft plan (YYYY-MM)`, `Saw`, or `Passed`.
    - If a title or date is uncertain, preserve that uncertainty and the search result rather than guessing. Do not add every movie Jon mentions—require explicit theatrical interest.
 
-19. **Review active project lifecycle state** — read `Projects/Projects.md`, then open every project listed there.
+19. **Review committed project lifecycle state** — read `Projects/Projects.md`, then open every project listed there.
+   - Attention states are `Backlog`, `This Quarter`, and `In Progress`, with optional `Paused until YYYY-MM-DD`. Never silently demote a project. If it appears stalled, ask whether it is paused, waiting, or needs a smaller next action.
    - Compare each active project's stated outcome and status with explicit evidence in today's daily note, the recent daily notes read in Step 3, and this week's weekly note.
    - If the evidence explicitly confirms that the project's outcome was achieved, close it during this run: set `**Status:** Complete`, add `**Completed:** [[Daily/YYYY-MM-DD|YYYY-MM-DD]]` using the supporting daily note, move it to `Archive/Projects/`, repair wikilinks throughout the vault, and synchronize `Projects/Projects.md`.
    - If Jon explicitly says the project was abandoned, follow the same lifecycle using `**Status:** Dropped` and record the decision source/date.
+   - For every explicit close, drop, pause, resume, or rename handled here, invoke `gtd-omnifocus` in `lifecycle` mode automatically so the matching OmniFocus project remains synchronized.
    - If completion or abandonment seems likely but is not explicit, do not change project status. Ask Jon whether the project should be closed, and identify the evidence that made its state uncertain.
-   - Never treat inactivity, completed individual tasks, a past event date, or an unchecked stale checklist as proof that the project outcome is complete.
+   - Never treat inactivity, completed individual tasks, or a past event date as proof that the project outcome is complete.
    - Include every project file, index, or repaired-link location actually written in **Logs updated today**.
 
 20. **Append** the AI Summary section to today's daily note (see format below).
@@ -149,6 +148,9 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 **OmniFocus captured:**
 - [One line per action actually added — omit entirely if none]
+
+**OmniFocus queued:**
+- [One line per failed intended write safely added to the failure queue — omit entirely if none]
 ```
 
 ### Section guidance

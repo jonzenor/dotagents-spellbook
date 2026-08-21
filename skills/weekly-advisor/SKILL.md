@@ -37,6 +37,8 @@ Reads Jon's vault, identifies 3–5 open threads from the past week, and opens a
    - When the conversation feels complete or Jon wraps up, move to step 5
 
 5. **Append a summary to today's daily note** (`Daily/YYYY-MM-DD.md`):
+   - Before writing the summary, invoke `gtd-omnifocus` in `capture` mode automatically for every explicit next action Jon committed to during the conversation. Supply the conversation decision as provenance. Do not ask Jon to run the GTD skill separately.
+   - Let capture mode own commitment testing, duplicate checks, project routing, wording, tags, dates, and verification. Do not independently create or classify tasks.
    - Read the file first to confirm where it ends
    - Append only — never overwrite existing content
    - Use this format:
@@ -50,11 +52,11 @@ Reads Jon's vault, identifies 3–5 open threads from the past week, and opens a
 **Decisions made:**
 - [Concrete decision, framed as a statement not a task]
 
-**Next moves:**
-- [Specific next action, if one was named — omit this section if none were]
+**OmniFocus captured:**
+- [Verified action and destination returned by GTD capture — omit this section if none were]
 ```
 
-   - Keep it tight — proportional to what was actually decided. If a thread produced no decision, omit it from Decisions. If no next actions were named, omit that section entirely.
+   - Keep it tight — proportional to what was actually decided. If a thread produced no decision, omit it from Decisions. If no actions were captured, omit the OmniFocus section entirely.
    - This is a record of what was resolved, not a summary of everything discussed.
 
 ## Question style
@@ -68,7 +70,7 @@ Questions should be **Invention or Discernment** in flavor — helping Jon desig
 
 ## Rules
 
-- **Conversation only** — never write to any file
+- **Conversation-first** — write only the compact Step 5 summary after the conversation; never produce a separate task list or audit
 - **No Tenacity pressure** — never enumerate missed tasks, count unchecked items, or ask "why hasn't X happened?"
 - **No Wonder questions** — avoid big open-ended existential questions ("what do you want your life to mean?")
 - **One thread at a time** — depth beats breadth; follow the live energy

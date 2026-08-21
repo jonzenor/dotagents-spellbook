@@ -1,6 +1,6 @@
 ---
 name: quarterly-planning
-description: Forward-looking quarterly planning for Jon's Obsidian vault. Loads trends from recent weekly/daily notes, Vision.md, Rhythms.md, OmniFocus stalled projects, and last quarter's review, then runs a back-and-forth brainstorm conversation to set goals across all life areas before writing a Quarterly/YYYY-QX-Plan.md note. Use when user says "quarterly planning", "plan my quarter", "q2 planning", "plan the next quarter", or similar forward-looking quarterly phrases.
+description: Forward-looking quarterly planning for Jon's Obsidian vault. Reviews Horizons' Areas and Goals, project attention states, repeatedly surfaced Ideas, recent patterns, and OmniFocus before setting quarterly direction and writing the plan note. Use when user says "quarterly planning", "plan my quarter", "q2 planning", "plan the next quarter", or similar forward-looking quarterly phrases.
 ---
 
 # Quarterly Planning
@@ -15,9 +15,12 @@ Run this skill at the start of a new quarter (or the week before). It loads data
 - Last 6–8 weekly notes → recurring themes, rolled-over goals, struggles
 - Last 2–3 weeks of daily notes → energy and avoidance patterns
 - `Vision.md` → stated values and priorities
+- `Horizons.md` → Purpose, Vision, H3 Goals, canonical Areas of Focus, project states, and area coverage
 - `Rhythms.md` → current standing commitments
 - `Keeper Instructions.md` → execute the `## Quarterly` standing instructions
-- OmniFocus stalled/on-hold projects: `query_omnifocus {"status": ["OnHold"], "fields": ["name", "status", "deferDate"]}`
+- Prepare committed project names, attention states, Areas of Focus, and explicit decisions for `gtd-omnifocus`; do not independently query or classify OmniFocus work.
+- `Projects/Projects.md` and each listed project note → review `Backlog`, `This Quarter`, and `In Progress` using the notes for outcome and context, never task checklists
+- `Ideas/Ideas.md`, recent daily notes, and recent weekly notes → identify Ideas that have surfaced repeatedly; present them for a commitment decision without promoting them automatically
 - Previous quarter review note (`Quarterly/YYYY-QX-Review.md`) → lessons and "things not to lose"
 - Determine the upcoming quarter label (Q1=Jan–Mar, Q2=Apr–Jun, Q3=Jul–Sep, Q4=Oct–Dec)
 
@@ -25,8 +28,10 @@ Run this skill at the start of a new quarter (or the week before). It loads data
 Synthesize what you found. Do NOT ask questions yet. Surface:
 - Recurring struggles and themes
 - Goals that kept rolling without completing
-- Stalled OmniFocus projects
+- Stalled or repeatedly rejected commitments, whether in OmniFocus or vault projects
 - Drift between Vision.md priorities and actual patterns
+- Areas of Focus with no active project or next action
+- Backlog projects that may deserve `This Quarter`, plus repeatedly surfaced Ideas worth reconsidering
 - Lessons from last quarter's review
 
 End with: *"Does this match what you've been feeling? Anything surprising or missing?"*
@@ -34,12 +39,17 @@ End with: *"Does this match what you've been feeling? Anything surprising or mis
 ### 3 — Back-and-Forth Brainstorm
 Conversation, not a form. One life area at a time — see [REFERENCE.md](REFERENCE.md) for area details and conversation guidelines.
 
+Review every Area of Focus and H3 Goal in `Horizons.md`. Ask which Backlog projects, if any, Jon wants to attempt this quarter. Moving an Idea into Projects still requires an explicit commitment.
+
 ### 4 — Rhythms Check
 Compare agreed goals against Rhythms.md. Suggest additions, changes, or removals. Let Jon decide.
 
 ### 5 — Finalize and Write
 Summarize goals, ask about stop/avoid items, then write `Quarterly/YYYY-QX-Plan.md`.
 Update the `This quarter` link in `Home.md` to the plan created by this run.
-Offer to add OmniFocus projects for any goals that need them.
+For each newly committed outcome, create or promote its vault project note with a clear outcome and no task checklist.
+
+Invoke `gtd-omnifocus` in `lifecycle` mode automatically for every project commitment, promotion, pause, resume, rename, completion, or drop. Supply the vault project name, attention state, Area of Focus, explicit decision source, and known next action. Do not ask Jon to run the GTD skill separately.
+Let lifecycle mode own OmniFocus project creation, placement, initial actions, waiting/deferred/someday classification, and state synchronization.
 
 See [REFERENCE.md](REFERENCE.md) for the plan note structure and goal format.

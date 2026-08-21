@@ -1,0 +1,4 @@
+interface:
+  display_name: "GTD OmniFocus"
+  short_description: "Process and review trusted OmniFocus actions"
+  default_prompt: "Use $gtd-omnifocus to process and review my OmniFocus system."

@@ -1,6 +1,6 @@
 ---
 name: weekly-planning
-description: Full weekly planning routine for Jon's Obsidian vault. Loads calendar, rhythms, OmniFocus tasks, and last week's rollover, then guides meal planning (Tue + Sat dinners plus 1 batch lunch), sets weekly goals across FOTF/Lighthouse/Personal, builds a day-by-day radar, and writes the week's note. Use when user says "weekly planning", "plan my week", "plan the week", or "weekly review".
+description: Full weekly planning routine for Jon's Obsidian vault. Reviews In Progress and This Quarter projects, checks coverage across Horizons' Areas of Focus, loads calendar and OmniFocus context, plans meals and weekly goals, and writes the week's note. Use when user says "weekly planning", "plan my week", "plan the week", or "weekly review".
 ---
 
 # Weekly Planning
@@ -26,12 +26,13 @@ Run this only during the first weekly-planning session of the month, never as a 
 
 ### Step 1 — Load Context (run in parallel)
 - Read `Rhythms.md` at the vault root
+- Read `Horizons.md` at the vault root. It owns Areas of Focus, Goals, and project-review calibration; `Rhythms.md` owns cadence and capacity.
 - Read the `## Weekly` section of `Keeper Instructions.md` and execute applicable standing instructions
 - Read last week's weekly note (`Weekly/YYYY-WXX.md`) for rolled items
 - Read this week's weekly note if it already exists
 - Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — determine which quarter it is from today's date
 - Read `Reference/Theater Movie Candidates.md` if it exists. Use it only for the monthly theater-selection and release-week rules below.
-- Query OmniFocus with the enhanced server: use `filter_tasks` once for `taskStatus: ["Overdue", "DueSoon"]` and once for `flagged: true`, using compact output and a reasonable limit.
+- Prepare the vault project names, attention states, quarterly priorities, and calendar deadlines for the automatic GTD review in Step 1.6. Do not independently query or classify OmniFocus work here.
 - Pull calendar for the full 7 days ahead using the `mcp-ical` tool. Query each of these calendars in parallel:
   - **"Jon's Calendar"** — personal events, appointments, paydays
   - **"Family"** (query twice — there are two calendars with this name; both will return results)
@@ -39,7 +40,17 @@ Run this only during the first weekly-planning session of the month, never as a 
   - **"Calendar"** — FOTF Exchange calendar (work meetings)
 - Note: Google Calendar (`gcal_list_events`) is not available — use `mcp-ical` exclusively for all calendar queries.
 
-**OmniFocus reliability:** Treat OmniFocus as a best-effort external system, never a prerequisite for finishing weekly planning. If any OmniFocus call fails because the transport closed, the server disconnected, or the tool became unavailable, retry that read exactly once. If the retry fails, continue from the vault and calendar without using an old task snapshot as current truth. State briefly in the weekly note or final report that OmniFocus was unavailable and which task-dependent checks were omitted. Never manufacture task state or queue writes that cannot first be duplicate-checked.
+**OmniFocus reliability:** Let `gtd-omnifocus` own retries, verification, failure handling, and task-state interpretation. If it reports an outage, continue weekly planning from the vault and calendar without stale task data and state which checks were omitted.
+
+### Step 1.5 — Review Projects and Area Coverage
+- Review every vault project in `In Progress` and every `This Quarter` project that might be started or driven to completion this week. Do not review the Backlog as a weekly pipeline.
+- Review project outcomes, attention states, and Area-of-Focus coverage from the vault. Pass apparent stalls, uncovered areas, and activation questions to GTD review mode; do not independently classify tasks or OmniFocus project state.
+
+### Step 1.6 — GTD Weekly Review
+- Invoke `gtd-omnifocus` in `review` mode automatically. Do not add a separate user-facing step or ask Jon to run it.
+- Supply the vault project index, project attention states, current quarter, weekly priorities, and calendar deadlines.
+- When sub-agents are available and the audit is substantial, delegate the read-only GTD audit and continue the calendar/vault review in parallel. The main agent presents judgment calls to Jon and applies approved changes. Run it locally when delegation adds no value.
+- Incorporate the returned housekeeping, commitment questions, project gaps, Waiting On follow-ups, Someday Maybe candidates, deadline corrections, flag recommendations, and perspective-integrity findings into the normal weekly-planning conversation.
 
 ### Step 2 — Review Last Week
 - Identify any goals or action items from last week's note that did not complete
@@ -49,12 +60,12 @@ Run this only during the first weekly-planning session of the month, never as a 
 ### Step 2.1 — Patterns Check
 Weekly planning is the **one place** where cross-day patterns get raised — the daily skills deliberately never do this.
 - Look across last week's daily notes, Today's Focus checklists, and logs for at most 1–2 real patterns (an item that slid all week, a rhythm that didn't happen, a thread gaining momentum worth feeding)
-- Frame each as a **question, not a verdict**: "X didn't happen last week — is it still important? What would make it happen this week, or should it move to OmniFocus someday/maybe or be dropped?"
+- Frame each as a **question, not a verdict**: "X didn't happen last week — is it still important? What would make it happen this week?" Send any resulting task-state decision to GTD review mode.
 - Positive patterns count too — name what's working so it gets protected
 - ⚡ Tenacity awareness: if the slid item is a Tenacity-type task, acknowledge the real resistance and look for the Invention lever (what made cooking work in Q1) rather than prescribing more willpower
 
 ### Step 2.5 — Review Quarterly Plan
-- Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) — it contains full GTD-style project breakdowns with next actions, milestone signals, and blocker watches. Jon does not read this file; it is Claude's reference.
+- Read the current quarterly plan (`Quarterly/YYYY-QN-Plan.md`) for outcomes, milestone signals, and blocker watches. Every individual next action lives in OmniFocus.
 - Work through the **Weekly Planning Checklist** at the bottom of the quarterly plan — each signal item tells you what to surface or flag this week
 - Flag anything with a hard deadline inside the next two weeks
 - Note where this week falls in the quarter (e.g. W1 of Q3 = reentry/foundation week)
@@ -102,10 +113,7 @@ Cooking happens 3 times a week: **Tuesday dinner, Saturday dinner, and 1 batch l
 ### Step 6 — Weekly Goals
 - Choose a weekly theme/focus (one phrase)
 - The **Quarterly Objectives** (set in Step 2.5) anchor the week — distribute them across the week so each one has at least one day where it can actually get attention, rather than stacking them all on one day
-- Top 3–5 goals, split by area:
-  - **FOTF** — day job goals (separate from Lighthouse)
-  - **Lighthouse** — side project goals
-  - **Personal** — health, relationships, faith, home
+- Top 3–5 goals grouped under the relevant Areas of Focus from `Horizons.md`. Keep FOTF employment separate from Lighthouse leadership/community.
 - Include a prayer/spiritual focus for the week
 - Distribute goals to specific days, matching load and energy
 
@@ -178,5 +186,5 @@ Create or update `Weekly/YYYY-WXX.md` using the structure below.
 - Do NOT add meals or cooking to the calendar — calendar is hard landscape only (appointments and meetings)
 - Meal plan is Tue dinner + Sat dinner + 1 batch lunch (3 cooks a week), not a meal every day — breakfast burritos are no longer an automatic default
 - Theater planning runs only in the final weekly-planning session before a new month. The candidate file is theater-specific; selected movies surface during release week but remain soft until an actual showing is chosen.
-- Quarterly Objectives is a list sized to what the quarter actually needs that week, not a single fixed slot — morning-startup pulls from this list daily to build each day's Quarterly Progress section
+- Quarterly Objectives is a list sized to what the quarter actually needs that week; morning-startup uses it only to choose relevant OmniFocus context lists, not to create a duplicate daily task list
 - Weekly reflection records the significance of events to the week's arc; it does not repeat the full daily narrative

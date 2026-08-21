@@ -1,17 +1,17 @@
 ---
 name: morning-startup
-description: Morning startup routine for Jon's Obsidian life vault. Checks Apple Calendar (Jon's Calendar, Family, Danae's, and FOTF Exchange), reads the weekly note and yesterday's daily note, then appends a Today's Focus section to today's daily note. Use when the user says "morning startup", "start my day", "morning routine", or asks what to focus on today.
+description: Morning startup routine for Jon's Obsidian life vault. Checks calendars and current context, then writes a Today's Focus with the hard landscape and exact OmniFocus execution perspectives to open—never copied task lists. Use when the user says "morning startup", "start my day", "morning routine", or asks what to focus on today.
 ---
 
 # Morning Startup
 
 ## What this does
 
-Creates or refreshes the AI-owned `## Today's Focus` and `## Quarterly Progress` sections in today's daily note. `## Today's Focus` always includes a compact, deadline-aware **Active Projects** triage. On a rerun, replace those existing AI-owned sections in place so the note has only one current copy of each.
+Creates or refreshes the AI-owned `## Today's Focus` section in today's daily note. It contains the calendar hard landscape, the OmniFocus context lists worth opening, and the useful weekly radar. It never copies individual tasks or the active-project list into the journal.
 
 The safety boundary is **section ownership**, not append-only file handling:
 - Never modify Jon-authored journal content under `## What Happened Today?`, `## What Stood Out?`, `## What Needs Follow Up?`, or `## Random Thoughts`, including Jon-authored subheadings such as Captain's Log entries.
-- AI-designated sections may be updated by the AI. For this skill, those are `## Today's Focus`, `## Quarterly Progress`, and the two skill-generated blockquotes under `## Brainstorm Today`.
+- AI-designated sections may be updated by the AI. For this skill, those are `## Today's Focus` and the skill-generated blockquote under `## Brainstorm Today`.
 - Preserve any content whose ownership is unclear. Do not treat an unfamiliar heading as AI-owned merely because it appears near an AI section.
 
 This is a **morning briefing, not a task ledger**. Its job is orientation: gather the full shape of the day and the important things coming that get lost in the fullness of the calendar app, all in one place. Deadlines get surfaced plainly, once. Jon decides what the day holds — the brief describes, it doesn't direct.
@@ -31,14 +31,14 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - Read the full file before changing anything. Identify the exact boundaries of existing AI-owned sections and Jon-authored sections.
 
 3. **Read yesterday's daily note**. Check `Daily/YYYY-MM-DD.md` first; if absent, check `Daily/YYYY/MM/YYYY-MM-DD.md`.
-   - Pull any unfinished items from `### What Needs Follow Up?` and `## Today's Focus` must/try lists.
+   - Use unfinished narrative only as context for selecting useful OmniFocus lists; never copy it forward as a task.
    - If yesterday's note is empty or missing, skip this step silently — build today's brief from the calendar, weekly note, and Rhythms instead. After a multi-day gap, at most one warm line acknowledging the restart; never list or count what was missed.
 
 4. **Read this week's weekly note** at `Weekly/YYYY-WXX.md` (weeks start Sunday).
    - Extract the week's focus, priorities, and any action items relevant to today.
    - Pull any items explicitly tied to today's day of the week (e.g. cooking schedule entries for today, day-specific tasks). Surface these in the brief.
-   - Read the `## Meal Plan` table. If today has a planned cook (dinner or lunch), surface it in "Get done today" or "Today's hard landscape" as appropriate. Pull the **remaining** planned meals for the rest of the week (after today) into "On the radar this week" as a single line, e.g. *"Fri — cook night (salsa meatloaf)"*. Skip days marked blank, "leftovers," or "quick/simple."
-   - Extract the **Quarterly Objectives** (`## Quarterly Objectives` section) — the week's list of multi-day goals, each tied to a quarterly goal. This feeds the `## Quarterly Progress` section in the daily note. There may be several — do not assume there's only one.
+   - Read the `## Meal Plan` table. If today has a planned cook, mention it under "Useful context" unless it has a real scheduled time. Pull the **remaining** planned meals for the rest of the week into "On the radar this week" as a single line. Skip blank, leftovers, or quick/simple entries.
+   - Use weekly priorities to decide which context lists matter today; do not turn weekly goals into daily-note tasks.
 
 5. **Read `Rhythms.md`**.
    - From the **Structure** table: note if today is an on-site work day.
@@ -82,77 +82,31 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - Run any `## Before Events` instruction whose trigger matches today's calendar or radar. For example, before a Kevin Shireman 1:1, read his Person note and surface the requested preparation brief.
    - Standing instructions remain active after use; never remove or mark them complete.
 
-8a. **Build the Active Projects triage** — use the `project-morning-brief` skill.
-   - When sub-agents are available, delegate this review to a fresh sub-agent and continue calendar and OmniFocus work in parallel. Give it today's date, capacity/hard landscape, relevant deadlines, and the skill path. Otherwise run the skill locally.
-   - Always include every active project as a link. Put projects with a selected action under **Projects to Advance Today** and place all others, with their concise deferral reasons, in the collapsed **Other Active Projects** callout.
-   - When there are more than six active projects, give strong extra weight to projects that can be completed soon from a small number of clear, unblocked actions, regardless of deadline. Preserve truly urgent commitments, but prefer closing a nearly finished project over distributing attention across larger projects.
-   - Surface only the zero-to-two actions that deserve attention today according to urgency, finishability, remaining work, recent progress, weekly priorities, and capacity.
-   - Include `⚠️ At risk` or `🔥 Urgent` with a concise evidence-based explanation when the project is in danger of missing its committed plan.
-   - Project-specific actions live in project notes under `## Next Actions`; do not duplicate them in OmniFocus.
-
-9. **Check the Almanac** — read `Almanac.md` at vault root. Pull every entry dated today **or earlier** into today's daily note. Put meeting-specific context near the matching meeting; put general information in "Get done today." Preserve an overdue entry's original target date inline.
+9. **Check the Almanac** — read `Almanac.md` at vault root. Pull every entry dated today **or earlier** into today's daily note. Put meeting-specific context near the matching meeting and general information under "Useful context." Preserve an overdue entry's original target date inline.
    - After copying a one-time entry, delete it immediately and remove any empty date heading. Surfacing is its terminal state; do not wait for the underlying matter to be completed.
    - An entry tagged `*(annual; added YYYY-MM-DD)*` is renewable. Before deleting the consumed occurrence, add the same reminder under the same month and day in the following year, preserve its provenance and wording, and replace the metadata with `*(annual; added [today's date])*`. Keep date headings ascending and avoid duplicates. Then delete the consumed occurrence.
    - If `Almanac.md` is missing or has no due/overdue entries, skip silently.
 
-10. **Build the two Brainstorm items** — the `### Brainstorm Today` section gets **two** prompts, from two different sources:
+10. **Build one Brainstorm item** — write one AI-generated question drawn from recent notes, plans, and live tensions. It must be generative rather than accountability framed. Do not copy an OmniFocus task into the daily note.
 
-   **a. The OmniFocus item** — use `get_tasks` with `source: "tag"`, `tagName: "Thinking / Brainstorming"`, and `exactMatch: true`; keep only available tasks. Pick **one** task using this priority order:
-   1. Tasks with a due date — soonest first
-   2. Flagged tasks
-   3. Tasks that are timely given today's context (e.g. a Lighthouse task on a day with heavy LH activity)
+11. **Invoke `gtd-omnifocus` in `orient` mode automatically** — supply today's hard landscape, location, weekly priorities, and likely energy/time. Do not ask Jon to run the GTD skill separately.
+   - Use the exact perspective recommendations and nonzero deadline/flag counts it returns. Do not copy individual tasks into the daily note.
+   - Orient mode is read-only; morning startup never creates, edits, or reclassifies OmniFocus work.
+   - If orient mode reports an outage after its retry, omit OmniFocus guidance and counts, continue the brief from the vault and calendar, and mention the omission only in the final report.
 
-   Use the actual OmniFocus task — never reword or replace it with a synthesized topic. If the tag has no Available tasks, omit this item (the AI item below still appears).
+12. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment, read their Person and/or Mentoring note if it exists. Put a brief “Before you talk to X” line under "Useful context" or beside the matching event. Keep it to 1–2 lines.
 
-   **b. The AI item** — one question the assistant genuinely thinks Jon needs to be thinking about, drawn from its knowledge of his recent notes, plans, and threads: pending decisions approaching a date, tensions visible across recent entries, ideas gaining momentum, or something Jon said he wanted to think about but never captured. This is **not** a reworded OmniFocus task — it must be distinct from item (a) and from everything currently under the Thinking / Brainstorming tag. Good picks are timely and generative ("What would a ChristianWarrior.me MVP look like with zero new time commitment?"), never accountability framed as a question ("Why hasn't X happened?"). Vary it day to day; only repeat a question if it's clearly still the live one, and re-angle it when you do.
-
-   Both go into the `### Brainstorm Today` section of the daily note (see template and format below) — not in "Get done today." The intent is low-pressure prompts for background thinking during downtime, not tasks.
-
-11. **Query OmniFocus** for three categories — in order of priority. Use the enhanced server's `filter_tasks` for filtered reads and `get_tasks` for Inbox, Flagged, Forecast, tag, or custom-perspective views:
-
-   OmniFocus supplies standalone actions and commitments. Exclude project-specific actions maintained in project notes; never create or surface duplicate copies.
-
-   a. **Hard deadlines** — use `filter_tasks` for overdue tasks and a separate `dueToday: true` read, keeping only available, due-soon, or overdue tasks. These are non-negotiable. Mark overdue items with ⚠️. Weave into the top of "Get done today."
-
-   b. **Today's intentions** — use separate `filter_tasks` reads for `flagged: true` and `plannedToday: true`, keeping available tasks. These are tasks Jon has already decided he wants to attempt today. Add below hard deadlines in "Get done today." Do not duplicate items already surfaced from the weekly note or yesterday's follow-ups.
-
-   c. **Stretch goals** — based on two signals already known at this point:
-      - **Location**: on-site (Monday/Wednesday, or any day flagged as on-site) vs. home
-      - **Mental load**: light (0–2 timed events in hard landscape) vs. heavy (3+ events, or back-to-back blocks)
-      
-      Use `filter_tasks` for available, unflagged work, then exclude anything with a due date, planned date, or future defer date and filter by context-appropriate tags:
-      - On-site → prefer tags like `Phone Calls`, `Errands`, `In Person`
-      - Home → prefer tags like `5 Minutes - Quick Win`, `Low Energy`, `Deep Work`
-      - Heavy day → only suggest `5 Minutes - Quick Win` or similar low-overhead tasks
-      - Light day → suggest 1–2 more substantive tasks
-      
-      Surface 1–2 stretch items maximum, clearly labeled as optional. Never surface tasks with a future defer date (these appear as `Blocked` in OmniFocus and should be ignored entirely).
-
-   **Reliability rule:** OmniFocus is best-effort and must never block the morning brief. If a call fails because the transport closed, the server disconnected, or the tool is unavailable, retry that read exactly once. If it still fails, omit OmniFocus-derived brainstorm, deadline, intention, and stretch items; continue from the daily note, weekly note, projects, calendar, Rhythms, and Almanac. Do not use a prior run's counts or tasks as current truth. Mention the omission briefly in the final report, not as filler in Jon's journal. Do not attempt a write unless the duplicate-check read succeeded in the current run.
-
-12. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment (e.g. a mentoring session, a doctor visit, a planned call), read their `Person/Name.md` and/or `Mentoring/Name.md` if it exists. Pull the 1–3 most recent or most relevant log entries. Surface a brief "Before you talk to X" note in the **Get done today** section or as a callout just before the matching hard landscape item — enough to jog memory on anything important without turning it into a report. Keep it to 1–2 lines. Skip this step if no named meetings are on today's calendar.
-
-13. **Build the `## Quarterly Progress` section** — this is where the day makes real, visible progress toward the quarter, not just the one item that happens to be loudest.
-    - Pull from the week's full **Quarterly Objectives** list (Step 4), not just the first or most urgent one.
-    - Propose **2–3 specific actions**, each moving a different quarterly objective forward — a couple items, not one. It's fine if that means picking from 2–3 different objectives on the list rather than only the top one.
-    - A multi-day action that's already in progress (started yesterday or earlier, not yet finished) belongs back on today's list — carry it forward until it's actually done. Don't let a several-day task disappear after one mention; that's how it stalls.
-    - Each action should be:
-      - Flexible — doable today or tomorrow, not a hard deadline item
-      - Concrete — specific enough to start, not vague ("make progress on X"); "start X" or "make progress on the first piece of X" is fine for a multi-day item
-      - Sized for a partial day — a focused session or a starting step, not a week of work
-    - If a given objective is complete or has no sensible daily move today, just skip it — pull the day's 2–3 actions from whichever objectives do have something to move. Only omit the whole `## Quarterly Progress` section if none of the week's objectives have any daily move available (e.g. a Saturday with no work context).
-
-14. **Write or refresh** the Today's Focus section followed by the Quarterly Progress section (see format below).
-   - If either AI-owned section already exists, replace that section in place through the next heading of equal or higher level, leaving surrounding Jon-authored sections byte-for-byte unchanged.
-   - If an AI-owned section is missing, add it after Jon's template sections at the bottom of the note.
-   - On reruns, consolidate prior AI-created duplicates into one current `## Today's Focus` and one current `## Quarterly Progress`.
+13. **Write or refresh** the Today's Focus section (see format below).
+   - Replace an existing AI-owned section in place through the next heading of equal or higher level, leaving surrounding Jon-authored sections byte-for-byte unchanged.
+   - If it is missing, add it after Jon's template sections at the bottom of the note.
+   - On reruns, consolidate prior AI-created duplicates into one current `## Today's Focus`.
    - Never replace the whole daily note to accomplish a section update.
 
 ## Output format notes
 
 - **Week's focus**: Pull the first line of the `## Focus This Week` section from the weekly note and include it as a single italic line at the top of Today's Focus, e.g. `*Week's focus: ...*`
 - **Mentoring links**: When a mentoring session appears in the hard landscape, use the wikilink to the mentoring note, e.g. `[[Mentoring/Zac Story]]`, `[[Mentoring/Jeremy]]`, `[[Mentoring/Tyler]]`
-- **Brainstorm Today**: The `### Brainstorm Today` section is written directly into the daily note body (not inside Today's Focus). It contains two blockquotes — the OmniFocus item labeled **OF:**, then the AI-generated item labeled **AI:** (just the AI item if the tag is empty). Keep each to one sentence or a focused question — these are background prompts, not tasks.
+- **Brainstorm Today**: The `### Brainstorm Today` section contains one AI-generated question. It is a background prompt, not a copied task.
 
 ## Output format
 
@@ -163,41 +117,25 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 - HH:MM — [Event or commitment with a specific time]
 - (All day) — [All-day calendar event worth noting]
 
-**Get done today:**
-- [ ] [Prioritized list — OmniFocus overdue ⚠️ and due-today first, then flagged/planned-today, then weekly note items and yesterday's follow-ups, then untimed rhythms]
+**OmniFocus perspectives to open:**
+- `[Exact perspective name]` — [why it fits today's location, capacity, or protected commitments]
 
-**Projects to Advance Today:**
-- [[Projects/Project Name|Project Name]] — [optional risk flag and concise explanation]
-  - [ ] [Only today's selected project action]
-- None *(use only when there are no active projects)*
+*[Concise overdue/due/flagged counts, only when nonzero]*
 
-> [!note]- Other Active Projects
-> - [[Projects/Another Project|Another Project]]
->   - No project action needed today — [concise reason].
-
-*Stretch (if time allows):*
-- [ ] [1–2 context-appropriate tasks from OmniFocus backlog — omit this block entirely if nothing fits or the day is already packed]
+**Useful context:**
+- [Due Almanac information, person preparation, or today's meal/rhythm; omit when empty]
 
 **On the radar this week:**
 - [Day Mon DD] — [Event or commitment] *(time if applicable)*
 
 *[Daily habits tagline — one line, always at the bottom: e.g. "Rhythms: Bible → exercise → family time → read before bed"]*
 
-## Quarterly Progress
-
-*This week's objectives: [list the week's Quarterly Objectives from the weekly note — verbatim, one per line or comma-separated]*
-
-**Today's moves:**
-- [ ] [Specific, flexible action toward one objective — scoped for a focused session; can carry into tomorrow if needed]
-- [ ] [Specific, flexible action toward a different objective]
-- [ ] [A third, if a third objective has a sensible daily move today]
 ```
 
 ### Section guidance
 
-- **Today's hard landscape**: The fixed shape of the day (GTD concept). Include only items with a specific time — calendar events and Rhythms.md commitments that have a scheduled time. If a time-based commitment has a known exception (e.g. Youth Group cancelled for spring break), note it inline. Do NOT include untimed items like "work on-site" — those are tasks, not landscape. If a meal from the weekly cooking schedule has a time context (e.g. Thursday Lunch), include it here; otherwise put it in "Get done today." If nothing is scheduled, omit this section.
-- **Get done today**: Everything that needs doing but isn't pinned to a time. Order: (1) OmniFocus overdue items ⚠️, (2) OmniFocus due today, (3) flagged/planned-today OF items, (4) weekly note action items and yesterday's unfinished follow-ups, (5) untimed rhythms (work on-site, cook for family, etc.). Keep this list tight — 3–5 items max, not counting stretch goals. Mark overdue items ⚠️ with the due date, once, without commentary — never count days slipped, missed attempts, or "windows" that went unused; patterns belong in weekly planning, not the morning brief. Never surface OmniFocus tasks with a future defer date. Do not duplicate items already shown from the weekly note.
-- **Projects to Advance Today / Other Active Projects**: Always account for every project from `Projects/Projects.md`. Put only projects with selected work under **Projects to Advance Today**, normally with zero or one action per project and never the full checklist. Put all remaining projects in a collapsed `> [!note]- Other Active Projects` callout and retain a concise reason each is not being worked today. When there are more than six active projects, strongly favor projects that can be completed soon from clear, unblocked remaining work, regardless of deadline, while still respecting genuinely urgent commitments. Add an evidence-based `⚠️ At risk` or `🔥 Urgent` explanation only when the committed plan is genuinely endangered. If there are no active projects, write `- None` under **Projects to Advance Today** and omit the callout.
+- **Today's hard landscape**: Include only calendar events and commitments with a real time. Put untimed meal/rhythm information under "Useful context." If nothing is scheduled, omit this section.
+- **OmniFocus perspectives to open**: Name exact existing custom perspectives. Do not list individual tasks, projects, copied checkboxes, or raw tag combinations.
 - **On the radar**: Only actionable or personally significant items for the rest of the week. One line each. Skip purely informational entries. For any day that is going on-site but is NOT a standard on-site day (standard = Monday and Wednesday), include the reason in parentheses, e.g. *"On-site (April Chapel 15:00)"*. No reason needed for Monday/Wednesday since those are always on-site. Include remaining planned cook nights/meals from the weekly note's Meal Plan table (see step 4) — skip days with no meal planned.
 - **Daily habits tagline**: Always one line at the bottom. Never a section — just a quiet reminder of the daily rhythm. Use the Daily Rhythms from Rhythms.md.
 
@@ -218,8 +156,6 @@ All other days (and the remainder of Sunday's note after the link):
 
 ## Brainstorm Today
 
-> **OF:** [Thinking / Brainstorming task from OmniFocus — one sentence or question to hold in the back of your mind]
-
 > **AI:** [Assistant-generated question — what Jon's recent notes, plans, and threads suggest he needs to be thinking about; never a reworded OmniFocus item]
 
 ## What Stood Out?
@@ -232,13 +168,12 @@ All other days (and the remainder of Sunday's note after the link):
 
 See also: [[Prayer/War-Room]]
 
-## Quarterly Progress
 ```
 
 ## Rules
 
 - **Protect Jon's writing** — never alter Jon-authored journal sections or their subheadings. Existing AI-designated sections may be replaced in place on reruns.
-- **No duplicate AI sections** — keep one current `## Today's Focus` and one current `## Quarterly Progress`. Refresh them instead of appending another copy.
+- **No duplicate AI sections** — keep one current `## Today's Focus`. Refresh it instead of appending another copy.
 - **Almanac.md is the one exception** — this skill both reads it and deletes due/overdue entries (Step 9), once those entries have been pulled into today's note. Never delete an entry without also surfacing it. Renew annual entries for the following year before deleting the consumed occurrence.
 - Read the full file before writing to confirm section ownership and boundaries.
 - Use `[[Person/Name]]` wikilink syntax when referencing people.
