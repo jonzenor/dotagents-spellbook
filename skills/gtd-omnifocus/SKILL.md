@@ -58,7 +58,7 @@ Never invent a near-match; OmniFocus may silently create a new tag.
 Remain read-only.
 
 1. Use calendar location, available time, likely energy, and weekly priorities supplied by the caller.
-2. Query the smallest useful set of existing perspectives: `Bishop - Home`, `Bishop - Work`, `Home Computer`, `Work Computer`, `Phone Calls`, `Knight - Out & About`, `Pawn - Quick Wins`, `Rook - Deep Focus`, and `King - Protect This Week`.
+2. Query the smallest useful set of existing perspectives: `Bishop - Home`, `Bishop - Work`, `Home Computer`, `Work Computer`, `Phone Calls`, `Anywhere`, `Knight - Out & About`, `Pawn - Quick Wins`, `Rook - Deep Focus`, and `King - Protect This Week`.
 3. Query overdue and due-today counts separately because deadlines form the hard landscape.
 4. Return exact perspective names, concise reasons, and nonzero counts. Do not copy task lists unless the caller explicitly requests task-level triage.
 5. Never surface deferred, waiting, someday/maybe, paused-project, completed, or dropped work as executable.
