@@ -27,7 +27,7 @@ description: Afternoon check-in routine for Jon's Obsidian life vault. Reads tod
 - If current time is before 13:00: mention any lunch plans or leftovers noted for today
 - Food that needs to be cooked tonight
 - Checks, payments, or deliveries being watched for
-- Bible reading streak — only surface if it hasn't happened yet today (no reading in `## Today's Reading`); omit entirely if reading is already present in the note
+- Bible reading — only surface if nothing has been written under `## Did you read the Bible today? Any thoughts?` (older notes: `## Today's Reading`); omit entirely if reading is already recorded. Ask it as an open question, never as a streak or a miss.
 - Anything promised to someone else
 
 ### Incomplete Intentions

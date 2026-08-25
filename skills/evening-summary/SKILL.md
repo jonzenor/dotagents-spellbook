@@ -47,7 +47,66 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 12. **Lighthouse log** — scan today's daily note for *significant* Lighthouse moments: direction shifts, staffing changes (join/leave/role change), key conversations with officers or mentors, spiritual discernment about the ministry, external connections (other ministries, collaborators, advisors), or reframes of the ministry's trajectory. If found, prepend an entry to `Reference/Logs/Lighthouse Log.md` under `## Log` (newest at top). Format: `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [what happened, why it matters, link to relevant people/notes]`. Use wikilinks for people (`[[Organizations/Lighthouse/People/OnlineName]]` or `[[Mentoring/Name]]`) and related notes. **Only log significant moments — skip routine status updates, everyday server activity, or passing mentions.** If nothing significant surfaced, skip it.
 
-13. **Keeper instructions** — scan today's daily note for any line containing `Keeper,` or `Keeper:` that does **not** already end with `📚✅`.
+13. **Scripture memory deck** — this skill is the only writer of `Bible/Scripture Memory.md`. Read it, then read whatever Jon wrote under `## How did scripture memory go?` and anywhere else in the note that reports a recitation.
+
+   **Read the checklist, not just prose.** Morning startup writes a grouped checklist of today's reps. Jon checks boxes and may append a note to a line:
+   - `- [x] Galatians 1:5 — 1× — struggled, need more practice`
+   - A **checked box** means the rep happened. An **unchecked box** at day's end means *not attempted*.
+   - **The appended note is the grade.** "Struggled" or "need more practice" → `shaky`. "Blanked" or "couldn't get it" → `blank`. A checked box with **no note** → `clean`. Jon never has to use a keyword.
+   - **Never modify Jon's checkmarks or his notes.** Read them; leave the line exactly as he wrote it.
+
+   **Grade vocabulary** — map whatever Jon wrote to one of four outcomes. Accept plain language ("nailed it", "totally blanked on verse 4"); never make him use a keyword.
+   - `clean` — recited without help → advance one rung on the interval ladder
+   - `shaky` — got through it with effort, a peek, or a stumble → hold at the current rung
+   - `blank` — could not recall it → drop two rungs, minimum 1 day
+   - *nothing written* — treat as **not attempted**. Reschedule to tomorrow, change nothing else, and log nothing. This is not a miss, not a lapse, and not a broken streak. Never mention it in the AI Summary.
+
+   **The atomic unit is the verse, not the passage.** Each new verse walks its own ladder independently and matures before it is ever combined. Units merge upward — verse → paragraph → section → chapter → book — and **a merge is permanent; merged units never decompose back into their parts.** A merged unit graded `blank` steps back a rung but stays merged.
+
+   **Verse ladder** — Keeper states the rep count so Jon never computes it:
+   - **New** — daily, days 1–5, recited 25× → 20× → 15× → 10× → 5×
+   - **Imprint** — daily, days 6–10, recited 1×
+   - **Settle** — every other day for about a week, 1×
+   - **Hold** — every 3 days, 1×, until its paragraph-mates catch up
+
+   A verse reaching Hold is merge-eligible and gets no further individual promotion.
+
+   **Merge rules:**
+   - **Every** verse in a paragraph at Hold → merge into the paragraph; the individual verse rows retire permanently. All of them or none — one straggler holds the paragraph, and that is correct.
+   - Two adjacent paragraphs both stable at 30 days → the combined section
+   - Every paragraph of a chapter merged and stable at 30 days → the chapter
+   - Every chapter of a book merged and stable at 60 days → the book (rotating reps if over ten minutes)
+   - **Merged-unit ladder:** 7 → 14 → 30 → 60 → 90 days. At 90 with a clean rep → Maintenance.
+
+   **Intake is measured in words, not verses** — words are what cost time. Twenty-five reps of a 7-word verse is forty seconds; of a 35-word verse, four minutes. A word allowance keeps the daily ask roughly constant.
+   - **Tier 1: 22 words/day** (the ESV average for Galatians, so ≈1 verse/day) · **Tier 2: 40** · **Tier 3: 60 (cap)**
+   - **A verse is never split across days.** It enters whole or not at all.
+   - The allowance grows by the tier rate each day. **Unused surplus carries, capped at one day's rate.** At most **3 verses** may enter in a day regardless of how short they are.
+   - **The next verse always enters even if it overdraws.** The deficit carries and silently suppresses intake until repaid — Jon never gets a day with nothing new merely because the next verse is long.
+   - **A verse longer than 1.5× the daily allowance repeats its first ladder rung** (25× again) for ⌈words ÷ allowance⌉ days. That is how a long verse gets extra time: more days of intensive work, never a split and never a deferral.
+   - Count words from the ESV text when a chapter first comes up; store the counts in the deck. **Never show the allowance, deficit, tier, or word counts to Jon** — he sees verses and rep counts only.
+
+   **Tier promotion.** Jon wants to push Galatians toward finishing sooner, so the tier is a dial — but one that only turns up when the practice is demonstrably holding. Start at tier 1. After **14 consecutive days with at least 80% of reps checked off**, raise to tier 2; after a further 14 days holding, to tier 3 (cap). **Any quiet stretch of 4+ days drops the tier one step on return**, to be re-earned — that is a return to a load that was working, not a punishment. Jon may override in either direction and his call wins. **Never ask him to pick a tier, never state the current tier in the daily note, and never report the adherence percentage back to him.** The dial governs silently; surfacing it would turn the practice into a metric.
+
+   **Intake — the valve Keeper controls.** Intake is whether new verses are added today. Keeper opens and closes it; never ask Jon to decide. Close intake when:
+   1. A chapter just became whole — closed 5 days, for merge work and first full-chapter recitations
+   2. In-flight material (introduced but not yet merged) exceeds **28 days' worth of the current allowance** — closed until it drains below **22 days' worth**. Scale this with the tier rather than using a fixed word count: steady-state in-flight naturally sits near 17–20 days' worth, so a flat cap tuned to tier 1 would jam intake shut at tier 2.
+   3. **Jon has been quiet 4 or more days — closed on return, reopening after 3 days of reps.** He comes back to what he already knows, never to a pile of new material.
+   4. Jon says so, or a day's build would exceed ~15 minutes
+
+   **Closed intake is a normal operating state, not a failure.** It pauses growth, never the practice — everything in flight continues on its own cadence. Never describe closed intake as being behind, never count the days it has been closed, and never tie it to a lapse. This is the mechanism that makes a week away survivable, so do not undermine it with commentary.
+
+   **Reactivating** — a previously memorized passage gone cold. Rebuilds **one paragraph at a time**, stacking; never open a cold passage at full chapter or book length. Daily for the first few days on each paragraph, then move to the next and add them together. One `clean` advances (new learning needs the full ladder), the text may be open on the first pass at any new paragraph, and `shaky` carries **no penalty**. When the whole unit is recited clean and cold, it joins Review at the **14-day rung**. When Jon does not say whether the text was open, assume it was.
+
+   **Caps — Keeper enforces these, not Jon's willpower:**
+   - **Learning: one passage, hard cap.** If Jon asks to start another while one is in Learning, say no and explain what is currently in flight. Add the request to `## Backlog` instead.
+   - **Review: five entries, soft cap.** Reactivating entries count toward it. Individual in-flight verses do not — they are governed by the intake valve instead. At six or more, do not add anything new; note it once at weekly planning as a question about pace, not a warning.
+   - **Backlog is inert.** Entries there are partially memorized passages Jon set down. Never surface them, count them, ask about them, or treat them as unfinished business — they move only when Jon says so. When one does activate, establish how much survives before planning segments; do not assume a restart from zero.
+   - **Respect scheduled start dates.** A Reactivating entry with a future `Starts` date is not due and is not late. It simply does not exist yet as far as the daily note is concerned.
+
+   Update the deck tables in place. Only write to `Reference/Logs/Spiritual Log.md` for a genuine milestone — a chapter fully learned or retired to maintenance — never for a daily rep.
+
+14. **Keeper instructions** — scan today's daily note for any line containing `Keeper,` or `Keeper:` that does **not** already end with `📚✅`.
 
    For each unprocessed Keeper instruction:
    - Read the surrounding context (the instruction may reference content written several paragraphs earlier)
@@ -59,7 +118,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
    Skip any Keeper line already ending with `📚✅` — it has been handled.
 
-14. **Almanac entries** — scan today's full narrative (not just explicit Keeper lines) for anything tied to a future date or a specific future meeting/event — e.g. "bring this up at next week's Dev Chapter meeting," "remind me about X on the 15th," "need to follow up on Y next month." This includes both Keeper instructions handled in Step 13 that ask for something to be surfaced later, and plain narrative that states a clear future-surfacing intent without invoking Keeper at all.
+15. **Almanac entries** — scan today's full narrative (not just explicit Keeper lines) for anything tied to a future date or a specific future meeting/event — e.g. "bring this up at next week's Dev Chapter meeting," "remind me about X on the 15th," "need to follow up on Y next month." This includes both Keeper instructions handled in Step 14 that ask for something to be surfaced later, and plain narrative that states a clear future-surfacing intent without invoking Keeper at all.
 
    For each one found:
    - Determine the target date. If a specific date is given, use it. If it's tied to a recurring meeting/event with no fixed date yet, use the date of its next known occurrence and name the event in the entry text.
@@ -70,7 +129,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
    Only add entries with a genuine future-surfacing intent — not every mention of a date. This skill only ever *adds* to Almanac.md; entries are removed by morning-startup once they've surfaced.
 
-15. **Person file updates** — scan today's note for people worth logging. For each qualifying person, prepend a dated entry under `## Log` in their `Person/Name.md` file (creating the file if it doesn't exist).
+16. **Person file updates** — scan today's note for people worth logging. For each qualifying person, prepend a dated entry under `## Log` in their `Person/Name.md` file (creating the file if it doesn't exist).
 
    **Who qualifies:** People with a real relationship to Jon — family, friends, mentees, close colleagues. Ask: would future-Jon want this on record when interacting with this person again? Skip FOTF coworkers mentioned only in a routine work context. Skip Danae (covered by her Med Log and existing notes). For mentees with a Mentoring note, use the Mentoring note for session content — but still use Person/ for significant life events outside of sessions.
 
@@ -96,21 +155,21 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
      ```
    - Never duplicate content already captured in a Mentoring note for today.
 
-16. **Invoke `gtd-omnifocus` in `capture` mode automatically** — supply the target daily note, its source path/date, explicit Keeper actions, and relevant project names. Do not ask Jon to run the GTD skill separately.
+17. **Invoke `gtd-omnifocus` in `capture` mode automatically** — supply the target daily note, its source path/date, explicit Keeper actions, and relevant project names. Do not ask Jon to run the GTD skill separately.
    - Let the GTD skill own commitment tests, project routing, duplicate checks, action wording, tags, dates, flags, waiting/someday states, verification, and the failure queue.
    - Treat OmniFocus as best-effort: if capture mode reports an outage after its retry, continue the evening summary and report the safely queued writes.
    - Report each verified action and destination under **OmniFocus captured** and each queued write under **OmniFocus queued**.
 
-17. **Scan for new ideas** — look through `## Random Thoughts`, the day's narrative, and passing mentions for uncommitted possibilities. Substantial project-shaped ideas belong in `Ideas/`, never `Projects/` unless Jon explicitly committed to implementation. Reusable learning belongs in `Topics/`. Update the relevant collection index when creating a durable note.
+18. **Scan for new ideas** — look through the day's full narrative and passing mentions for uncommitted possibilities (notes before 2026-08-24 may also have a `## Random Thoughts` section). Substantial project-shaped ideas belong in `Ideas/`, never `Projects/` unless Jon explicitly committed to implementation. Reusable learning belongs in `Topics/`. Update the relevant collection index when creating a durable note.
 
-18. **Theater movie candidates** — scan for movies Jon explicitly says he may want to see **in a theater**. This is not a general watchlist.
+19. **Theater movie candidates** — scan for movies Jon explicitly says he may want to see **in a theater**. This is not a general watchlist.
    - Read or create `Reference/Theater Movie Candidates.md` and keep it linked from `Reference/Reference.md`.
    - Before adding or substantially updating a candidate, browse for missing decision-support information: verified theatrical release date (or the narrowest supported window), current MPAA rating or `Not yet rated`, main star or stars, and a brief spoiler-free description. Prefer official studio/distributor pages and authoritative rating sources; preserve descriptive source links.
    - Record Jon's stated reason for interest from the daily note. Do not invent a reason from genre, cast, or Keeper synthesis.
    - Use these fields: title, theatrical release date, rating, main stars, brief description, why Jon is interested, status, and sources. Default status is `Candidate`; weekly-planning may change it to `Soft plan (YYYY-MM)`, `Saw`, or `Passed`.
    - If a title or date is uncertain, preserve that uncertainty and the search result rather than guessing. Do not add every movie Jon mentions—require explicit theatrical interest.
 
-19. **Review committed project lifecycle state** — read `Projects/Projects.md`, then open every project listed there.
+20. **Review committed project lifecycle state** — read `Projects/Projects.md`, then open every project listed there.
    - Attention states are `Backlog`, `This Quarter`, and `In Progress`, with optional `Paused until YYYY-MM-DD`. Never silently demote a project. If it appears stalled, ask whether it is paused, waiting, or needs a smaller next action.
    - Compare each active project's stated outcome and status with explicit evidence in today's daily note, the recent daily notes read in Step 3, and this week's weekly note.
    - If the evidence explicitly confirms that the project's outcome was achieved, close it during this run: set `**Status:** Complete`, add `**Completed:** [[Daily/YYYY-MM-DD|YYYY-MM-DD]]` using the supporting daily note, move it to `Archive/Projects/`, repair wikilinks throughout the vault, and synchronize `Projects/Projects.md`.
@@ -120,7 +179,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - Never treat inactivity, completed individual tasks, or a past event date as proof that the project outcome is complete.
    - Include every project file, index, or repaired-link location actually written in **Logs updated today**.
 
-20. **Append** the AI Summary section to today's daily note (see format below).
+21. **Append** the AI Summary section to today's daily note (see format below).
 
 ## Output format
 
@@ -140,7 +199,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - [Concrete next actions derived from today's unfinished items and follow-ups]
 
 **New ideas worth capturing:**
-- [Idea from today's Random Thoughts or narrative — with a suggested vault home if it belongs somewhere: Topics/, project note, Mentoring, etc.]
+- [Idea from today's narrative — with a suggested vault home if it belongs somewhere: Topics/, project note, Mentoring, etc.]
 - [Omit this section entirely if nothing new surfaced]
 
 **Logs updated today:**
@@ -158,7 +217,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **What happened**: Write it like a friend summarizing the day — honest, human, not clinical. Acknowledge hard days as hard.
 - **Lessons learned**: Only include genuine insights. A lesson should change future behavior. Skip platitudes.
 - **Don't lose this**: The most important section. Capture things that are easy to forget but costly if forgotten — upcoming events, pending decisions, relationship moments, financial deadlines. Also flag anything from today that belongs in a deeper note (Mentoring, Person, Prayer, etc.).
-- **Tomorrow's focus**: Pull from `## What Needs Follow Up?`, unfinished `## Today's Focus` items, and anything that needs a next action. Keep it short — 2–4 items max. State items plainly, once — no slip counts, no "this keeps not happening" commentary. If a genuine multi-day pattern matters, it gets raised during weekly planning, framed as a question.
+- **Tomorrow's focus**: Pull from commitments Jon stated in the day's narrative, unfinished `## Today's Focus` items, and anything that needs a next action. Keep it short — 2–4 items max. State items plainly, once — no slip counts, no "this keeps not happening" commentary. If a genuine multi-day pattern matters, it gets raised during weekly planning, framed as a question.
 
 ## Rules
 
@@ -173,6 +232,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Person files: prepend entries under `## Log`** — `Person/Name.md`. Read the file first if it exists; create with a minimal template if not. Two tiers: brief (single sentence) for events and passing notes, deeper (paragraph) for significant relational developments, strong reactions, or anything that needs context to be useful later. Skip people with no real relationship to Jon, skip Danae (her own logs), skip FOTF coworkers in routine work contexts. Never duplicate content already written to a Mentoring note for today.
 - **Person versus Mentoring** — mentoring-session content belongs in the Mentoring note. Person notes receive only identity, relationship facts, and significant life events outside the session; use a brief linked pointer instead of duplicating session details.
 - **Keeper instructions: act and mark complete** — scan for `Keeper,` or `Keeper:` lines not ending with `📚✅`. Execute each instruction with full context, promote explicit recurring behavior to `Keeper Instructions.md`, then append `📚✅` to the line. Log what was done in **Logs updated today**. Skip already-marked lines.
+- **Scripture Memory deck: this skill is its only writer** — `Bible/Scripture Memory.md`. Read it first. In the daily note, read Jon's checkboxes and appended notes but **never alter them** — those marks are his words. Grade from what Jon actually wrote; a missing grade means *not attempted*, which reschedules silently and is never logged, counted, or mentioned. There is no overdue state, no backlog, and no streak. Enforce the Learning cap of one and the Review soft cap of five so the load never grows past what Jon can carry — that enforcement is Keeper's job, not Jon's.
 - **Almanac.md: add only, under the matching date header** — `Almanac.md` at vault root. Read the file first (create it if missing). Only add entries with a clear future-surfacing intent — a specific date or a named future meeting/event. Never delete entries here — deletion happens in morning-startup, at the moment an entry actually surfaces.
 - **Theater candidates are theater-specific** — `Reference/Theater Movie Candidates.md` supports choosing one or two theater outings each month. Do not turn it into a general streaming, rental, or someday watchlist. Preserve Jon's stated reason for interest and cited release information.
 - **Ideas are not projects** — create project-shaped possibilities under `Ideas/`. Move one to `Projects/` only after Jon explicitly commits to implementing it.

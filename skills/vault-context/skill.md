@@ -14,7 +14,7 @@ Reads the vault and produces a concise briefing of Jon's current life and work s
 1. **Determine today's date and day of week** from the `currentDate` context variable.
 
 2. **Read the last 7 days of daily notes** (`Daily/YYYY-MM-DD.md`). Pull:
-   - Unfinished items from `### What Needs Follow Up?` and `## Today's Focus`
+   - Unfinished items and stated commitments from the day's narrative and `## Today's Focus`. Notes written before 2026-08-24 may also have a `### What Needs Follow Up?` section — read it when present.
    - Any named priorities, decisions pending, or time-sensitive items
    - Recurring themes visible across the notes themselves
    - If recent daily notes are sparse or empty, build the briefing from the weekly note, Projects/, Rhythms, and logs instead — don't remark on the gap
