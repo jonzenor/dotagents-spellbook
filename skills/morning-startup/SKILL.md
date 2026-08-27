@@ -10,7 +10,7 @@ description: Morning startup routine for Jon's Obsidian life vault. Checks calen
 Creates or refreshes the AI-owned `## Today's Focus` section in today's daily note. It contains the calendar hard landscape, the OmniFocus context lists worth opening, and the useful weekly radar. It never copies individual tasks or the active-project list into the journal.
 
 The safety boundary is **section ownership**, not append-only file handling:
-- Never modify Jon-authored journal content. In the current template that is `## What Happened Today?`, `## Did you read the Bible today? Any thoughts?`, and anything Jon has written under `## How did scripture memory go?` — including Jon-authored subheadings such as Captain's Log entries.
+- Never modify Jon-authored journal content. In the current template that is `## What Happened Today?`, `## Did you read the Bible today? Any thoughts?`, `## Did you focus on any hobbies today?`, and anything Jon has written under `## How did scripture memory go?` — including Jon-authored subheadings such as Captain's Log entries.
 - Daily notes written before 2026-08-24 use an older template. Its sections — `## What Stood Out?`, `## What Needs Follow Up?`, `## Random Thoughts`, and `## Today's Reading` — are also Jon-authored and must never be modified or removed from historical notes. Do not add them to new notes.
 - AI-designated sections may be updated by the AI. For this skill, those are `## Today's Focus`, the skill-generated blockquote under `## Brainstorm Today`, and the skill-generated checklist under `## How did scripture memory go?`. In that checklist Keeper owns the lines it wrote, but **Jon's checkmarks and any note he appends to a line are his own words** — preserve them exactly.
 - Preserve any content whose ownership is unclear. Do not treat an unfamiliar heading as AI-owned merely because it appears near an AI section.
@@ -221,6 +221,8 @@ All other days (and the remainder of Sunday's note after the link):
 > **AI:** [Assistant-generated question — what Jon's recent notes, plans, and threads suggest he needs to be thinking about; never a reworded OmniFocus item]
 
 ## Did you read the Bible today? Any thoughts?
+
+## Did you focus on any hobbies today?
 
 ## How did scripture memory go?
 
