@@ -7,7 +7,7 @@ description: Quarterly review skill for Jon's Obsidian vault. Looks back over th
 
 ## What this does
 
-Generates a retrospective for the just-completed calendar quarter and saves it to `Reference/Logs/Quarterly Reference/Logs/Quarterly Reviews/YYYY-QN.md`. Draws from weekly notes, daily notes, OmniFocus completed projects, and Google Calendar.
+Generates a retrospective for the just-completed calendar quarter and saves it to `Quarterly/YYYY-QN-Review.md`. Draws from weekly notes, daily notes, OmniFocus completed projects, and calendar context.
 
 ## Step 1 — Determine the quarter
 
@@ -21,27 +21,33 @@ If today is the first week of a new quarter, review the quarter just ended. Esta
 
 ## Step 2 — Read all weekly notes for the quarter
 
-Weekly notes are named `Weekly/YYYY-WXX.md` (weeks start Sunday). Identify every week that falls within the quarter date range and read each one in full. Focus on:
-- `## Focus This Week` — what mattered that week
-- `## Active Action Items` — what was completed (`[x]`) vs. carried
-- `## Notes & Reflections` — the curated narrative of each week
-- `## Mentee Check-ins This Week` — who was met with
-- `## Cooking This Week` — family rhythms (signals home life stability)
+Weekly notes are named `Weekly/YYYY-WXX.md` (weeks start Sunday). Identify every week that falls within the quarter date range and read each one in full. Focus on the current schema:
+- `## Weekly Focus` — what mattered that week
+- `## Quarterly Objectives` — which quarterly outcomes needed movement
+- `## Goals` — committed weekly outcomes and explicit completions
+- `## Prayer Focus` — the week's spiritual attention
+- `## Meal Plan` and `## On the Radar` — capacity and household context, not proof that planned events occurred
+- `## Notes & Reflections` — the curated narrative of the week
+
+Historical notes may use older headings such as `Focus This Week`, `Active Action Items`, `Mentee Check-ins This Week`, or `Cooking This Week`. Read those when present, but never require or recreate them.
 
 ## Step 3 — Sample daily notes
 
-Do not read all daily notes. Instead read selectively:
-- The last daily note of each month in the quarter (e.g. Jan 31, Feb 28, Mar 31) — these often contain reflections on the month
-- Any daily note explicitly referenced in a weekly "Notes & Reflections" entry as significant
-- The last daily note of the quarter itself
+Do not read all daily notes or assume month-end notes are representative. Build a significance-ranked sample from:
+- Daily notes explicitly linked from weekly `Notes & Reflections`
+- Sources cited by project `## Decisions & History` entries made during the quarter
+- Days containing an explicit decision, substantial reflection or lesson, project lifecycle change, significant health or relationship development, spiritual milestone, or unusual capacity disruption
+- The final substantive daily note of the quarter, when it adds evidence not already represented
 
-Look for: recurring themes, health mentions, significant relationship moments, spiritual highlights, or anything the weekly notes only touched on briefly.
+Select the smallest set that covers the quarter's major themes and different life areas. Calendar density, note length, and the mere presence of an AI Summary are not significance by themselves. Preserve contradictory evidence and ask Jon rather than forcing a clean narrative.
 
 ## Step 4 — Query OmniFocus for completed projects
 
 Query for projects with `status: Done` and `completionDate` within the quarter date range. Also query for completed flagged tasks within the quarter — these represent things Jon marked as important and actually finished.
 
 This surfaces what actually shipped vs. what just got carried week to week.
+
+Also read `## Decisions & History` in project notes for decisions dated inside the quarter. Scope changes, deliberate pauses, constraints, and wise abandonment are part of the quarter's story even when a project did not complete.
 
 ## Step 5 — Query Google Calendar for the quarter
 
@@ -59,13 +65,19 @@ These rhythm changes are often more significant than individual one-off events. 
 
 Calendar is a supporting signal, not the primary narrative. Use it to catch things the vault didn't explicitly capture.
 
+## Step 5.5 — Keeper system health
+
+Invoke `review-keeper-system` in **quarterly pulse** scope automatically. Supply the quarter's representative daily and weekly outputs, the routines used during the quarter, and any integration failures or recovery behavior already observed.
+
+Keep this separate from the life review: system friction is not evidence that Jon had a bad quarter. Present only material **Repair** findings or decisions alongside the clarifying conversation; preserve **Healthy** and **Watch** findings for context without turning them into additional work. The review is read-only and must never modify skills or create OmniFocus actions.
+
 ## Step 6 — Check for an existing review note
 
-Check if `Reference/Logs/Quarterly Reviews/YYYY-QN.md` already exists. If so, read it before writing — either update it or append to it rather than overwriting. If the `Reviews/` folder doesn't exist, it will be created when writing the file.
+Check if `Quarterly/YYYY-QN-Review.md` already exists. If so, read it before writing — either update it or append to it rather than overwriting.
 
 ## Step 7 — Write the quarterly review
 
-Save to `Reference/Logs/Quarterly Reviews/YYYY-QN.md` (e.g. `Reviews/2026-Q1.md`).
+Save to `Quarterly/YYYY-QN-Review.md` (e.g. `Quarterly/2026-Q1-Review.md`).
 
 ---
 
@@ -142,7 +154,7 @@ Save to `Reference/Logs/Quarterly Reviews/YYYY-QN.md` (e.g. `Reviews/2026-Q1.md`
 ## Rules
 
 - Read before writing — always check if a review file already exists before creating one.
-- Output goes to `Reference/Logs/Quarterly Reviews/YYYY-QN.md` — create the file, don't just print to screen.
+- Output goes to `Quarterly/YYYY-QN-Review.md` — create the file, don't just print to screen.
 - Weekly notes are the primary source; calendar and OmniFocus are supporting signals.
 - Be honest, not harsh. The purpose is clarity for the next quarter, not self-criticism.
 - Omit sections that have nothing real to say — don't pad.

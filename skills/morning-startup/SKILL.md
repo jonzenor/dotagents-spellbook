@@ -10,9 +10,9 @@ description: Morning startup routine for Jon's Obsidian life vault. Checks calen
 Creates or refreshes the AI-owned `## Today's Focus` section in today's daily note. It contains the calendar hard landscape, the OmniFocus context lists worth opening, and the useful weekly radar. It never copies individual tasks or the active-project list into the journal.
 
 The safety boundary is **section ownership**, not append-only file handling:
-- Never modify Jon-authored journal content. In the current template that is `## What Happened Today?`, `## Did you read the Bible today? Any thoughts?`, `## Did you focus on any hobbies today?`, and anything Jon has written under `## How did scripture memory go?` — including Jon-authored subheadings such as Captain's Log entries.
+- Never modify Jon-authored journal content. In the current template that is `## What Happened Today?`, `## Did you read the Bible today? Any thoughts?`, `## Did you focus on any hobbies today?`, Jon's checkmarks or appended notes under `## Did you do any of these today?`, and anything Jon has written under `## How did scripture memory go?` — including Jon-authored subheadings such as Captain's Log entries.
 - Daily notes written before 2026-08-24 use an older template. Its sections — `## What Stood Out?`, `## What Needs Follow Up?`, `## Random Thoughts`, and `## Today's Reading` — are also Jon-authored and must never be modified or removed from historical notes. Do not add them to new notes.
-- AI-designated sections may be updated by the AI. For this skill, those are `## Today's Focus`, the skill-generated blockquote under `## Brainstorm Today`, and the skill-generated checklist under `## How did scripture memory go?`. In that checklist Keeper owns the lines it wrote, but **Jon's checkmarks and any note he appends to a line are his own words** — preserve them exactly.
+- AI-designated sections may be updated by the AI. For this skill, those are `## Today's Focus`, the skill-generated blockquote under `## Brainstorm Today`, and the skill-generated checklists under `## Did you do any of these today?` and `## How did scripture memory go?`. Keeper owns the lines it wrote, but **Jon's checkmarks and any note he appends to a line are his own words** — preserve them exactly.
 - Preserve any content whose ownership is unclear. Do not treat an unfamiliar heading as AI-owned merely because it appears near an AI section.
 
 This is a **morning briefing, not a task ledger**. Its job is orientation: gather the full shape of the day and the important things coming that get lost in the fullness of the calendar app, all in one place. Deadlines get surfaced plainly, once. Jon decides what the day holds — the brief describes, it doesn't direct.
@@ -88,7 +88,17 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - An entry tagged `*(annual; added YYYY-MM-DD)*` is renewable. Before deleting the consumed occurrence, add the same reminder under the same month and day in the following year, preserve its provenance and wording, and replace the metadata with `*(annual; added [today's date])*`. Keep date headings ascending and avoid duplicates. Then delete the consumed occurrence.
    - If `Almanac.md` is missing or has no due/overdue entries, skip silently.
 
-10. **Scripture memory** — read `Bible/Scripture Memory.md` and build today's reps.
+10. **Daily tracking checklist** — seed this exact small checklist under `## Did you do any of these today?` in every new daily note:
+    ```markdown
+    - [ ] Reconcile YNAB budget
+    - [ ] Read a book
+    - [ ] Do Sweepy chores
+    ```
+    - On reruns, preserve every checkmark and appended note exactly. Add a missing standard line, but do not reset, reorder, or rewrite an existing line.
+    - These are gentle rhythm questions, not daily commitments. An unchecked line records only that the rhythm did not happen that day; it never creates a warning, streak, debt, overdue state, or automatic OmniFocus action.
+    - The checklist tracks daily practices; its unchecked lines are not OmniFocus actions and must not be copied into OmniFocus or `## Today's Focus`. If Jon separately makes a concrete commitment involving one of these practices, capture that specific action normally without turning the rhythm itself into a repeating task.
+
+11. **Scripture memory** — read `Bible/Scripture Memory.md` and build today's reps.
    - Select what is due today: every individual verse, merged unit, Reactivating unit, and Maintenance entry whose `Next due` is today or earlier — plus today's new verses if **intake is open**, as determined by the deck's word allowance. Never show the allowance, deficit, tier, or word counts — Jon sees verses and rep counts only.
    - **Write a checklist, grouped by cadence.** State exactly what to recite and how many times. Jon checks the boxes and may append a note to any line.
 
@@ -118,16 +128,16 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - **Never surface the Backlog.** Those are passages Jon deliberately set down. Not unfinished business — never counted, listed, or asked about.
    - **This skill never writes to `Bible/Scripture Memory.md`.** Evening summary owns all deck state.
 
-11. **Build one Brainstorm item** — write one AI-generated question drawn from recent notes, plans, and live tensions. It must be generative rather than accountability framed. Do not copy an OmniFocus task into the daily note.
+12. **Build one Brainstorm item** — write one AI-generated question drawn from recent notes, plans, and live tensions. It must be generative rather than accountability framed. Do not copy an OmniFocus task into the daily note.
 
-12. **Invoke `gtd-omnifocus` in `orient` mode automatically** — supply today's hard landscape, location, weekly priorities, and likely energy/time. Do not ask Jon to run the GTD skill separately.
+13. **Invoke `gtd-omnifocus` in `orient` mode automatically** — supply today's hard landscape, location, weekly priorities, and likely energy/time. Do not ask Jon to run the GTD skill separately.
    - Use the exact perspective recommendations and nonzero deadline/flag counts it returns. Do not copy individual tasks into the daily note.
    - Orient mode is read-only; morning startup never creates, edits, or reclassifies OmniFocus work.
    - If orient mode reports an outage after its retry, omit OmniFocus guidance and counts, continue the brief from the vault and calendar, and mention the omission only in the final report.
 
-13. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment, read their Person and/or Mentoring note if it exists. Put a brief “Before you talk to X” line under "Useful context" or beside the matching event. Keep it to 1–2 lines.
+14. **Person context** — for each person who appears in today's hard landscape as a meeting, call, or appointment, read their Person and/or Mentoring note if it exists. Put a brief “Before you talk to X” line under "Useful context" or beside the matching event. Keep it to 1–2 lines.
 
-14. **Write or refresh** the Today's Focus section (see format below).
+15. **Write or refresh** the Today's Focus section (see format below).
    - Replace an existing AI-owned section in place through the next heading of equal or higher level, leaving surrounding Jon-authored sections byte-for-byte unchanged.
    - If it is missing, add it after Jon's template sections at the bottom of the note.
    - On reruns, consolidate prior AI-created duplicates into one current `## Today's Focus`.
@@ -168,6 +178,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
 - **Today's hard landscape**: Include only calendar events and commitments with a real time. Put untimed meal/rhythm information under "Useful context." If nothing is scheduled, omit this section.
 - **OmniFocus perspectives to open**: Name exact existing custom perspectives. Do not list individual tasks, projects, copied checkboxes, or raw tag combinations.
+- **Projects to Advance Today**: When the standing active-project review runs, show only the zero-to-two projects selected for attention plus any unselected project with a genuine `⚠️ At risk` or `🔥 Urgent` exception. Do not include a complete list or a collapsed “Other Active Projects” inventory. The review remains silent unless its result changes today's orientation.
 - **On the radar**: One line each. Assign every candidate exactly one reminder tier and surface it only inside that tier's window (see **On the radar — reminder tiers** below). For any day that is going on-site but is NOT a standard on-site day (standard = Monday and Wednesday), include the reason in parentheses, e.g. *"On-site (April Chapel 15:00)"*. No reason needed for Monday/Wednesday since those are always on-site. Include remaining planned cook nights/meals from the weekly note's Meal Plan table (see step 4) as Tier 3 — skip days with no meal planned.
 
 ### On the radar — reminder tiers
@@ -223,6 +234,12 @@ All other days (and the remainder of Sunday's note after the link):
 ## Did you read the Bible today? Any thoughts?
 
 ## Did you focus on any hobbies today?
+
+## Did you do any of these today?
+
+- [ ] Reconcile YNAB budget
+- [ ] Read a book
+- [ ] Do Sweepy chores
 
 ## How did scripture memory go?
 

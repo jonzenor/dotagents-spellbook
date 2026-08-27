@@ -48,6 +48,7 @@ Compare agreed goals against Rhythms.md. Suggest additions, changes, or removals
 Summarize goals, ask about stop/avoid items, then write `Quarterly/YYYY-QX-Plan.md`.
 Update the `This quarter` link in `Home.md` to the plan created by this run.
 For each newly committed outcome, create or promote its vault project note with a clear outcome and no task checklist.
+For every explicit project decision made during planning—commitment, outcome or scope change, governing constraint, approach change, attention-state change, pause, resume, rename, completion, or drop—append a concise entry under `## Decisions & History` in the project note. Use `**YYYY-MM-DD** — [decision]` followed by `*Source: conversation with Jon, YYYY-MM-DD*`. Record only decisions that change how the outcome is pursued; omit routine planning discussion and executable actions.
 
 Invoke `gtd-omnifocus` in `lifecycle` mode automatically for every project commitment, promotion, pause, resume, rename, completion, or drop. Supply the vault project name, attention state, Area of Focus, explicit decision source, and known next action. Do not ask Jon to run the GTD skill separately.
 Let lifecycle mode own OmniFocus project creation, placement, initial actions, waiting/deferred/someday classification, and state synchronization.

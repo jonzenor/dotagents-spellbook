@@ -9,6 +9,10 @@ description: Full weekly planning routine for Jon's Obsidian vault. Reviews In P
 
 Run this skill at the start of each week (Sunday or Monday morning). It loads full context, asks a few focused questions, then builds out the weekly note.
 
+## Routine boundary
+
+Weekly planning owns commitments, capacity, project/Area coverage, the calendar, meals, and the few cross-day patterns that require a decision this week. It is not the place for a deep exploratory life conversation. When a tension needs discernment rather than a scheduling or commitment decision, name it briefly and offer it to `weekly-advisor` instead of processing it here.
+
 ## Workflow
 
 ### Step 0 — Monthly Vault Maintenance
@@ -23,6 +27,15 @@ Read `Reference/Logs/Vault Maintenance Log.md`. If the current calendar month ha
 - Prepend the result to the maintenance log. Add a short weekly-note maintenance line only if something materially changed or needs Jon's decision.
 
 Run this only during the first weekly-planning session of the month, never as a daily archive job.
+
+### Step 0.5 — Monthly Signal Pulse
+
+During the first weekly-planning session of each month, after maintenance, prepare a small retrospective pulse for the previous calendar month. This is part of the existing planning conversation, not a new routine or note.
+- Read the previous month's weekly notes and only the daily notes needed to verify meaningful signals.
+- Surface at most five concise signals: momentum worth protecting, recurring friction worth understanding, a relationship that may deserve attention, an Area of Focus receiving little attention, and a decision approaching. Omit categories with no real evidence.
+- Treat rhythm checkboxes as descriptive evidence, never compliance scores. Do not count missed days, produce adherence percentages, or turn a quiet rhythm into guilt.
+- Ask about only the one or two signals that require a decision now. Feed the rest silently into planning context.
+- Do not write a monthly note, add a new dashboard, or require Jon to review the weekly note.
 
 ### Step 1 — Load Context (run in parallel)
 - Read `Rhythms.md` at the vault root
@@ -44,7 +57,9 @@ Run this only during the first weekly-planning session of the month, never as a 
 
 ### Step 1.5 — Review Projects and Area Coverage
 - Review every vault project in `In Progress` and every `This Quarter` project that might be started or driven to completion this week. Do not review the Backlog as a weekly pipeline.
-- Review project outcomes, attention states, and Area-of-Focus coverage from the vault. Pass apparent stalls, uncovered areas, and activation questions to GTD review mode; do not independently classify tasks or OmniFocus project state.
+- Review project outcomes and attention states from the vault. For each Area of Focus, classify current coverage as one or more of: an active project, an available OmniFocus action, a healthy rhythm in `Rhythms.md`, or an explicit intentional dormancy/seasonal choice.
+- An Area without an active project is not automatically neglected. Raise one focused question only when an Area has none of the four coverage forms or when evidence suggests its existing mechanism is no longer carrying it.
+- Pass apparent stalls, genuinely uncovered areas, and activation questions to GTD review mode; do not independently classify tasks or OmniFocus project state. Never manufacture a project merely to make the coverage table look complete.
 
 ### Step 1.6 — GTD Weekly Review
 - Invoke `gtd-omnifocus` in `review` mode automatically. Do not add a separate user-facing step or ask Jon to run it.

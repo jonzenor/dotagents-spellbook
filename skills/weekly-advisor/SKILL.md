@@ -9,6 +9,8 @@ description: Weekly life advisor for Jon — reads the vault, surfaces real tens
 
 Reads Jon's vault, identifies 3–5 open threads from the past week, and opens a live conversational session with targeted questions. The goal is to help Jon think through what's actually going on — not produce a document or audit his task list. Output is always a conversation.
 
+Weekly Advisor owns depth and discernment; weekly planning owns commitments, capacity, calendars, project review, and the written weekly plan. Do not repeat questions that weekly planning already resolved. Prefer tensions that weekly planning explicitly deferred because they needed thought rather than scheduling.
+
 ## Steps
 
 1. **Read the vault** (silently — do not narrate this to the user):

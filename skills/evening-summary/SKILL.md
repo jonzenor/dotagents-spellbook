@@ -19,15 +19,22 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 2. **Read the target daily note** in full. Check `Daily/YYYY-MM-DD.md` first; for an explicitly requested older date, fall back to `Daily/YYYY/MM/YYYY-MM-DD.md`.
 
+2.5. **Repair unprocessed AI-owned state after a gap.** Before processing the target note, look backward up to 14 calendar days from the target date or to the most recent earlier daily note containing `## AI Summary`, whichever comes first. Any intervening daily note without an AI Summary is a catch-up candidate. Never start an unbounded historical sweep; older notes require an explicitly requested catch-up.
+   - Process candidates oldest first so Scripture scheduling, Keeper instructions, Almanac additions, OmniFocus captures, durable logs, and explicit project lifecycle changes remain chronological.
+   - Run only the mechanical and durable-routing work from Steps 7–20. Do not append retroactive AI Summaries, reconstruct the day from calendar data, add routine weekly reflections, or comment on the gap.
+   - Read every destination before writing and use the source daily-note link as an idempotency key. If an equivalent entry from that source already exists, treat that part as processed rather than duplicating it. OmniFocus capture retains its semantic duplicate check.
+   - Preserve ambiguity. Queue failed OmniFocus writes normally and defer any decision that cannot be supported by the source note.
+   - This is resilience, not backlog processing: never report missed-day counts, adherence, or debt. Mention catch-up only when a write failed or Jon must answer a genuine ambiguity.
+
 3. **Read the last 3–5 daily notes** for context on ongoing threads. If recent notes are sparse or empty, work with what's there — never comment on the gap or count missed days. Cross-day trend observations belong in weekly planning, not here.
 
 4. **Read this week's weekly note** (`Weekly/YYYY-WXX.md`, weeks start Sunday) in full — both for broader context and to identify what needs updating.
 
-5. **Update the weekly note** with what happened today:
-   - In **Active Action Items**: check off any items that were completed today (change `- [ ]` to `- [x]`).
-   - In **Mentee Check-ins This Week**: mark any mentee sessions that happened today.
-   - In **Cooking This Week**: fill in a Result if a meal was made today.
-   - In **Notes & Reflections**: append a brief dated entry (e.g. `**Thu Mar 26** — [1–2 sentences on how the day went, anything notable for the week's arc]`). Do not overwrite existing reflections.
+5. **Update the current weekly note only when today changes the week's record:**
+   - The current schema is `Weekly Focus`, `Quarterly Objectives`, `Goals`, `Prayer Focus`, `Meal Plan`, `On the Radar`, and `Notes & Reflections`. Do not create obsolete sections such as `Active Action Items`, `Mentee Check-ins This Week`, or `Cooking This Week` in a current note.
+   - Check off a current weekly `Goals` item only when today's note explicitly confirms that exact goal outcome is complete.
+   - Append a dated `Notes & Reflections` entry only when today changed the week's capacity, direction, a relationship, a project, or the interpretation of the week's arc. Do not compress routine days into weekly prose merely because evening summary ran.
+   - Historical weekly notes may retain older schemas. Update an older section only when it already exists and the target daily note explicitly supports the change.
 
 6. **Follow wikilinks in today's note** — identify any `[[File]]` or `[[Folder/File]]` links mentioned in the daily note. Read those linked files and look for content added today (dated entries, new rows in tables, new meeting log entries, recently added items). Summarize what was added in the **Don't lose this** section if it's time-sensitive or easily forgotten. Pay particular attention to Mentoring notes (meeting logs), Prayer lists, and any file with dated entries.
 
@@ -177,6 +184,8 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
    - For every explicit close, drop, pause, resume, or rename handled here, invoke `gtd-omnifocus` in `lifecycle` mode automatically so the matching OmniFocus project remains synchronized.
    - If completion or abandonment seems likely but is not explicit, do not change project status. Ask Jon whether the project should be closed, and identify the evidence that made its state uncertain.
    - Never treat inactivity, completed individual tasks, or a past event date as proof that the project outcome is complete.
+   - When Jon explicitly changes a project's outcome, scope, governing constraint, approach, attention state, pause/resume state, name, completion, or abandonment, record a concise dated entry under `## Decisions & History` in that project note. Use `**[[Daily/YYYY-MM-DD|YYYY-MM-DD]]** — [decision and why it changes pursuit of the outcome]` when sourced from a daily note.
+   - Do not record routine progress, completed actions, status chatter, or AI recommendations as decisions. Do not create an action checklist in the project note.
    - Include every project file, index, or repaired-link location actually written in **Logs updated today**.
 
 21. **Append** the AI Summary section to today's daily note (see format below).
@@ -195,8 +204,8 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 **Don't lose this:**
 - [Things that could fall through the cracks: upcoming deadlines, important decisions pending, time-sensitive relationships]
 
-**Tomorrow's focus:**
-- [Concrete next actions derived from today's unfinished items and follow-ups]
+**Tomorrow's context:**
+- [Non-task context that will help tomorrow's orientation: capacity, a pending decision, or why a particular OmniFocus perspective may matter]
 
 **New ideas worth capturing:**
 - [Idea from today's narrative — with a suggested vault home if it belongs somewhere: Topics/, project note, Mentoring, etc.]
@@ -217,13 +226,13 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **What happened**: Write it like a friend summarizing the day — honest, human, not clinical. Acknowledge hard days as hard.
 - **Lessons learned**: Only include genuine insights. A lesson should change future behavior. Skip platitudes.
 - **Don't lose this**: The most important section. Capture things that are easy to forget but costly if forgotten — upcoming events, pending decisions, relationship moments, financial deadlines. Also flag anything from today that belongs in a deeper note (Mentoring, Person, Prayer, etc.).
-- **Tomorrow's focus**: Pull from commitments Jon stated in the day's narrative, unfinished `## Today's Focus` items, and anything that needs a next action. Keep it short — 2–4 items max. State items plainly, once — no slip counts, no "this keeps not happening" commentary. If a genuine multi-day pattern matters, it gets raised during weekly planning, framed as a question.
+- **Tomorrow's context**: Actions belong in OmniFocus and are reported once under **OmniFocus captured**. Use this optional section only for non-task continuity that tomorrow's briefing should know: unusual capacity, an unresolved decision, or why a context/perspective may matter. Never reproduce captured actions or create a second execution list. If a genuine multi-day pattern matters, it gets raised during weekly planning, framed as a question.
 
 ## Rules
 
 - **Proportionality — the most important rule for this skill.** The AI Summary is a response to Jon's journaling, not a replacement for it. Aim for a summary no longer than what Jon wrote today. A thin note (a line or two) gets 1–3 sentences and the log scans, nothing more. If the note is essentially empty, append at most two lines — anything genuinely time-sensitive found in linked notes, or simply a quiet placeholder — and skip every optional section. Never reconstruct the day from calendar data Jon didn't write about.
 - **Daily note: append only** — never insert into or overwrite existing content in the daily note.
-- **Weekly note: targeted edits allowed** — check off completed items, fill in results, and append to Notes & Reflections. Never rewrite or delete existing weekly note content.
+- **Weekly note: significance-filtered edits only** — use the current weekly schema, require explicit evidence for completed goals, and append to Notes & Reflections only when the day changes the week's arc. Never rewrite or delete existing weekly note content.
 - **Medical Logs: prepend entries under `## Log`** — Jon's health → `Reference/Logs/Medical Log.md`; Danae's health → `Reference/Logs/Danae's Med Log.md`. Read each file first. Only write if there is actual health content for that person.
 - **Answered Prayers: prepend entries under `## Log`** — `Prayer/Answered Prayers.md`. Read the file first. Only write if a prayer is explicitly described as answered in today's note.
 - **Cooking Log: prepend entries under `## Log`** — add newest entry at the top of the log section (`Reference/Logs/Cooking Log.md`). Read the file first. Only write if cooking was mentioned in today's note.

@@ -39,6 +39,8 @@ Each goal should be:
 - **Bounded**: completable within the quarter or has a clear first milestone
 - **Labeled**: life area + Tenacity flag if applicable
 
+Quarterly plans contain outcomes, milestones, constraints, risks, and weekly planning signals—not next-action checklists. Every executable action belongs in the matching OmniFocus project.
+
 ```
 - [ ] [Goal statement] — milestone by [Month] [⚡ Tenacity]
 ```

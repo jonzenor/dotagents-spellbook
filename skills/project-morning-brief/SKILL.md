@@ -13,10 +13,9 @@ description: Reviews every active life project and produces a compact, deadline-
 4. **Invoke `gtd-omnifocus` in `triage` mode automatically** — supply the confirmed project names, outcomes, deadlines, recent progress, weekly priorities, today's capacity, and hard landscape. Do not ask Jon to run the GTD skill separately.
    - Let GTD triage load the matching OmniFocus projects and own task availability, waiting/deferred/someday exclusions, urgency, finishability, and action selection.
    - Never derive or invent tasks from the Obsidian project notes.
-5. Divide the returned results into two groups:
-   - **Projects to Advance Today** — preserve the order and exact actions returned by GTD triage.
-   - **Other Active Projects** — preserve GTD triage's concise exclusion reason.
-6. Always link every active project so Jon can open its outcome and context note. When task-level output was explicitly requested, preserve the exact OmniFocus task name returned by triage.
+5. Return **Projects to Advance Today** — preserve the order returned by GTD triage and select no more than two projects.
+6. Omit unselected projects by default. Include an unselected project only when GTD triage found a genuine `⚠️ At risk` or `🔥 Urgent` exception Jon needs to see today. A full all-project audit is available only when Jon explicitly requests it.
+7. Link every project that is surfaced. When task-level output was explicitly requested, preserve the exact OmniFocus task name returned by triage; otherwise point Jon to the matching OmniFocus project or perspective without reproducing the action in the journal.
 
 Use risk labels exactly as returned by GTD triage. Do not independently add or reinterpret them.
 
@@ -24,15 +23,13 @@ Use risk labels exactly as returned by GTD triage. Do not independently add or r
 
 ```markdown
 **Projects to Advance Today:**
-- [[Projects/Project File|Project Name]] — [optional risk flag and one-sentence explanation]
-  - OmniFocus: [exact selected action name]
+- [[Projects/Project File|Project Name]] — [optional risk flag and one-sentence reason it deserves attention]
 
-> [!note]- Other Active Projects
-> - [[Projects/Another Project|Another Project]]
->   - No project action needed today — [concise reason: blocked, waiting, lower priority, or poor fit for today's capacity].
+**Project exceptions:**
+- [[Projects/Another Project|Another Project]] — ⚠️ At risk: [concise evidence; omit this section when empty]
 ```
 
-Use Obsidian's collapsed callout for `Other Active Projects` instead of inline HTML or custom CSS. It visually quiets projects not being worked while preserving their links and reasons. Omit either group when it is empty; when every project is in the callout, write `- None selected today` under `Projects to Advance Today`.
+Omit either group when it is empty. Do not explain why every other project was not selected.
 
 If there are no active projects, output:
 
