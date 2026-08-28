@@ -56,62 +56,27 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 
 13. **Scripture memory deck** — this skill is the only writer of `Bible/Scripture Memory.md`. Read it, then read whatever Jon wrote under `## How did scripture memory go?` and anywhere else in the note that reports a recitation.
 
-   **Read the checklist, not just prose.** Morning startup writes a grouped checklist of today's reps. Jon checks boxes and may append a note to a line:
+   **The deck is the full definition of this system.** Its `Rules` section owns every mechanic — the verse ladder, the three-reps-to-a-rung minimum, blocks, chapter graduation, the Review ladder and its 180-day floor, relearning, intake, and the caps. **Read those rules and apply them. Do not reproduce them here**; a second copy is how this skill went stale before. If this skill and the deck ever disagree, **the deck wins and this step gets corrected.**
+
+   **Reading Jon's marks:**
    - `- [x] Galatians 1:5 — 1× — struggled, need more practice`
-   - A **checked box** means the rep happened. An **unchecked box** at day's end means *not attempted*.
-   - **The appended note is the grade.** "Struggled" or "need more practice" → `shaky`. "Blanked" or "couldn't get it" → `blank`. A checked box with **no note** → `clean`. Jon never has to use a keyword.
    - **Never modify Jon's checkmarks or his notes.** Read them; leave the line exactly as he wrote it.
+   - **The appended note is the grade.** Accept plain language ("nailed it", "totally blanked on verse 4"); never make him use a keyword.
 
-   **Grade vocabulary** — map whatever Jon wrote to one of four outcomes. Accept plain language ("nailed it", "totally blanked on verse 4"); never make him use a keyword.
-   - `clean` — recited without help → advance one rung on the interval ladder
-   - `shaky` — got through it with effort, a peek, or a stumble → hold at the current rung
-   - `blank` — could not recall it → drop two rungs, minimum 1 day
-   - *nothing written* — treat as **not attempted**. Reschedule to tomorrow, change nothing else, and log nothing. This is not a miss, not a lapse, and not a broken streak. Never mention it in the AI Summary.
+   **Two grades, and neither is a punishment:**
+   - **`clean`** — checked box with no note, or a positive one → counts toward the three reps that rung needs
+   - **`struggled`** — checked box with any sign of difficulty (struggled, blanked, couldn't get it, peeked, stumbled) → holds the rung, does not count toward advancement, and **does not take away reps already banked**
+   - **Unchecked box** → *not attempted*. **Nothing happens at all** — not a miss, not a step back, not a reset, not a broken streak. Reschedule, change nothing, log nothing, and never mention it in the AI Summary.
 
-   **The atomic unit is the verse, not the passage.** Each new verse walks its own ladder independently and matures before it is ever combined. Units merge upward — verse → paragraph → section → chapter → book — and **a merge is permanent; merged units never decompose back into their parts.** A merged unit graded `blank` steps back a rung but stays merged.
+   **Demotion takes a pattern, never one bad day.** A unit steps back one rung only after **two `struggled` reps in a row**. A `clean` clears the streak; a missed day is inert and neither counts toward it nor clears it. Blocks step back whole. **Relearning is exempt from demotion entirely** — cold material is expected to be rough.
 
-   **Verse ladder** — Keeper states the rep count so Jon never computes it:
-   - **New** — daily, days 1–5, recited 25× → 20× → 15× → 10× → 5×
-   - **Imprint** — daily, days 6–10, recited 1×
-   - **Settle** — every other day for about a week, 1×
-   - **Hold** — every 3 days, 1×, until its paragraph-mates catch up
+   **The Perfected checkbox.** A verse leaves the Daily rung only when Jon checks the nested `- [ ] *Perfected — promote*` box beneath its line. When he does, advance it that evening. His check wins even if the line also carries a note. **Never count or remark on how long the box has gone unchecked.**
 
-   A verse reaching Hold is merge-eligible and gets no further individual promotion.
+   **Silent by design.** Never show the allowance, deficit, tier, word counts, or any adherence figure — in the daily note, the AI Summary, or conversation. Never describe intake as behind, never count days it has been closed, never tie it to a lapse. Surfacing the dial would turn the practice into a metric.
 
-   **Merge rules:**
-   - **Every** verse in a paragraph at Hold → merge into the paragraph; the individual verse rows retire permanently. All of them or none — one straggler holds the paragraph, and that is correct.
-   - Two adjacent paragraphs both stable at 30 days → the combined section
-   - Every paragraph of a chapter merged and stable at 30 days → the chapter
-   - Every chapter of a book merged and stable at 60 days → the book (rotating reps if over ten minutes)
-   - **Merged-unit ladder:** 7 → 14 → 30 → 60 → 90 days. At 90 with a clean rep → Maintenance.
+   **Never surface the Backlog.** Those are passages Jon set down; they are not unfinished business and move only when he says so. When one does activate, establish how much survives before planning — do not assume a restart from zero.
 
-   **Intake is measured in words, not verses** — words are what cost time. Twenty-five reps of a 7-word verse is forty seconds; of a 35-word verse, four minutes. A word allowance keeps the daily ask roughly constant.
-   - **Tier 1: 22 words/day** (the ESV average for Galatians, so ≈1 verse/day) · **Tier 2: 40** · **Tier 3: 60 (cap)**
-   - **A verse is never split across days.** It enters whole or not at all.
-   - The allowance grows by the tier rate each day. **Unused surplus carries, capped at one day's rate.** At most **3 verses** may enter in a day regardless of how short they are.
-   - **The next verse always enters even if it overdraws.** The deficit carries and silently suppresses intake until repaid — Jon never gets a day with nothing new merely because the next verse is long.
-   - **A verse longer than 1.5× the daily allowance repeats its first ladder rung** (25× again) for ⌈words ÷ allowance⌉ days. That is how a long verse gets extra time: more days of intensive work, never a split and never a deferral.
-   - Count words from the ESV text when a chapter first comes up; store the counts in the deck. **Never show the allowance, deficit, tier, or word counts to Jon** — he sees verses and rep counts only.
-
-   **Tier promotion.** Jon wants to push Galatians toward finishing sooner, so the tier is a dial — but one that only turns up when the practice is demonstrably holding. Start at tier 1. After **14 consecutive days with at least 80% of reps checked off**, raise to tier 2; after a further 14 days holding, to tier 3 (cap). **Any quiet stretch of 4+ days drops the tier one step on return**, to be re-earned — that is a return to a load that was working, not a punishment. Jon may override in either direction and his call wins. **Never ask him to pick a tier, never state the current tier in the daily note, and never report the adherence percentage back to him.** The dial governs silently; surfacing it would turn the practice into a metric.
-
-   **Intake — the valve Keeper controls.** Intake is whether new verses are added today. Keeper opens and closes it; never ask Jon to decide. Close intake when:
-   1. A chapter just became whole — closed 5 days, for merge work and first full-chapter recitations
-   2. In-flight material (introduced but not yet merged) exceeds **28 days' worth of the current allowance** — closed until it drains below **22 days' worth**. Scale this with the tier rather than using a fixed word count: steady-state in-flight naturally sits near 17–20 days' worth, so a flat cap tuned to tier 1 would jam intake shut at tier 2.
-   3. **Jon has been quiet 4 or more days — closed on return, reopening after 3 days of reps.** He comes back to what he already knows, never to a pile of new material.
-   4. Jon says so, or a day's build would exceed ~15 minutes
-
-   **Closed intake is a normal operating state, not a failure.** It pauses growth, never the practice — everything in flight continues on its own cadence. Never describe closed intake as being behind, never count the days it has been closed, and never tie it to a lapse. This is the mechanism that makes a week away survivable, so do not undermine it with commentary.
-
-   **Reactivating** — a previously memorized passage gone cold. Rebuilds **one paragraph at a time**, stacking; never open a cold passage at full chapter or book length. Daily for the first few days on each paragraph, then move to the next and add them together. One `clean` advances (new learning needs the full ladder), the text may be open on the first pass at any new paragraph, and `shaky` carries **no penalty**. When the whole unit is recited clean and cold, it joins Review at the **14-day rung**. When Jon does not say whether the text was open, assume it was.
-
-   **Caps — Keeper enforces these, not Jon's willpower:**
-   - **Learning: one passage, hard cap.** If Jon asks to start another while one is in Learning, say no and explain what is currently in flight. Add the request to `## Backlog` instead.
-   - **Review: five entries, soft cap.** Reactivating entries count toward it. Individual in-flight verses do not — they are governed by the intake valve instead. At six or more, do not add anything new; note it once at weekly planning as a question about pace, not a warning.
-   - **Backlog is inert.** Entries there are partially memorized passages Jon set down. Never surface them, count them, ask about them, or treat them as unfinished business — they move only when Jon says so. When one does activate, establish how much survives before planning segments; do not assume a restart from zero.
-   - **Respect scheduled start dates.** A Reactivating entry with a future `Starts` date is not due and is not late. It simply does not exist yet as far as the daily note is concerned.
-
-   Update the deck tables in place. Only write to `Reference/Logs/Spiritual Log.md` for a genuine milestone — a chapter fully learned or retired to maintenance — never for a daily rep.
+   Count words from the ESV text when a chapter first comes up and store them in the deck's `Reference data`. Update the deck's `State` tables in place. Only write to `Reference/Logs/Spiritual Log.md` for a genuine milestone — a chapter graduating to Review, or a cold chapter relearned — never for a daily rep.
 
 14. **Keeper instructions** — scan today's daily note for any line containing `Keeper,` or `Keeper:` that does **not** already end with `📚✅`.
 
@@ -241,7 +206,7 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
 - **Person files: prepend entries under `## Log`** — `Person/Name.md`. Read the file first if it exists; create with a minimal template if not. Two tiers: brief (single sentence) for events and passing notes, deeper (paragraph) for significant relational developments, strong reactions, or anything that needs context to be useful later. Skip people with no real relationship to Jon, skip Danae (her own logs), skip FOTF coworkers in routine work contexts. Never duplicate content already written to a Mentoring note for today.
 - **Person versus Mentoring** — mentoring-session content belongs in the Mentoring note. Person notes receive only identity, relationship facts, and significant life events outside the session; use a brief linked pointer instead of duplicating session details.
 - **Keeper instructions: act and mark complete** — scan for `Keeper,` or `Keeper:` lines not ending with `📚✅`. Execute each instruction with full context, promote explicit recurring behavior to `Keeper Instructions.md`, then append `📚✅` to the line. Log what was done in **Logs updated today**. Skip already-marked lines.
-- **Scripture Memory deck: this skill is its only writer** — `Bible/Scripture Memory.md`. Read it first. In the daily note, read Jon's checkboxes and appended notes but **never alter them** — those marks are his words. Grade from what Jon actually wrote; a missing grade means *not attempted*, which reschedules silently and is never logged, counted, or mentioned. There is no overdue state, no backlog, and no streak. Enforce the Learning cap of one and the Review soft cap of five so the load never grows past what Jon can carry — that enforcement is Keeper's job, not Jon's.
+- **Scripture Memory deck: this skill is its only writer** — `Bible/Scripture Memory.md`. **The deck's `Rules` section is authoritative for every mechanic; read it rather than working from memory.** In the daily note, read Jon's checkboxes and appended notes but **never alter them** — those marks are his words. An unchecked box means *not attempted* and changes nothing at all. There is no overdue state, no backlog, and no streak. Enforce the deck's caps — one passage in New, one chapter in Relearning, one Review chapter a day — so the load never grows past what Jon can carry; that enforcement is Keeper's job, not Jon's.
 - **Almanac.md: add only, under the matching date header** — `Almanac.md` at vault root. Read the file first (create it if missing). Only add entries with a clear future-surfacing intent — a specific date or a named future meeting/event. Never delete entries here — deletion happens in morning-startup, at the moment an entry actually surfaces.
 - **Theater candidates are theater-specific** — `Reference/Theater Movie Candidates.md` supports choosing one or two theater outings each month. Do not turn it into a general streaming, rental, or someday watchlist. Preserve Jon's stated reason for interest and cited release information.
 - **Ideas are not projects** — create project-shaped possibilities under `Ideas/`. Move one to `Projects/` only after Jon explicitly commits to implementing it.

@@ -98,34 +98,44 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
     - These are gentle rhythm questions, not daily commitments. An unchecked line records only that the rhythm did not happen that day; it never creates a warning, streak, debt, overdue state, or automatic OmniFocus action.
     - The checklist tracks daily practices; its unchecked lines are not OmniFocus actions and must not be copied into OmniFocus or `## Today's Focus`. If Jon separately makes a concrete commitment involving one of these practices, capture that specific action normally without turning the rhythm itself into a repeating task.
 
-11. **Scripture memory** — read `Bible/Scripture Memory.md` and build today's reps.
-   - Select what is due today: every individual verse, merged unit, Reactivating unit, and Maintenance entry whose `Next due` is today or earlier — plus today's new verses if **intake is open**, as determined by the deck's word allowance. Never show the allowance, deficit, tier, or word counts — Jon sees verses and rep counts only.
-   - **Write a checklist, grouped by cadence.** State exactly what to recite and how many times. Jon checks the boxes and may append a note to any line.
+11. **Scripture memory** — read `Bible/Scripture Memory.md` and build today's checklist.
+
+   **The deck is the full definition of this system.** Follow its `Rules` section for every mechanic — ladders, rungs, rep counts, intake, merges. Do not reproduce those rules here, and if this skill and the deck ever disagree, **the deck wins**.
+
+   - **Two sections, in this order, and no more:** `**New — <passage>**` then `**Review**`. Never invent a third.
+   - **New** lists everything due from the deck's New track — the day's new verse if intake is open, the taper rungs, dailies, stretching rungs, and any blocks due. One line per unit, with its exact rep count.
+   - **Review** is **exactly one chapter**, chosen by the deck's Review rules. When a relearning chapter holds the slot, mark the section `**Review** *(relearning)*` and name the paragraph, how many there are, and whether the text may be open.
+   - **Add the nested Perfected box** under any verse the deck says has earned it:
+     ```markdown
+     - [ ] Galatians 1:14 — 1×
+       - [ ] *Perfected — promote*
+     ```
+     It reappears every day until Jon checks it. **Never note how long it has been sitting.**
 
      ```markdown
-     *~9 min · 12 reps*
+     *~12 min · 76 spoken passes*
 
-     **New**
-     - [ ] **Galatians 1:12** — recite **25×**
+     **New — Galatians**
+     - [ ] **1:20** — **John Piper method**
+     - [ ] 1:19 — 20×
+     - [ ] 1:18 — 15×
+     - [ ] 1:15 — 1×
+     - [ ] 1:14 — 1×
+       - [ ] *Perfected — promote*
+     - [ ] 1:11 — every other day · 1×
+     - [ ] **1:1–1:5** — block · weekly · 1×
 
-     **Daily**
-     - [ ] Galatians 1:5 — 1×
-     - [ ] Galatians 1:6 — 1×
-
-     **Every other day**
-     - [ ] Galatians 1:1–5 — paragraph · 1×
-
-     **Reactivating**
-     - [ ] Psalm 1:1–3 — ¶1 of 2 · text may be open · 1×
+     **Review**
+     - [ ] Psalm 1 — whole chapter · 1×
      ```
 
    - **Detail is welcome here** — exact verses, exact rep counts, which paragraph of how many, whether the text may be open. Jon should never have to work out how much today is. Never write just a passage name.
-   - Lead with a one-line estimate (`*~9 min · 12 reps*`) so Jon can judge capacity at a glance.
-   - Omit any group with nothing in it. Never write a group header followed by "none."
+   - Lead with a one-line estimate (`*~12 min · 76 spoken passes*`) so Jon can judge capacity at a glance. **Estimate the New section only** — Review is extra he does afterward and never counts toward the ~15-minute limit.
+   - Omit any section with nothing in it. Never write a header followed by "none."
    - **Preserve Jon's marks.** Keeper writes the checklist; the checkmarks and any note Jon appends to a line are his. On a rerun, refresh only lines still unchecked and unannotated — never overwrite, reword, reorder, or strip a checked or annotated line.
-   - **A `Starts` date in the future means the entry does not exist yet.** Skip it silently — not due, not late, not mentioned.
-   - **When intake is closed, simply omit the "New" group.** Never write "intake closed", "no new verse today", "you're caught up", or any explanation. Closed intake is a normal state and needs no announcement. Never state or hint at the current rate.
-   - **Never surface the Backlog.** Those are passages Jon deliberately set down. Not unfinished business — never counted, listed, or asked about.
+   - **Never show the allowance, deficit, tier, word counts, or any adherence figure.** Jon sees verses and rep counts only.
+   - **When intake is closed, simply omit the day's new verse.** Never write "intake closed", "no new verse today", "you're caught up", or any explanation. Closed intake is a normal state and needs no announcement.
+   - **Never surface the Backlog, and never mention the relearning queue.** Those are passages Jon deliberately set down or has not started. Not unfinished business — never counted, listed, or asked about.
    - **This skill never writes to `Bible/Scripture Memory.md`.** Evening summary owns all deck state.
 
 12. **Build one Brainstorm item** — write one AI-generated question drawn from recent notes, plans, and live tensions. It must be generative rather than accountability framed. Do not copy an OmniFocus task into the daily note.
@@ -148,7 +158,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 - **Week's focus**: Pull the first line of the `## Focus This Week` section from the weekly note and include it as a single italic line at the top of Today's Focus, e.g. `*Week's focus: ...*`
 - **Mentoring links**: When a mentoring session appears in the hard landscape, use the wikilink to the mentoring note, e.g. `[[Mentoring/Zac Story]]`, `[[Mentoring/Jeremy]]`, `[[Mentoring/Tyler]]`
 - **Brainstorm Today**: The `### Brainstorm Today` section contains one AI-generated question. It is a background prompt, not a copied task.
-- **How did scripture memory go?**: A grouped checklist of today's reps with exact verses and rep counts. Jon checks boxes and appends notes to lines in his own words. No progress bars, no streaks, no encouragement copy, no adherence statistics.
+- **How did scripture memory go?**: Two sections — `**New — <passage>**` and `**Review**` (one chapter) — with exact verses and rep counts. Jon checks boxes and appends notes to lines in his own words. No progress bars, no streaks, no encouragement copy, no adherence statistics.
 
 ## Output format
 
@@ -243,7 +253,7 @@ All other days (and the remainder of Sunday's note after the link):
 
 ## How did scripture memory go?
 
-> **AI:** [Today's reps from the deck — omit the blockquote entirely when the deck is empty or nothing is due]
+[Two sections — **New** then **Review** — as a checklist with exact rep counts. Omit entirely when the deck is empty or nothing is due.]
 
 See also: [[Prayer/War-Room]]
 
