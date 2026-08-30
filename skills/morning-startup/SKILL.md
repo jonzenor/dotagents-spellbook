@@ -103,7 +103,8 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    **The deck is the full definition of this system.** Follow its `Rules` section for every mechanic — ladders, rungs, rep counts, intake, merges. Do not reproduce those rules here, and if this skill and the deck ever disagree, **the deck wins**.
 
    - **Two sections, in this order, and no more:** `**New — <passage>**` then `**Review**`. Never invent a third.
-   - **New** lists everything due from the deck's New track — the day's new verse if intake is open, the taper rungs, dailies, stretching rungs, and any blocks due. One line per unit, with its exact rep count.
+   - **New** lists everything due from the deck's New track — blocks, stretching rungs, dailies, taper rungs, and the day's new verse if intake is open. One line per unit, with its exact rep count.
+   - **Order the New section by scripture reference, earliest first, with today's new verse last.** Never group by cadence or rung, and never lead with the newest verse. Jon memorizes by adding onto what came before, so he recites forward through the passage. Rep counts will climb down the list (5×, 10×, 15×, 20×, John Piper method) — that is correct, not backwards.
    - **Review** is **exactly one chapter**, chosen by the deck's Review rules. When a relearning chapter holds the slot, mark the section `**Review** *(relearning)*` and name the paragraph, how many there are, and whether the text may be open.
    - **Add the nested Perfected box** under any verse the deck says has earned it:
      ```markdown
@@ -116,14 +117,14 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
      *~12 min · 76 spoken passes*
 
      **New — Galatians**
-     - [ ] **1:20** — **John Piper method**
-     - [ ] 1:19 — 20×
-     - [ ] 1:18 — 15×
-     - [ ] 1:15 — 1×
+     - [ ] **1:1–1:5** — block · weekly · 1×
+     - [ ] 1:11 — every other day · 1×
      - [ ] 1:14 — 1×
        - [ ] *Perfected — promote*
-     - [ ] 1:11 — every other day · 1×
-     - [ ] **1:1–1:5** — block · weekly · 1×
+     - [ ] 1:15 — 1×
+     - [ ] 1:18 — 15×
+     - [ ] 1:19 — 20×
+     - [ ] **1:20** — **John Piper method**
 
      **Review**
      - [ ] Psalm 1 — whole chapter · 1×
