@@ -46,7 +46,7 @@ Never invent a near-match; OmniFocus may silently create a new tag.
 ## Capture mode
 
 1. Drain `Reference/Logs/OmniFocus Failure Queue.md` before new captures. Remove only entries successfully written and verified.
-2. Extract direct commitments from the supplied source. Reject noncommittal language.
+2. Extract direct commitments from the supplied source. Reject noncommittal language. **Exception:** unchecked items the caller supplies from a daily note's `## Quick List` are already commitments by virtue of being written there — accept them as-is, even as bare fragments, and do not reject them for lacking commitment phrasing. Word them as proper next actions when creating the task.
 3. Determine whether each action belongs to a matching OmniFocus project or a single-action list.
 4. Search for an equivalent task before writing.
 5. Create or update the action with an accurate context, energy, time, availability state, deadline, and flag only when supported.

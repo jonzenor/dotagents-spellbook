@@ -127,7 +127,10 @@ Appends an `## AI Summary` section to today's daily note. **Never overwrites or 
      ```
    - Never duplicate content already captured in a Mentoring note for today.
 
-17. **Invoke `gtd-omnifocus` in `capture` mode automatically** — supply the target daily note, its source path/date, explicit Keeper actions, and relevant project names. Do not ask Jon to run the GTD skill separately.
+17. **Invoke `gtd-omnifocus` in `capture` mode automatically** — supply the target daily note, its source path/date, explicit Keeper actions, relevant project names, and **every unchecked item under `## Quick List`**. Do not ask Jon to run the GTD skill separately.
+   - Quick List items need no qualifying language. Jon wrote them there because he intended to do them today, so an unchecked box *is* the commitment — pass them to capture mode as commitments rather than testing them for commitment phrasing.
+   - Do not pass a checked item, or one Jon annotated as dropped or no longer needed.
+   - Leave the list itself exactly as Jon wrote it. Capturing an item does not check it off, strike it, annotate it, or delete it, and the list is never carried into tomorrow's note.
    - Let the GTD skill own commitment tests, project routing, duplicate checks, action wording, tags, dates, flags, waiting/someday states, verification, and the failure queue.
    - Treat OmniFocus as best-effort: if capture mode reports an outage after its retry, continue the evening summary and report the safely queued writes.
    - Report each verified action and destination under **OmniFocus captured** and each queued write under **OmniFocus queued**.

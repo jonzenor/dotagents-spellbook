@@ -10,7 +10,7 @@ description: Morning startup routine for Jon's Obsidian life vault. Checks calen
 Creates or refreshes the AI-owned `## Today's Focus` section in today's daily note. It contains the calendar hard landscape, the OmniFocus context lists worth opening, and the useful weekly radar. It never copies individual tasks or the active-project list into the journal.
 
 The safety boundary is **section ownership**, not append-only file handling:
-- Never modify Jon-authored journal content. In the current template that is `## What Happened Today?`, `## Did you read the Bible today? Any thoughts?`, `## Did you focus on any hobbies today?`, Jon's checkmarks or appended notes under `## Did you do any of these today?`, and anything Jon has written under `## How did scripture memory go?` — including Jon-authored subheadings such as Captain's Log entries.
+- Never modify Jon-authored journal content. In the current template that is `## What Happened Today?`, `## Did you read the Bible today? Any thoughts?`, every line under `## Quick List`, Jon's checkmarks or appended notes under `## Did you do any of these today?`, and anything Jon has written under `## How did scripture memory go?` — including Jon-authored subheadings such as Captain's Log entries. In notes from 2026-08-26 through 2026-08-28 it also includes `## Did you focus on any hobbies today?`.
 - Daily notes written before 2026-08-24 use an older template. Its sections — `## What Stood Out?`, `## What Needs Follow Up?`, `## Random Thoughts`, and `## Today's Reading` — are also Jon-authored and must never be modified or removed from historical notes. Do not add them to new notes.
 - AI-designated sections may be updated by the AI. For this skill, those are `## Today's Focus`, the skill-generated blockquote under `## Brainstorm Today`, and the skill-generated checklists under `## Did you do any of these today?` and `## How did scripture memory go?`. Keeper owns the lines it wrote, but **Jon's checkmarks and any note he appends to a line are his own words** — preserve them exactly.
 - Preserve any content whose ownership is unclear. Do not treat an unfamiliar heading as AI-owned merely because it appears near an AI section.
@@ -93,8 +93,14 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
     - [ ] Reconcile YNAB budget
     - [ ] Read a book
     - [ ] Do Sweepy chores
+    - [ ] Play guitar or drums
+    - [ ] Play WoW
+    - [ ] Other hobbies (disc golf, MTG, etc)
     ```
     - On reruns, preserve every checkmark and appended note exactly. Add a missing standard line, but do not reset, reorder, or rewrite an existing line.
+    - `Play guitar or drums` is deliberately one line — either instrument counts, and five minutes counts. Do not split it into two lines.
+    - `Play WoW` has its own line rather than living under `Other hobbies` because the separate line is the reminder Jon wants: he enjoys the game and finds it relaxing, and Danae wants him playing it. Playing at all counts — alone, alongside her, or neither. Do not re-narrow this line to playing *with* Danae, and do not treat it as a relationship obligation.
+    - `Other hobbies` is the catch-all for disc golf, MTG, astrophotography, and anything else. When Jon checks it he usually names what it was; that note is his.
     - These are gentle rhythm questions, not daily commitments. An unchecked line records only that the rhythm did not happen that day; it never creates a warning, streak, debt, overdue state, or automatic OmniFocus action.
     - The checklist tracks daily practices; its unchecked lines are not OmniFocus actions and must not be copied into OmniFocus or `## Today's Focus`. If Jon separately makes a concrete commitment involving one of these practices, capture that specific action normally without turning the rhythm itself into a repeating task.
 
@@ -244,13 +250,16 @@ All other days (and the remainder of Sunday's note after the link):
 
 ## Did you read the Bible today? Any thoughts?
 
-## Did you focus on any hobbies today?
+## Quick List
 
 ## Did you do any of these today?
 
 - [ ] Reconcile YNAB budget
 - [ ] Read a book
 - [ ] Do Sweepy chores
+- [ ] Play guitar or drums
+- [ ] Play WoW
+- [ ] Other hobbies (disc golf, MTG, etc)
 
 ## How did scripture memory go?
 
@@ -264,6 +273,8 @@ See also: [[Prayer/War-Room]]
 
 Every Jon-owned heading is a **question he can answer in three words without feeling judged**, with room to say more if he wants to. A heading that gets left blank every day is not a prompt — it is friction, and it gets removed rather than tolerated.
 
+- `## Quick List` is seeded as an **empty heading only**. It is Jon's scratch pad for things that come up during the day and need doing today — no project, no tags, no trip to OmniFocus. Never seed it with items, and never carry yesterday's list forward. Evening summary resolves it.
+- Do not reintroduce `## Did you focus on any hobbies today?`. It was removed on 2026-08-26 because it duplicated the tracking checklist directly above it, and a checked line with an appended note carries the same detail without asking Jon to compose prose. Notes from 2026-08-26 through 2026-08-28 keep it; new notes never get it.
 - Do not reintroduce `## What Stood Out?`, `## What Needs Follow Up?`, `## Random Thoughts`, or `## Today's Reading`. They were removed on 2026-08-24 because Jon left them blank daily and they did not prompt thought or action. Historical notes keep them; new notes never get them.
 - Do not add a new heading to this template without Jon explicitly asking for it.
 - Follow-up commitments are no longer collected under a dedicated heading. They are captured from Jon's narrative language anywhere in the note — see the qualifying-language rules in `AGENTS.md`.
