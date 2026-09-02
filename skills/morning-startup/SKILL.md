@@ -111,7 +111,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
    - **Two sections, in this order, and no more:** `**New — <passage>**` then `**Review**`. Never invent a third.
    - **New** lists everything due from the deck's New track — blocks, stretching rungs, dailies, taper rungs, and the day's new verse if intake is open. One line per unit, with its exact rep count.
    - **Order the New section by scripture reference, earliest first, with today's new verse last.** Never group by cadence or rung, and never lead with the newest verse. Jon memorizes by adding onto what came before, so he recites forward through the passage. Rep counts will climb down the list (5×, 10×, 15×, 20×, John Piper method) — that is correct, not backwards.
-   - **Review** is **exactly one chapter**, chosen by the deck's Review rules. When a relearning chapter holds the slot, mark the section `**Review** *(relearning)*` and name the paragraph, how many there are, and whether the text may be open.
+   - **Review** follows the deck's current Review rules. It contains one active-acquisition line (Consolidation, Relearning, or a paused-Relearning keep-warm rep) plus at most one mature maintenance chapter due that day. State exact rep counts and any text-open allowance. Never show Consolidation counts, block numbers, or queue state; Jon sees only today's recitation.
    - **Add the nested Perfected box** under any verse the deck says has earned it:
      ```markdown
      - [ ] Galatians 1:14 — 1×
@@ -124,7 +124,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 
      **New — Galatians**
      - [ ] **1:1–1:5** — block · weekly · 1×
-     - [ ] 1:11 — every other day · 1×
+     - [ ] 1:11 — every 3 days · 1×
      - [ ] 1:14 — 1×
        - [ ] *Perfected — promote*
      - [ ] 1:15 — 1×
@@ -133,6 +133,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
      - [ ] **1:20** — **John Piper method**
 
      **Review**
+     - [ ] Galatians 1 — whole chapter · 1×
      - [ ] Psalm 1 — whole chapter · 1×
      ```
 
@@ -165,7 +166,7 @@ This is a **morning briefing, not a task ledger**. Its job is orientation: gathe
 - **Week's focus**: Pull the first line of the `## Focus This Week` section from the weekly note and include it as a single italic line at the top of Today's Focus, e.g. `*Week's focus: ...*`
 - **Mentoring links**: When a mentoring session appears in the hard landscape, use the wikilink to the mentoring note, e.g. `[[Mentoring/Zac Story]]`, `[[Mentoring/Jeremy]]`, `[[Mentoring/Tyler]]`
 - **Brainstorm Today**: The `### Brainstorm Today` section contains one AI-generated question. It is a background prompt, not a copied task.
-- **How did scripture memory go?**: Two sections — `**New — <passage>**` and `**Review**` (one chapter) — with exact verses and rep counts. Jon checks boxes and appends notes to lines in his own words. No progress bars, no streaks, no encouragement copy, no adherence statistics.
+- **How did scripture memory go?**: Two sections — `**New — <passage>**` and `**Review**` — with exact verses and rep counts. Review contains the deck-selected active-acquisition work plus at most one mature maintenance chapter. Jon checks boxes and appends notes to lines in his own words. No progress bars, Consolidation counters, streaks, encouragement copy, or adherence statistics.
 
 ## Output format
 
