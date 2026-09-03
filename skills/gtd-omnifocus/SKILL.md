@@ -22,6 +22,9 @@ Never ask Jon to run this skill separately when a parent routine has already inv
 1. Store every task in OmniFocus. Put project-specific actions in the matching OmniFocus project and standalone actions in the appropriate single-action list or Inbox. Never create task checklists in Obsidian project notes.
 2. Require commitment before creating an action. Do not convert ideas, questions, aspirations, or “maybe” language into obligations.
 3. Phrase each task as one visible physical next action. Separate outcomes from actions and split independent actions.
+   - A next action starts with an observable verb and names the object or destination: `Email Proof ID about the security review`, `Draft the first configuration checklist`, or `List three candidate teams`.
+   - Words such as *figure out, handle, work on, plan, improve, finalize,* and *find the best way* usually describe an outcome or unresolved thinking. Replace them with the first visible move: open and review a named source, list bounded options, draft a concrete artifact, send a named person a specific question, or make a defined decision from known options.
+   - Do not hide several independently completable actions behind one task. Conversely, do not manufacture separate tasks for headings or planning dimensions that will be resolved together in one artifact or session.
 4. Keep unavailable work out of execution perspectives:
    - Use a defer date for a committed action that should reappear on a known date.
    - Use `Waiting On` and the appropriate `Waiting On: <name>` child tag for a dependency or delegation.
@@ -31,6 +34,7 @@ Never ask Jon to run this skill separately when a parent routine has already inv
 6. Use flags only for the small set of available actions Jon chooses to protect this week. Flags populate `King - Protect This Week`; they are not a priority scale.
 7. Duplicate-check semantically before every create. Similar meaning counts even when wording differs.
 8. Preserve uncertainty. Ask during review when commitment, affordability, project mapping, or state requires Jon's judgment.
+9. Model dependencies in OmniFocus, not in task names. When later work depends on an earlier result, use a sequential project or sequential action group and order it so only the first genuinely executable action is available. Phrases such as `once the plan is ready`, `after approval`, or `when X arrives` are dependency signals; the dependent task must not remain independently available.
 
 ## Taxonomy
 
@@ -47,11 +51,20 @@ Never invent a near-match; OmniFocus may silently create a new tag.
 
 1. Drain `Reference/Logs/OmniFocus Failure Queue.md` before new captures. Remove only entries successfully written and verified.
 2. Extract direct commitments from the supplied source. Reject noncommittal language. **Exception:** unchecked items the caller supplies from a daily note's `## Quick List` are already commitments by virtue of being written there — accept them as-is, even as bare fragments, and do not reject them for lacking commitment phrasing. Word them as proper next actions when creating the task.
-3. Determine whether each action belongs to a matching OmniFocus project or a single-action list.
-4. Search for an equivalent task before writing.
-5. Create or update the action with an accurate context, energy, time, availability state, deadline, and flag only when supported.
-6. Verify every write. Report the action and destination to the caller.
-7. Retry a failed read or write exactly once. If it still fails, append the complete intended write—including action, destination, tags, dates, flag, and source—to the failure queue. Never strand it only in narrative.
+3. Clarify each commitment before filing it:
+   - State the desired result privately, then identify the first observable action Jon can perform without doing more planning first.
+   - If the source names a deliverable but not its first move, use a bounded drafting or inspection action rather than copying the deliverable as though it were executable.
+   - Split bundled independent work; combine overlapping planning placeholders when one draft, conversation, or decision will resolve them together.
+4. Determine whether each action belongs to a matching OmniFocus project or a single-action list. Inspect the destination project's existing tasks and parallel/sequential setting before adding anything.
+5. Search for an equivalent task before writing. Also search for prerequisites, dependent actions, and outcome-like placeholders in the destination project.
+6. Preserve dependency logic:
+   - If the new action is a prerequisite, place it before the dependent work.
+   - If later tasks cannot honestly start yet, make the project or a suitable action group sequential and put the tasks in causal order.
+   - Keep a project parallel only when its currently available actions really can proceed independently.
+   - Never rely on wording such as `after`, `once`, or `later` to hide an unavailable task from context perspectives.
+7. Create or update the action with an accurate context, energy, time, availability state, deadline, and flag only when supported. Before verification, apply a final next-action test: could Jon begin this task now, in its tagged context, with no unstated decision or prerequisite? If not, refine, sequence, defer, wait, or hold it.
+8. Verify every write, including final availability and project ordering—not only the task's existence. Report the action and destination to the caller.
+9. Retry a failed read or write exactly once. If it still fails, append the complete intended write—including action, destination, tags, dates, flag, and source—to the failure queue. Never strand it only in narrative.
 
 ## Orient mode
 
@@ -80,12 +93,12 @@ Remain read-only. Use this mode only when the caller needs task-level selection 
 ## Review mode
 
 1. Capture loose inputs and process the OmniFocus Inbox to zero: do, delegate, defer, schedule only genuine calendar events, move to `Someday Maybe`, or delete/drop.
-2. Review every active OmniFocus project for alignment with its vault project's stated outcome and at least one physical next action, or an explicit waiting, deferred, or on-hold state.
+2. Review every active OmniFocus project for alignment with its vault project's stated outcome and at least one physical next action, or an explicit waiting, deferred, or on-hold state. Inspect whether the project's parallel/sequential setting matches its real dependencies and whether only genuinely executable actions are available.
 3. Review `Waiting On` for follow-ups and changed dependencies.
 4. Review `Someday Maybe` without pressure. Activate something only after explicit commitment and confirmation that money, time, and prerequisites support it.
 5. Review upcoming deadlines and remove soft due dates.
 6. Reset flags to the small set Jon intends to protect this week.
-7. Inspect every execution perspective. Anything visible must be genuinely actionable now.
+7. Inspect every execution perspective. Anything visible must be genuinely actionable now. For each visible task, reject outcome wording, unresolved planning, hidden prerequisites, and later-stage work exposed by a parallel project. Refine names and structure rather than merely removing context tags.
 8. Return completed housekeeping, proposed changes requiring judgment, and focused questions to the parent weekly-planning routine.
 
 When delegated to a sub-agent, perform the read-only audit and return recommendations. Let the parent agent obtain Jon's decisions and apply ambiguous or material changes. Do not require delegation when the review is small.
